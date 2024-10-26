@@ -1,0 +1,18 @@
+cd test/check
+cd check
+pwd
+c
+cd check
+echo j
+cd check
+cd -
+cd test/check
+cd .
+cd ..
+cd ~
+cd ..
+cd ~
+cd ..
+cd .
+cd 
+history
