@@ -1,0 +1,86 @@
+.login-div{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    width:30%;
+    margin-top: 5%;
+    height: 70%;
+    border-radius: 10px;
+    border-bottom: 4px solid #ddd;
+    background-color: #eee;
+    padding: 2%;
+}
+
+.login-div h2{
+    font-family: poppins;
+    font-weight: bolder;
+    font-size: 225%;
+    margin-top:0;
+}
+.login-div button{
+    display: block;
+    height: 40px;
+    width:100px;
+    color:#f8f8f8;
+    background-color: #2D46B9;
+    overflow: hidden;
+    border:none;
+    border-radius: 20px;
+    margin: 10px 2px;
+    font-family: poppins;
+    font-weight: bolder;
+    font-size:80%;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.login-div input{
+    background-color: #e3e3e3;
+    border:none;
+    padding:4% 3%;
+    font-size:100%;
+    font-family: "fira sans";
+    outline: none;
+    width:100%;
+    margin-bottom: 3%;
+    border-left:5px solid #2D46B9;
+}
+.login-div label{
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-family: poppins;
+    font-size:80%;
+}
+.sign-up-hook{
+    font-size:70%;
+    position: absolute;
+    bottom:4%;
+    font-family: poppins;
+    font-weight: bolder;
+    margin-left:5px;
+}
+.login-div a{
+    color:#2D46B9;
+    font-weight: bolder;
+    font-size:110%;
+}
+.login-sym{
+    position: absolute;
+    left:-20%;
+    transition: 0.4s;
+    transition-delay: 0.1s;
+}
+.login-btn-text{
+    position: absolute;
+    right:50%;
+    transform: translateX(50%);
+    transition: 0.4s;
+}
+.login-div button:hover .login-sym{
+    left:50%;
+    transform: translateX(-50%);
+}
+.login-div button:hover .login-btn-text{
+    right:-30%;
+}
