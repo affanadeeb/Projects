@@ -50,10 +50,6 @@ npm run dev
 4. Push to the branch (`git push origin feature/UpdateMenu`)
 5. Open a Pull Request
 
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## Contact
 
 If you have any questions or suggestions, please open an issue in the repository.
