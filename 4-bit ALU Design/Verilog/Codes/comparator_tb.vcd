@@ -1,0 +1,151 @@
+$date
+	Tue Nov  7 01:49:56 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module comparator_tb $end
+$var wire 1 ! lesser $end
+$var wire 1 " greater $end
+$var wire 1 # equal $end
+$var reg 4 $ A [3:0] $end
+$var reg 4 % B [3:0] $end
+$scope module DUT $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 ( eq0 $end
+$var wire 1 ) eq1 $end
+$var wire 1 * eq2 $end
+$var wire 1 + eq3 $end
+$var wire 1 # equal $end
+$var wire 1 " greater $end
+$var wire 1 , greater0 $end
+$var wire 1 - greater1 $end
+$var wire 1 . greater2 $end
+$var wire 1 / greater3 $end
+$var wire 1 ! lesser $end
+$var wire 1 0 lesser0 $end
+$var wire 1 1 lesser1 $end
+$var wire 1 2 lesser2 $end
+$var wire 1 3 lesser3 $end
+$var wire 4 4 B_comp [3:0] $end
+$var wire 4 5 A_comp [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1010 5
+b110 4
+13
+02
+01
+00
+0/
+0.
+0-
+0,
+0+
+0*
+1)
+1(
+b1001 '
+b101 &
+b1001 %
+b101 $
+0#
+0"
+1!
+$end
+#10
+0!
+0"
+03
+0-
+1#
+b100 4
+01
+1*
+1+
+b100 5
+b1011 %
+b1011 '
+b1011 $
+b1011 &
+#20
+0#
+1!
+0*
+b0 4
+12
+b1111 %
+b1111 '
+#30
+1"
+0!
+1/
+02
+0(
+0+
+b1001 4
+0)
+b110 5
+b110 %
+b110 '
+b1001 $
+b1001 &
+#40
+0"
+0/
+0,
+1#
+1(
+1+
+b0 4
+1)
+1*
+b0 5
+b1111 %
+b1111 '
+b1111 $
+b1111 &
+#50
+1!
+13
+0#
+b11 4
+0+
+b1011 5
+b1100 %
+b1100 '
+b100 $
+b100 &
+#60
+1"
+1/
+0!
+0*
+b1111 4
+03
+0)
+b1 5
+b0 %
+b0 '
+b1110 $
+b1110 &
+#70
+1!
+13
+0"
+b11 4
+0(
+b1100 5
+0/
+b1100 %
+b1100 '
+b11 $
+b11 &
+#80

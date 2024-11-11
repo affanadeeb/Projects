@@ -1,0 +1,5 @@
+.subckt 4inputOR in1 in2 in3 in4 out vdd gnd
+   X73 in1 in2 a vdd gnd OR
+   X74 in3 in4 b vdd gnd OR
+   X75 a b out vdd gnd OR
+.ends 4inputOR

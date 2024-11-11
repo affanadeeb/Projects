@@ -1,0 +1,4 @@
+.subckt 3inputAND in1 in2 in3 out vdd gnd
+   X62 in1 in2 a vdd gnd AND
+   X63 a in3 out vdd gnd AND
+.ends 3inputAND

@@ -1,0 +1,4 @@
+.subckt XNOR node_a node_b node_out vdd gnd
+  X15 node_a node_b node_x vdd gnd XOR
+  X16 node_x node_out vdd gnd NOT
+.ends XNOR

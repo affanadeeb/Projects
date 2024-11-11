@@ -1,0 +1,9 @@
+.subckt twotofourdecoder S0 S1 D0 D1 D2 D3 vdd gnd
+   X18 S0 S0_comp vdd gnd NOT
+   X19 S1 S1_comp vdd gnd NOT
+   X20 S0_comp S1_comp D0 vdd gnd AND
+   X21 S0 S1_comp D1 vdd gnd AND
+   X22 S0_comp S1 D2 vdd gnd AND
+   X23 S0 S1 D3 vdd gnd AND
+
+.ends twotofourdecoder

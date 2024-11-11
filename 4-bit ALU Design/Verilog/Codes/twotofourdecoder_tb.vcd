@@ -1,0 +1,64 @@
+$date
+	Tue Nov  7 01:18:06 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module twotofourdecoder_tb $end
+$var wire 1 ! D3 $end
+$var wire 1 " D2 $end
+$var wire 1 # D1 $end
+$var wire 1 $ D0 $end
+$var reg 1 % S0 $end
+$var reg 1 & S1 $end
+$var integer 32 ' i [31:0] $end
+$scope module DUT $end
+$var wire 1 $ D0 $end
+$var wire 1 # D1 $end
+$var wire 1 " D2 $end
+$var wire 1 ! D3 $end
+$var wire 1 % S0 $end
+$var wire 1 ( S0_comp $end
+$var wire 1 & S1 $end
+$var wire 1 ) S1_comp $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1)
+1(
+b0 '
+0&
+0%
+1$
+0#
+0"
+0!
+$end
+#1
+b1 '
+#2
+0$
+0(
+1#
+b10 '
+1%
+#3
+0)
+1"
+1(
+0#
+b11 '
+1&
+0%
+#4
+0"
+0(
+1!
+b100 '
+1%
+#5

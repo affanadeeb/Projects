@@ -1,0 +1,12 @@
+.subckt addersubtractor M A3 A2 A1 A0 B3 B2 B1 B0 S3 S2 S1 S0 carry vdd gnd
+
+   X39 B0 M E0 vdd gnd XOR
+   X40 B1 M E1 vdd gnd XOR
+   X41 B2 M E2 vdd gnd XOR
+   X42 B3 M E3 vdd gnd XOR
+   X43 A0 E0 M S0 C1 vdd gnd fulladder
+   X44 A1 E1 C1 S1 C2 vdd gnd fulladder
+   X45 A2 E2 C2 S2 C3 vdd gnd fulladder
+   X46 A3 E3 C3 S3 carry vdd gnd fulladder
+
+.ends addersubtractor

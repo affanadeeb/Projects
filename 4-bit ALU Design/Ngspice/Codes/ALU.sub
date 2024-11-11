@@ -1,0 +1,13 @@
+.subckt ALU S0 S1 A3 A2 A1 A0 B3 B2 B1 B0 S_03 S_02 S_01 S_00 carry equal lesser greater S_33 S_32 S_31 S_30 vdd gnd
+   X102 S0 S1 D0 D1 D2 D3 vdd gnd twotofourdecoder
+   X103 D0 D1 D_updated vdd gnd OR
+   X104 D_updated A3 A2 A1 A0 B3 B2 B1 B0 A_03 A_02 A_01 A_00 B_03 B_02 B_01 B_00 vdd gnd enable
+   X105 D2 A3 A2 A1 A0 B3 B2 B1 B0 A_23 A_22 A_21 A_20 B_23 B_22 B_21 B_20 vdd gnd enable
+   X106 D3 A3 A2 A1 A0 B3 B2 B1 B0 A_33 A_32 A_31 A_30 B_33 B_32 B_31 B_30 vdd gnd enable
+   X107 S0 A_03 A_02 A_01 A_00 B_03 B_02 B_01 B_00 S_03 S_02 S_01 S_00 carry_temp vdd gnd addersubtractor
+   X108 A_23 A_22 A_21 A_20 B_23 B_22 B_21 B_20 equal_temp lesser greater vdd gnd comparator
+   X109 A_33 A_32 A_31 A_30 B_33 B_32 B_31 B_30 S_33 S_32 S_31 S_30 vdd gnd andblock
+   X110 equal_temp D2 equal vdd gnd AND
+   X111 carry_temp D_updated carry_temp2 vdd gnd AND
+   X112 carry_temp2 D1 carry vdd gnd XOR
+.ends ALU

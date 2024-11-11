@@ -1,0 +1,4 @@
+.subckt 3inputOR in1 in2 in3 out vdd gnd
+   X95 in1 in2 a vdd gnd OR
+   X96 in3 a out vdd gnd OR
+.ends 3inputOR

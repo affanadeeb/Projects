@@ -1,0 +1,6 @@
+.subckt 5inputAND in1 in2 in3 in4 in5 out vdd gnd
+   X68 in1 in2 a vdd gnd AND
+   X69 in3 in4 b vdd gnd AND
+   X70 a b c vdd gnd AND
+   X71 c in5 out vdd gnd AND
+.ends 5inputAND

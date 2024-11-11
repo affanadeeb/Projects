@@ -1,0 +1,11 @@
+.subckt enable  En A3 A2 A1 A0 B3 B2 B1 B0 A_out3 A_out2 A_out1 A_out0 B_out3 B_out2 B_out1 B_out0 vdd gnd
+  X31 A0 En A_out0 vdd gnd AND
+  X32 A1 En A_out1 vdd gnd AND
+  X33 A2 En A_out2 vdd gnd AND
+  X34 A3 En A_out3 vdd gnd AND
+  X35 B0 En B_out0 vdd gnd AND
+  X36 B1 En B_out1 vdd gnd AND
+  X37 B2 En B_out2 vdd gnd AND
+  X38 B3 En B_out3 vdd gnd AND
+   
+.ends enable

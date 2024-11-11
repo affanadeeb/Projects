@@ -1,0 +1,26 @@
+.subckt comparator A3 A2 A1 A0 B3 B2 B1 B0 equal lesser greater vdd gnd
+ 
+  X47 A0 A0_comp vdd gnd NOT
+  X48 A1 A1_comp vdd gnd NOT
+  X49 A2 A2_comp vdd gnd NOT
+  X50 A3 A3_comp vdd gnd NOT
+  X51 B0 B0_comp vdd gnd NOT
+  X52 B1 B1_comp vdd gnd NOT
+  X53 B2 B2_comp vdd gnd NOT
+  X54 B3 B3_comp vdd gnd NOT
+  X55 A0 B0 X0 vdd gnd XNOR
+  X56 A1 B1 X1 vdd gnd XNOR
+  X57 A2 B2 X2 vdd gnd XNOR
+  X58 A3 B3 X3 vdd gnd XNOR
+  X64 X0 X1 X2 X3 equal vdd gnd 4inputAND
+  X65 A3 B3_comp G3 vdd gnd AND
+  X66 A2 B2_comp X3 G2 vdd gnd 3inputAND
+  X67 A1 B1_comp X3 X2 G1 vdd gnd 4inputAND
+  X72 A0 B0_comp X3 X2 X1 G0 vdd gnd 5inputAND
+  X76 G3 G2 G1 G0 greater vdd gnd 4inputOR
+  X77 A3_comp B3 L3 vdd gnd AND
+  X78 A2_comp B2 X3 L2 vdd gnd 3inputAND
+  X79 A1_comp B1 X3 X2 L1 vdd gnd 4inputAND
+  X80 A0_comp B0 X3 X2 X1 L0 vdd gnd 5inputAND
+  X81 L3 L2 L1 L0 lesser vdd gnd 4inputOR
+.ends comparator

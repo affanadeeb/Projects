@@ -1,0 +1,7 @@
+.subckt fulladder A B C_in S C vdd gnd
+   X25 A B X vdd gnd XOR
+   X26 C_in X S vdd gnd XOR
+   X27 A B Y vdd gnd AND
+   X28 X C_in Z vdd gnd AND
+   X29 Y Z C vdd gnd OR
+.ends fulladder

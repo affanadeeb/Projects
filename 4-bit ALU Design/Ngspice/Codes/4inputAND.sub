@@ -1,0 +1,5 @@
+.subckt 4inputAND in1 in2 in3 in4 out vdd gnd
+   X59 in1 in2 a vdd gnd AND
+   X60 in3 in4 b vdd gnd AND
+   X61 a b out vdd gnd AND
+.ends 4inputAND

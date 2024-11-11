@@ -1,0 +1,288 @@
+$date
+	Tue Nov  7 01:48:36 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module addersubtractor_tb $end
+$var wire 1 ! carry $end
+$var wire 4 " S [3:0] $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 1 % M $end
+$scope module DUT $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 % M $end
+$var wire 1 ! carry $end
+$var wire 4 ( S [3:0] $end
+$var wire 1 ) C3 $end
+$var wire 1 * C2 $end
+$var wire 1 + C1 $end
+$var wire 4 , B_updated [3:0] $end
+$scope module instance_1 $end
+$var wire 1 - A $end
+$var wire 1 . B $end
+$var wire 1 + C $end
+$var wire 1 % C_in $end
+$var wire 1 / C_inter1 $end
+$var wire 1 0 C_inter2 $end
+$var wire 1 1 S $end
+$var wire 1 2 S_inter $end
+$upscope $end
+$scope module instance_2 $end
+$var wire 1 3 A $end
+$var wire 1 4 B $end
+$var wire 1 * C $end
+$var wire 1 + C_in $end
+$var wire 1 5 C_inter1 $end
+$var wire 1 6 C_inter2 $end
+$var wire 1 7 S $end
+$var wire 1 8 S_inter $end
+$upscope $end
+$scope module instance_3 $end
+$var wire 1 9 A $end
+$var wire 1 : B $end
+$var wire 1 ) C $end
+$var wire 1 * C_in $end
+$var wire 1 ; C_inter1 $end
+$var wire 1 < C_inter2 $end
+$var wire 1 = S $end
+$var wire 1 > S_inter $end
+$upscope $end
+$scope module instance_4 $end
+$var wire 1 ? A $end
+$var wire 1 @ B $end
+$var wire 1 ! C $end
+$var wire 1 ) C_in $end
+$var wire 1 A C_inter1 $end
+$var wire 1 B C_inter2 $end
+$var wire 1 C S $end
+$var wire 1 D S_inter $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1D
+1C
+0B
+0A
+1@
+0?
+1>
+1=
+0<
+0;
+0:
+19
+08
+17
+06
+05
+04
+03
+02
+01
+00
+1/
+1.
+1-
+b1001 ,
+1+
+0*
+0)
+b1110 (
+b1001 '
+b101 &
+0%
+b1001 $
+b101 #
+b1110 "
+0!
+$end
+#10
+07
+0=
+1)
+0+
+0D
+0>
+1;
+08
+0/
+0@
+1:
+04
+0.
+0-
+b100 ,
+b1001 "
+b1001 (
+11
+b1011 $
+b1011 '
+b100 #
+b100 &
+1%
+#20
+1=
+1>
+17
+0)
+1D
+18
+12
+0;
+1@
+1:
+14
+1.
+09
+b1111 ,
+b1111 "
+b1111 (
+11
+b1111 $
+b1111 '
+b0 #
+b0 &
+0%
+#30
+1!
+0C
+1B
+04
+17
+0*
+b11 "
+b11 (
+0=
+1)
+b1101 ,
+18
+05
+0>
+1;
+13
+19
+b1101 $
+b1101 '
+b110 #
+b110 &
+#40
+0=
+1!
+1<
+1>
+0C
+1B
+1*
+1)
+12
+07
+16
+0;
+0@
+1:
+14
+1.
+1+
+03
+09
+1?
+b111 ,
+b0 "
+b0 (
+01
+10
+b1000 $
+b1000 '
+b1000 #
+b1000 &
+1%
+#50
+1)
+0!
+0:
+11
+00
+0=
+1<
+b1001 "
+b1001 (
+1C
+0B
+b11 ,
+02
+1/
+1>
+0;
+0D
+1-
+19
+0?
+b1100 $
+b1100 '
+b101 #
+b101 &
+#60
+0*
+0C
+17
+06
+0)
+1:
+0.
+11
+00
+0+
+b111 "
+b111 (
+1=
+0<
+b110 ,
+02
+0/
+1>
+0-
+09
+b1001 $
+b1001 '
+b0 #
+b0 &
+#70
+0!
+0B
+0)
+0<
+0*
+12
+17
+06
+1C
+1=
+0+
+1D
+1>
+0/
+1@
+1:
+04
+0.
+1-
+13
+b1100 ,
+b1111 "
+b1111 (
+11
+b1100 $
+b1100 '
+b11 #
+b11 &
+0%
+#80
