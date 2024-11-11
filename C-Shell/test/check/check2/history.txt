@@ -1,0 +1,12 @@
+cd test/check/check2
+cd check/check2
+pwd
+cd check2
+cd check/check2
+cd check2
+cd check/check2
+cd check2
+cd .
+cd -
+cd check2
+cd -
