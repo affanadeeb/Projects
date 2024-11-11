@@ -1,0 +1,85 @@
+Four Input NOR gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+vin3 in3 gnd  PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+vin4 in4 gnd  PULSE(0 1.8 0ns 100ps 100ps 160ns 320ns)
+M1000 out in4 gnd Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=80 ps=72
+M1001 out in1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1002 a_77_6# in3 a_45_6# vdd CMOSP w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1003 out in3 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 a_13_6# in1 vdd vdd CMOSP w=4 l=2
++  ad=40 pd=36 as=20 ps=18
+M1005 out in4 a_77_6# vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1006 gnd in2 out Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 a_45_6# in2 a_13_6# vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 vdd vdd 0.03fF
+C1 a_45_6# a_13_6# 0.04fF
+C2 vdd vdd 0.03fF
+C3 a_45_6# vdd 0.03fF
+C4 out in4 0.10fF
+C5 a_77_6# out 0.04fF
+C6 out in3 0.12fF
+C7 vdd vdd 0.05fF
+C8 vdd in2 0.06fF
+C9 out vdd 0.03fF
+C10 a_77_6# a_45_6# 0.04fF
+C11 out gnd 0.72fF
+C12 a_13_6# vdd 0.03fF
+C13 in1 vdd 0.06fF
+C14 a_13_6# vdd 0.21fF
+C15 a_45_6# vdd 0.03fF
+C16 vdd vdd 0.03fF
+C17 a_77_6# vdd 0.03fF
+C18 vdd in4 0.06fF
+C19 vdd in3 0.06fF
+C20 a_77_6# vdd 0.03fF
+C21 gnd in3 0.08fF
+C22 out in2 0.12fF
+C23 vdd a_13_6# 0.03fF
+C24 out vdd 0.07fF
+C25 in2 in3 0.22fF
+C26 a_45_6# vdd 0.17fF
+C27 a_77_6# vdd 0.18fF
+C28 in2 gnd 0.06fF
+C29 gnd Gnd 0.43fF
+C30 out Gnd 0.52fF
+C31 a_77_6# Gnd 0.00fF
+C32 a_45_6# Gnd 0.02fF
+C33 a_13_6# Gnd 0.02fF
+C34 vdd Gnd 0.19fF
+C35 in4 Gnd 0.27fF
+C36 in3 Gnd 0.43fF
+C37 in2 Gnd 0.41fF
+C38 in1 Gnd 0.17fF
+C39 vdd Gnd 0.40fF
+C40 vdd Gnd 0.40fF
+C41 vdd Gnd 0.40fF
+C42 vdd Gnd 0.40fF
+
+.tran 0.1n 400n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(in3)+4 v(in4)+6 v(out)+8
+.end
+.endc

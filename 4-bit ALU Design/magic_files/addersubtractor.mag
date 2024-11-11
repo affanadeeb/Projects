@@ -1,0 +1,147 @@
+magic
+tech scmos
+timestamp 1699637881
+<< metal1 >>
+rect 1080 607 1085 609
+rect 710 590 715 592
+rect 763 590 1054 593
+rect 763 576 766 590
+rect 337 574 342 576
+rect 390 573 684 576
+rect 363 562 368 565
+rect 390 560 393 573
+rect 19 557 311 560
+rect -33 554 -28 556
+rect 19 540 22 557
+rect 1367 460 1370 512
+rect 997 424 1000 440
+rect 624 410 627 424
+rect 624 407 630 410
+rect 254 391 257 404
+rect -93 -14 -90 371
+rect 897 290 1044 293
+rect 523 272 673 275
+rect 154 261 300 264
+rect -93 -17 -59 -14
+rect -44 -20 -41 184
+rect 80 176 85 177
+rect 133 163 317 166
+rect -32 160 54 163
+rect 102 4 312 7
+rect 29 -20 32 -6
+rect 257 -20 260 4
+rect 326 -21 329 204
+rect 341 181 424 184
+rect 506 181 688 184
+rect 341 167 344 181
+rect 373 7 376 25
+rect 343 4 376 7
+rect 399 -20 402 15
+rect 482 -8 485 40
+rect 481 -9 486 -8
+rect 699 -20 702 220
+rect 787 197 797 200
+rect 879 197 1057 200
+rect 787 184 790 197
+rect 720 181 790 184
+rect 746 29 749 41
+rect 714 26 749 29
+rect 772 -20 775 31
+rect 855 -9 858 56
+rect 1069 -20 1072 237
+rect 1119 214 1167 217
+rect 1119 200 1122 214
+rect 1089 197 1122 200
+rect 1116 45 1119 58
+rect 1110 42 1119 45
+rect 1142 -20 1145 48
+rect 1225 -9 1228 73
+<< m2contact >>
+rect 300 209 305 214
+rect -59 -18 -53 -13
+rect -37 159 -32 164
+rect 317 162 322 167
+rect 111 14 116 19
+rect 312 3 317 8
+rect 688 180 693 185
+rect 340 162 345 167
+rect 367 138 373 144
+rect 472 25 477 30
+rect 338 3 343 8
+rect 686 25 691 30
+rect 481 -14 486 -9
+rect 715 180 720 185
+rect 1057 196 1062 201
+rect 845 41 850 46
+rect 709 25 714 30
+rect 854 -14 859 -9
+rect 1084 196 1089 201
+rect 1105 41 1110 46
+rect 1224 -14 1229 -9
+<< pdm12contact >>
+rect -24 352 -19 357
+<< metal2 >>
+rect -78 353 -24 356
+rect -78 163 -75 353
+rect -78 160 -37 163
+rect 301 142 304 209
+rect 1062 197 1084 200
+rect 693 181 715 184
+rect 322 163 340 166
+rect 301 139 367 142
+rect 850 42 1105 45
+rect 477 26 686 29
+rect 691 26 709 29
+rect 112 -14 115 14
+rect 317 4 338 7
+rect -53 -17 1292 -14
+use XOR  XOR_0
+timestamp 1699628355
+transform 1 0 52 0 1 4
+box -50 -10 103 172
+use fulladder  fulladder_0
+timestamp 1699630280
+transform 1 0 -71 0 1 186
+box -42 -9 328 368
+use fulladder  fulladder_1
+timestamp 1699630280
+transform 1 0 299 0 1 206
+box -42 -9 328 368
+use XOR  XOR_1
+timestamp 1699628355
+transform 1 0 422 0 1 25
+box -50 -10 103 172
+use fulladder  fulladder_2
+timestamp 1699630280
+transform 1 0 672 0 1 222
+box -42 -9 328 368
+use XOR  XOR_2
+timestamp 1699628355
+transform 1 0 795 0 1 41
+box -50 -10 103 172
+use fulladder  fulladder_3
+timestamp 1699630280
+transform 1 0 1042 0 1 239
+box -42 -9 328 368
+use XOR  XOR_3
+timestamp 1699628355
+transform 1 0 1165 0 1 58
+box -50 -10 103 172
+<< labels >>
+rlabel metal1 29 -20 32 -19 1 B0
+rlabel metal1 -44 -20 -41 -19 1 A0
+rlabel metal1 399 -20 402 -19 1 B1
+rlabel metal1 326 -21 329 -20 1 A1
+rlabel metal1 699 -20 702 -19 1 A2
+rlabel metal1 -93 -17 -86 -14 1 M
+rlabel metal1 772 -20 775 -19 1 B2
+rlabel metal1 1142 -20 1145 -19 1 B3
+rlabel metal1 1069 -20 1072 -19 1 A3
+rlabel metal1 -33 554 -28 556 1 S0
+rlabel metal1 337 574 342 576 1 S1
+rlabel metal1 710 590 715 592 1 S2
+rlabel metal1 1080 607 1085 609 5 S3
+rlabel metal1 1367 508 1370 512 7 Carry
+rlabel metal1 363 562 368 565 1 vdd
+rlabel metal1 257 -20 260 -18 1 gnd
+<< end >>

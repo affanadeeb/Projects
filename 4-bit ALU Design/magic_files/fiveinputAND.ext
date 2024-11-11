@@ -1,0 +1,47 @@
+timestamp 1699643694
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use not not_0 1 0 -33 0 1 22
+use fiveinputNAND fiveinputNAND_0 1 0 1 0 1 27
+node "in4" 0 17.187 120 -13 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "in3" 0 17.187 83 -13 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "in2" 0 17.187 53 -13 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "gnd" 0 43.4364 -8 1 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 36 32 0 0 0 0 0 0 0 0 0 0
+node "in5" 0 14.5512 158 20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 12 0 0 0 0 0 0 0 0 0 0
+node "in1" 1 334.088 -1 -11 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 91 66 86 58 0 0 0 0 0 0 0 0
+node "m1_n11_41#" 0 50.2875 -11 41 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 45 36 0 0 0 0 0 0 0 0 0 0
+node "m1_n39_15#" 3 341.242 -39 15 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 338 234 0 0 0 0 0 0 0 0 0 0
+node "out" 2 590.591 -11 16 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 58 44 176 118 0 0 0 0 0 0 0 0
+node "vdd" 1 341.659 -25 41 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 55 42 95 64 0 0 0 0 0 0 0 0
+cap "m1_n39_15#" "out" 131.907
+cap "m1_n11_41#" "out" 63.1773
+cap "m1_n39_15#" "vdd" 114.725
+cap "out" "in1" 41.238
+cap "gnd" "in1" 164.009
+cap "m1_n11_41#" "m1_n39_15#" 70.6937
+cap "not_0/vdd" "not_0/w_0_0#" 7.10543e-15
+cap "not_0/out" "not_0/vdd" -1.42109e-14
+cap "not_0/in" "not_0/vdd" 200.299
+cap "not_0/in" "not_0/w_0_0#" -1.42109e-14
+cap "fiveinputNAND_0/in1" "fiveinputNAND_0/w_0_0#" -1.42109e-14
+cap "not_0/out" "not_0/in" -5.68434e-14
+cap "fiveinputNAND_0/in1" "fiveinputNAND_0/a_6_n14#" 101.033
+cap "fiveinputNAND_0/in1" "not_0/gnd" 33.9317
+subcap "in2" -44.3463
+subcap "in5" -38.6328
+merge "not_0/out" "out" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fiveinputNAND_0/out" "not_0/in" -28.5276 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4 -22 0 0 0 0 0 0 0 0 0 0
+merge "not_0/in" "m1_n39_15#"
+merge "fiveinputNAND_0/gnd" "not_0/gnd" -16.3479 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1 -16 0 0 0 0 0 0 0 0 0 0
+merge "not_0/gnd" "gnd"
+merge "fiveinputNAND_0/in1" "in1" -34.2483 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 -14 0 0 0 0 0 0 0 0 0 0
+merge "fiveinputNAND_0/in2" "in2" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fiveinputNAND_0/in3" "in3" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fiveinputNAND_0/vdd" "not_0/vdd" -48.144 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22 0 0 0 0 0 0 0 0 0 0
+merge "not_0/vdd" "vdd"
+merge "vdd" "m1_n11_41#"
+merge "fiveinputNAND_0/in4" "in4" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fiveinputNAND_0/in5" "in5" -4.2252 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 -8 0 0 0 0 0 0 0 0 0 0

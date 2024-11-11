@@ -1,0 +1,164 @@
+timestamp 1699637881
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use XOR XOR_0 1 0 52 0 1 4
+use fulladder fulladder_0 1 0 -71 0 1 186
+use fulladder fulladder_1 1 0 299 0 1 206
+use XOR XOR_1 1 0 422 0 1 25
+use fulladder fulladder_2 1 0 672 0 1 222
+use XOR XOR_2 1 0 795 0 1 41
+use fulladder fulladder_3 1 0 1042 0 1 239
+use XOR XOR_3 1 0 1165 0 1 58
+node "B3" 2 206.728 1142 -20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 204 142 0 0 0 0 0 0 0 0 0 0
+node "A3" 7 764.599 1069 -20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 771 520 0 0 0 0 0 0 0 0 0 0
+node "B2" 1 156.549 772 -20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 153 108 0 0 0 0 0 0 0 0 0 0
+node "m1_845_41#" 8 2997.16 845 41 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 116 84 815 544 0 0 0 0 0 0 0 0
+node "m1_879_197#" 9 1214.98 879 197 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 869 586 116 78 0 0 0 0 0 0 0 0
+node "A2" 6 714.42 699 -20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 720 486 0 0 0 0 0 0 0 0 0 0
+node "B1" 1 109.322 399 -20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 105 76 0 0 0 0 0 0 0 0 0 0
+node "m1_472_25#" 9 2866.72 472 25 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 216 154 756 502 0 0 0 0 0 0 0 0
+node "m1_506_181#" 9 1220.88 506 181 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 875 590 116 78 0 0 0 0 0 0 0 0
+node "A1" 6 670.144 326 -21 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 675 456 0 0 0 0 0 0 0 0 0 0
+node "B0" 0 47.3358 29 -20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 42 34 0 0 0 0 0 0 0 0 0 0
+node "gnd" 9 1239.5 102 4 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 905 610 113 76 0 0 0 0 0 0 0 0
+node "m1_133_163#" 9 1194.99 133 163 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 893 602 104 70 0 0 0 0 0 0 0 0
+node "m1_80_176#" 0 13.6035 80 176 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 12 0 0 0 0 0 0 0 0 0 0
+node "A0" 5 608.159 -44 -20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 612 414 0 0 0 0 0 0 0 0 0 0
+node "m1_300_209#" 4 1646.23 300 209 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 61 44 460 304 0 0 0 0 0 0 0 0
+node "m1_154_261#" 4 436.96 154 261 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 438 298 0 0 0 0 0 0 0 0 0 0
+node "m1_523_272#" 4 448.767 523 272 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 450 306 0 0 0 0 0 0 0 0 0 0
+node "m1_897_290#" 4 439.912 897 290 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 441 300 0 0 0 0 0 0 0 0 0 0
+node "M" 55 16871.6 -93 -17 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1977 1332 4249 2812 0 0 0 0 0 0 0 0
+node "m1_254_391#" 0 44.3841 254 391 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 39 32 0 0 0 0 0 0 0 0 0 0
+node "m1_624_407#" 1 65.046 624 407 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 60 46 0 0 0 0 0 0 0 0 0 0
+node "m1_997_424#" 0 53.2392 997 424 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 38 0 0 0 0 0 0 0 0 0 0
+node "Carry" 1 159.5 1367 460 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 156 110 0 0 0 0 0 0 0 0 0 0
+node "S0" 0 17.187 -33 554 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "m1_19_540#" 8 918.087 19 540 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 927 624 0 0 0 0 0 0 0 0 0 0
+node "vdd" 0 20.7705 363 562 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 16 0 0 0 0 0 0 0 0 0 0
+node "m1_390_560#" 8 912.184 390 560 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 921 620 0 0 0 0 0 0 0 0 0 0
+node "S1" 0 17.187 337 574 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "m1_763_576#" 8 906.28 763 576 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 915 616 0 0 0 0 0 0 0 0 0 0
+node "S2" 0 17.187 710 590 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "S3" 0 17.187 1080 607 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "a_n24_352#" 18 3537.92 -24 352 pdm12c 0 0 25 20 0 0 0 0 0 0 0 0 0 0 308 212 905 604 0 0 0 0 0 0 0 0
+cap "A1" "gnd" 63.1773
+cap "A3" "M" 63.1773
+cap "m1_133_163#" "A1" 114.725
+cap "B3" "M" 63.1773
+cap "m1_845_41#" "M" 104.415
+cap "M" "A1" 63.1773
+cap "m1_300_209#" "A1" 63.1773
+cap "M" "B1" 63.1773
+cap "A3" "m1_845_41#" 63.1773
+cap "M" "gnd" 155.81
+cap "A0" "M" 63.1773
+cap "m1_506_181#" "A2" 97.5423
+cap "m1_472_25#" "A2" 92.633
+cap "m1_472_25#" "M" 104.415
+cap "a_n24_352#" "A0" 114.725
+cap "M" "B2" 63.1773
+cap "m1_133_163#" "m1_300_209#" 63.1773
+cap "A3" "m1_879_197#" 92.633
+cap "A2" "M" 63.1773
+cap "B0" "M" 63.1773
+subcap "A0" -584.437
+subcap "M" -16541.1
+subcap "gnd" -973.684
+subcap "A1" -501.789
+subcap "m1_472_25#" -2417.47
+subcap "A2" -501.789
+subcap "m1_845_41#" -2333.26
+subcap "A3" -755.635
+subcap "m1_133_163#" -959.178
+subcap "m1_80_176#" -26.4177
+subcap "m1_506_181#" -1220.59
+cap "XOR_2/NAND_3/in1" "m1_506_181#" 20.619
+cap "fulladder_0/gnd" "a_n24_352#" 13.05
+subcap "m1_300_209#" -399.149
+subcap "m1_506_181#" -922.817
+subcap "m1_879_197#" -872.56
+cap "XOR_2/vdd" "XOR_2/NAND_3/in1" 20.619
+subcap "m1_879_197#" -942.556
+subcap "a_n24_352#" -2071.29
+cap "fulladder_0/XOR_0/NAND_3/vdd" "fulladder_0/XOR_1/gnd" 63.1773
+subcap "m1_523_272#" -521.034
+cap "fulladder_1/XOR_1/gnd" "fulladder_0/C" 82.476
+cap "fulladder_0/C" "fulladder_0/OR_0/NOT_0/gnd" 10.3095
+cap "fulladder_1/C" "fulladder_1/OR_0/NOT_0/gnd" 30.9285
+cap "fulladder_2/XOR_1/gnd" "fulladder_1/C" 68.73
+cap "fulladder_3/XOR_1/gnd" "fulladder_2/C" 123.714
+cap "fulladder_2/OR_0/NOT_0/gnd" "fulladder_2/C" 30.9285
+subcap "Carry" -64.9917
+subcap "m1_19_540#" -544.07
+subcap "m1_390_560#" -664.873
+subcap "m1_390_560#" -552.076
+subcap "m1_763_576#" -669.587
+cap "fulladder_3/OR_0/NOT_0/vdd" "Carry" 30.9285
+subcap "S1" -21.9255
+subcap "m1_763_576#" -896.477
+subcap "S3" -25.368
+merge "fulladder_0/XOR_0/NAND_3/vdd" "XOR_0/NAND_3/vdd" -1150.56 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 -300 -200 0 0 0 0 0 0 0 0
+merge "XOR_0/NAND_3/vdd" "a_n24_352#"
+merge "fulladder_0/A" "XOR_0/out" -15.3015 0 0 0 0 0 0 0 0 0 0 0 0 0 0 15 -20 0 0 0 0 0 0 0 0 0 0
+merge "XOR_0/out" "m1_80_176#"
+merge "fulladder_1/S" "S1" -2.1225 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 -10 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_0/S" "S0" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_1/gnd" "fulladder_0/AND_0/gnd" -246.439 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -36 -40 -48 -32 0 0 0 0 0 0 0 0
+merge "fulladder_0/AND_0/gnd" "m1_154_261#"
+merge "m1_154_261#" "XOR_3/gnd"
+merge "XOR_3/gnd" "XOR_2/gnd"
+merge "XOR_2/gnd" "XOR_1/gnd"
+merge "XOR_1/gnd" "XOR_0/NAND_0/gnd"
+merge "XOR_0/NAND_0/gnd" "gnd"
+merge "gnd" "m1_472_25#"
+merge "m1_472_25#" "m1_845_41#"
+merge "m1_845_41#" "m1_300_209#"
+merge "XOR_3/NAND_3/vdd" "XOR_2/vdd" -10.4544 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 -18 0 0 0 0 0 0 0 0 0 0
+merge "XOR_2/vdd" "XOR_1/vdd"
+merge "XOR_1/vdd" "m1_506_181#"
+merge "m1_506_181#" "m1_879_197#"
+merge "fulladder_2/S" "S2" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_3/XOR_1/NAND_3/vdd" "fulladder_2/vdd" -349.791 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -327 -246 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_2/vdd" "m1_763_576#"
+merge "m1_763_576#" "fulladder_2/XOR_1/NAND_3/vdd"
+merge "fulladder_2/XOR_1/NAND_3/vdd" "fulladder_1/XOR_1/vdd"
+merge "fulladder_1/XOR_1/vdd" "fulladder_1/vdd"
+merge "fulladder_1/vdd" "vdd"
+merge "vdd" "m1_390_560#"
+merge "m1_390_560#" "fulladder_0/vdd"
+merge "fulladder_0/vdd" "m1_19_540#"
+merge "fulladder_3/S" "S3" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "XOR_2/in1" "B2" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_0/XOR_1/in1" "XOR_3/in2" -2483.27 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -366 -289 -582 -403 0 0 0 0 0 0 0 0
+merge "XOR_3/in2" "XOR_2/in2"
+merge "XOR_2/in2" "XOR_1/in2"
+merge "XOR_1/in2" "XOR_0/in2"
+merge "XOR_0/in2" "M"
+merge "fulladder_2/C_in" "fulladder_1/C" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_1/C" "m1_624_407#"
+merge "fulladder_2/XOR_0/gnd" "fulladder_2/gnd" 84.5328 0 0 0 0 0 0 0 0 0 0 0 0 0 0 312 -14 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_2/gnd" "fulladder_1/AND_0/gnd"
+merge "fulladder_1/AND_0/gnd" "m1_523_272#"
+merge "XOR_3/out" "fulladder_3/A" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_1/C_in" "fulladder_0/C" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_0/C" "m1_254_391#"
+merge "fulladder_3/C_in" "fulladder_2/C" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_2/C" "m1_997_424#"
+merge "XOR_1/NAND_3/vdd" "XOR_0/vdd" -138.542 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -96 -108 0 0 0 0 0 0 0 0 0 0
+merge "XOR_0/vdd" "m1_133_163#"
+merge "XOR_2/out" "fulladder_2/A" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_2/B" "A2" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "XOR_1/in1" "B1" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_0/B" "A0" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_3/XOR_0/gnd" "fulladder_2/AND_0/gnd" -177.265 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -171 -123 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_2/AND_0/gnd" "m1_897_290#"
+merge "XOR_0/in1" "B0" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_3/C" "Carry" -106.424 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -99 -75 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_1/B" "A1" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "XOR_3/in1" "B3" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fulladder_3/B" "A3" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "XOR_1/out" "fulladder_1/A" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0

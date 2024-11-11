@@ -1,0 +1,891 @@
+Comparator block
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global vdd
+
+Vdd vdd gnd 'SUPPLY'
+V_in_A3 A3 gnd PULSE(1.8 0 0ns 100ps 100ps 20ns 60ns)
+V_in_A2 A2 gnd PULSE(1.8 0 0ns 100ps 100ps 80ns 150ns)
+V_in_A1 A1 gnd PULSE(1.8 0 0ns 100ps 100ps 40ns 120ns)
+V_in_A0 A0 gnd PULSE(1.8 0 0ns 100ps 100ps 20ns 40ns)
+V_in_B3 B3 gnd PULSE(1.8 0 0ns 100ps 100ps 20ns 70ns)
+V_in_B2 B2 gnd PULSE(1.8 0 0ns 100ps 100ps 80ns 150ns)
+V_in_B1 B1 gnd PULSE(1.8 0 0ns 100ps 100ps 60ns 80ns)
+V_in_B0 B0 gnd PULSE(1.8 0 0ns 100ps 100ps 20ns 70ns)
+
+M1000 fourinputOR_0/not_0/in fourinputOR_0/in4 gnd Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=820 ps=738
+M1001 fourinputOR_0/not_0/in AND_0/out gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1002 fourinputOR_0/fourinputNOR_0/a_77_6# fourinputOR_0/in3 fourinputOR_0/fourinputNOR_0/a_45_6# fourinputOR_0/fourinputNOR_0/w_64_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1003 fourinputOR_0/not_0/in fourinputOR_0/in3 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 fourinputOR_0/fourinputNOR_0/a_13_6# AND_0/out vdd vdd CMOSP w=4 l=2
++  ad=40 pd=36 as=1345 ps=1208
+M1005 fourinputOR_0/not_0/in fourinputOR_0/in4 fourinputOR_0/fourinputNOR_0/a_77_6# fourinputOR_0/fourinputNOR_0/w_97_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1006 gnd fourinputOR_0/in2 fourinputOR_0/not_0/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 fourinputOR_0/fourinputNOR_0/a_45_6# fourinputOR_0/in2 fourinputOR_0/fourinputNOR_0/a_13_6# fourinputOR_0/fourinputNOR_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 greater fourinputOR_0/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1009 greater fourinputOR_0/not_0/in vdd fourinputOR_0/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1010 AND_0/not_0/in not_0/out AND_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1011 AND_0/not_0/in not_0/out vdd AND_0/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1012 gnd A3 AND_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1013 vdd A3 AND_0/not_0/in AND_0/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 AND_0/out AND_0/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1015 AND_0/out AND_0/not_0/in vdd AND_0/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1016 not_0/out B3 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1017 not_0/out B3 vdd not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1018 not_1/out B2 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1019 not_1/out B2 vdd not_1/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1020 not_2/out B1 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1021 not_2/out B1 vdd not_2/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1022 not_3/out B0 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1023 not_3/out B0 vdd not_3/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1024 fourinputOR_0/in3 fourinputAND_0/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1025 fourinputOR_0/in3 fourinputAND_0/not_0/in vdd fourinputAND_0/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1026 fourinputAND_0/not_0/in not_2/out fourinputAND_0/fourinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1027 gnd XNOR_0/out fourinputAND_0/fourinputNAND_0/a_76_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1028 fourinputAND_0/not_0/in XNOR_1/out vdd fourinputAND_0/fourinputNAND_0/w_63_0# CMOSP w=4 l=2
++  ad=80 pd=72 as=0 ps=0
+M1029 fourinputAND_0/not_0/in not_2/out vdd fourinputAND_0/fourinputNAND_0/w_0_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 fourinputAND_0/fourinputNAND_0/a_76_n14# XNOR_1/out fourinputAND_0/fourinputNAND_0/a_45_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1031 fourinputAND_0/fourinputNAND_0/a_45_n14# A1 fourinputAND_0/fourinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1032 vdd A1 fourinputAND_0/not_0/in fourinputAND_0/fourinputNAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1033 vdd XNOR_0/out fourinputAND_0/not_0/in fourinputAND_0/fourinputNAND_0/w_100_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1034 Equal fourinputAND_1/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1035 Equal fourinputAND_1/not_0/in vdd fourinputAND_1/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1036 fourinputAND_1/not_0/in XNOR_3/out fourinputAND_1/fourinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1037 gnd XNOR_2/out fourinputAND_1/fourinputNAND_0/a_76_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1038 fourinputAND_1/not_0/in XNOR_1/out vdd fourinputAND_1/fourinputNAND_0/w_63_0# CMOSP w=4 l=2
++  ad=80 pd=72 as=0 ps=0
+M1039 fourinputAND_1/not_0/in XNOR_3/out vdd fourinputAND_1/fourinputNAND_0/w_0_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1040 fourinputAND_1/fourinputNAND_0/a_76_n14# XNOR_1/out fourinputAND_1/fourinputNAND_0/a_45_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1041 fourinputAND_1/fourinputNAND_0/a_45_n14# XNOR_0/out fourinputAND_1/fourinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1042 vdd XNOR_0/out fourinputAND_1/not_0/in fourinputAND_1/fourinputNAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1043 vdd XNOR_2/out fourinputAND_1/not_0/in fourinputAND_1/fourinputNAND_0/w_100_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1044 threeinputAND_0/not_0/in not_1/out threeinputAND_0/threeinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1045 threeinputAND_0/not_0/in XNOR_0/out vdd threeinputAND_0/threeinputNAND_0/w_63_0# CMOSP w=4 l=2
++  ad=60 pd=54 as=0 ps=0
+M1046 threeinputAND_0/not_0/in not_1/out vdd threeinputAND_0/threeinputNAND_0/w_0_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1047 gnd XNOR_0/out threeinputAND_0/threeinputNAND_0/a_45_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1048 threeinputAND_0/threeinputNAND_0/a_45_n14# A2 threeinputAND_0/threeinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1049 vdd A2 threeinputAND_0/not_0/in threeinputAND_0/threeinputNAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1050 fourinputOR_0/in2 threeinputAND_0/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1051 fourinputOR_0/in2 threeinputAND_0/not_0/in vdd threeinputAND_0/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1052 fourinputOR_0/in4 fiveinputAND_0/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1053 fourinputOR_0/in4 fiveinputAND_0/not_0/in vdd fiveinputAND_0/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1054 fiveinputAND_0/not_0/in not_3/out fiveinputAND_0/fiveinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1055 fiveinputAND_0/fiveinputNAND_0/a_113_n14# XNOR_0/out fiveinputAND_0/fiveinputNAND_0/a_76_n14# Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1056 fiveinputAND_0/not_0/in XNOR_2/out vdd fiveinputAND_0/fiveinputNAND_0/w_133_0# CMOSP w=4 l=2
++  ad=100 pd=90 as=0 ps=0
+M1057 fiveinputAND_0/not_0/in XNOR_1/out vdd fiveinputAND_0/fiveinputNAND_0/w_63_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1058 fiveinputAND_0/not_0/in not_3/out vdd fiveinputAND_0/fiveinputNAND_0/w_0_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1059 gnd XNOR_2/out fiveinputAND_0/fiveinputNAND_0/a_113_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1060 fiveinputAND_0/fiveinputNAND_0/a_76_n14# XNOR_1/out fiveinputAND_0/fiveinputNAND_0/a_45_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1061 fiveinputAND_0/fiveinputNAND_0/a_45_n14# A0 fiveinputAND_0/fiveinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1062 vdd A0 fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1063 vdd XNOR_0/out fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/w_100_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1064 XNOR_1/out XNOR_1/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1065 XNOR_1/out XNOR_1/not_0/in vdd XNOR_1/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1066 XNOR_1/XOR_0/NAND_2/in1 A2 XNOR_1/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1067 XNOR_1/XOR_0/NAND_2/in1 A2 vdd XNOR_1/XOR_0/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1068 gnd B2 XNOR_1/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1069 vdd B2 XNOR_1/XOR_0/NAND_2/in1 XNOR_1/XOR_0/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1070 XNOR_1/XOR_0/NAND_3/in1 A2 XNOR_1/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1071 XNOR_1/XOR_0/NAND_3/in1 A2 vdd XNOR_1/XOR_0/NAND_1/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1072 gnd XNOR_1/XOR_0/NAND_2/in1 XNOR_1/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1073 vdd XNOR_1/XOR_0/NAND_2/in1 XNOR_1/XOR_0/NAND_3/in1 XNOR_1/XOR_0/NAND_1/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1074 XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_2/in1 XNOR_1/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1075 XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_2/in1 vdd XNOR_1/XOR_0/NAND_2/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1076 gnd B2 XNOR_1/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1077 vdd B2 XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_2/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1078 XNOR_1/not_0/in XNOR_1/XOR_0/NAND_3/in1 XNOR_1/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1079 XNOR_1/not_0/in XNOR_1/XOR_0/NAND_3/in1 vdd XNOR_1/XOR_0/NAND_3/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1080 gnd XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1081 vdd XNOR_1/XOR_0/NAND_3/in2 XNOR_1/not_0/in XNOR_1/XOR_0/NAND_3/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1082 XNOR_0/out XNOR_0/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1083 XNOR_0/out XNOR_0/not_0/in vdd XNOR_0/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1084 XNOR_0/XOR_0/NAND_2/in1 A3 XNOR_0/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1085 XNOR_0/XOR_0/NAND_2/in1 A3 vdd XNOR_0/XOR_0/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1086 gnd B3 XNOR_0/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1087 vdd B3 XNOR_0/XOR_0/NAND_2/in1 XNOR_0/XOR_0/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1088 XNOR_0/XOR_0/NAND_3/in1 A3 XNOR_0/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1089 XNOR_0/XOR_0/NAND_3/in1 A3 vdd XNOR_0/XOR_0/NAND_1/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1090 gnd XNOR_0/XOR_0/NAND_2/in1 XNOR_0/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1091 vdd XNOR_0/XOR_0/NAND_2/in1 XNOR_0/XOR_0/NAND_3/in1 XNOR_0/XOR_0/NAND_1/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1092 XNOR_0/XOR_0/NAND_3/in2 XNOR_0/XOR_0/NAND_2/in1 XNOR_0/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1093 XNOR_0/XOR_0/NAND_3/in2 XNOR_0/XOR_0/NAND_2/in1 vdd XNOR_0/XOR_0/NAND_2/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1094 gnd B3 XNOR_0/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1095 vdd B3 XNOR_0/XOR_0/NAND_3/in2 XNOR_0/XOR_0/NAND_2/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1096 XNOR_0/not_0/in XNOR_0/XOR_0/NAND_3/in1 XNOR_0/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1097 XNOR_0/not_0/in XNOR_0/XOR_0/NAND_3/in1 vdd XNOR_0/XOR_0/NAND_3/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1098 gnd XNOR_0/XOR_0/NAND_3/in2 XNOR_0/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1099 vdd XNOR_0/XOR_0/NAND_3/in2 XNOR_0/not_0/in XNOR_0/XOR_0/NAND_3/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1100 XNOR_2/out XNOR_2/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1101 XNOR_2/out XNOR_2/not_0/in vdd XNOR_2/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1102 XNOR_2/XOR_0/NAND_2/in1 A1 XNOR_2/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1103 XNOR_2/XOR_0/NAND_2/in1 A1 vdd XNOR_2/XOR_0/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1104 gnd B1 XNOR_2/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1105 vdd B1 XNOR_2/XOR_0/NAND_2/in1 XNOR_2/XOR_0/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1106 XNOR_2/XOR_0/NAND_3/in1 A1 XNOR_2/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1107 XNOR_2/XOR_0/NAND_3/in1 A1 vdd XNOR_2/XOR_0/NAND_1/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1108 gnd XNOR_2/XOR_0/NAND_2/in1 XNOR_2/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1109 vdd XNOR_2/XOR_0/NAND_2/in1 XNOR_2/XOR_0/NAND_3/in1 XNOR_2/XOR_0/NAND_1/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1110 XNOR_2/XOR_0/NAND_3/in2 XNOR_2/XOR_0/NAND_2/in1 XNOR_2/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1111 XNOR_2/XOR_0/NAND_3/in2 XNOR_2/XOR_0/NAND_2/in1 vdd XNOR_2/XOR_0/NAND_2/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1112 gnd B1 XNOR_2/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1113 vdd B1 XNOR_2/XOR_0/NAND_3/in2 XNOR_2/XOR_0/NAND_2/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1114 XNOR_2/not_0/in XNOR_2/XOR_0/NAND_3/in1 XNOR_2/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1115 XNOR_2/not_0/in XNOR_2/XOR_0/NAND_3/in1 vdd XNOR_2/XOR_0/NAND_3/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1116 gnd XNOR_2/XOR_0/NAND_3/in2 XNOR_2/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1117 vdd XNOR_2/XOR_0/NAND_3/in2 XNOR_2/not_0/in XNOR_2/XOR_0/NAND_3/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1118 XNOR_3/out XNOR_3/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1119 XNOR_3/out XNOR_3/not_0/in vdd XNOR_3/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1120 XNOR_3/XOR_0/NAND_2/in1 A0 XNOR_3/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1121 XNOR_3/XOR_0/NAND_2/in1 A0 vdd XNOR_3/XOR_0/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1122 gnd B0 XNOR_3/XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1123 vdd B0 XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1124 XNOR_3/XOR_0/NAND_3/in1 A0 XNOR_3/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1125 XNOR_3/XOR_0/NAND_3/in1 A0 vdd XNOR_3/XOR_0/NAND_1/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1126 gnd XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1127 vdd XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_3/in1 XNOR_3/XOR_0/NAND_1/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1128 XNOR_3/XOR_0/NAND_3/in2 XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1129 XNOR_3/XOR_0/NAND_3/in2 XNOR_3/XOR_0/NAND_2/in1 vdd XNOR_3/XOR_0/NAND_2/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1130 gnd B0 XNOR_3/XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1131 vdd B0 XNOR_3/XOR_0/NAND_3/in2 XNOR_3/XOR_0/NAND_2/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1132 XNOR_3/not_0/in XNOR_3/XOR_0/NAND_3/in1 XNOR_3/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1133 XNOR_3/not_0/in XNOR_3/XOR_0/NAND_3/in1 vdd XNOR_3/XOR_0/NAND_3/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1134 gnd XNOR_3/XOR_0/NAND_3/in2 XNOR_3/XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1135 vdd XNOR_3/XOR_0/NAND_3/in2 XNOR_3/not_0/in XNOR_3/XOR_0/NAND_3/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1136 lesser greater gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1137 NOR_0/a_13_6# greater vdd NOR_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1138 gnd Equal lesser Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1139 lesser Equal NOR_0/a_13_6# NOR_0/w_32_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 XNOR_3/XOR_0/NAND_1/w_32_0# vdd 0.05fF
+C1 XNOR_1/XOR_0/NAND_3/in1 XNOR_1/XOR_0/NAND_1/w_32_0# 0.03fF
+C2 A0 gnd 1.02fF
+C3 vdd fiveinputAND_0/not_0/w_0_0# 0.05fF
+C4 vdd B1 0.15fF
+C5 XNOR_3/out fourinputOR_0/in4 0.06fF
+C6 vdd threeinputAND_0/not_0/w_0_0# 0.05fF
+C7 fourinputAND_1/fourinputNAND_0/w_32_0# XNOR_0/out 0.06fF
+C8 XNOR_1/out fourinputAND_0/fourinputNAND_0/w_63_0# 0.06fF
+C9 gnd XNOR_2/XOR_0/NAND_2/in1 0.15fF
+C10 not_0/out not_0/w_0_0# 0.03fF
+C11 XNOR_1/out XNOR_0/out 1.10fF
+C12 XNOR_2/XOR_0/NAND_3/in1 XNOR_2/XOR_0/NAND_3/w_0_0# 0.06fF
+C13 XNOR_2/XOR_0/NAND_1/w_32_0# XNOR_2/XOR_0/NAND_2/in1 0.06fF
+C14 A0 fiveinputAND_0/fiveinputNAND_0/w_32_0# 0.06fF
+C15 A0 fiveinputAND_0/fiveinputNAND_0/a_6_n14# 0.04fF
+C16 XNOR_1/XOR_0/NAND_0/w_32_0# B2 0.06fF
+C17 not_2/out fourinputAND_0/fourinputNAND_0/w_0_0# 0.06fF
+C18 vdd threeinputAND_0/threeinputNAND_0/w_32_0# 0.05fF
+C19 vdd XNOR_2/XOR_0/NAND_1/w_0_0# 0.05fF
+C20 XNOR_0/XOR_0/NAND_2/in1 XNOR_0/XOR_0/NAND_1/w_32_0# 0.06fF
+C21 gnd fourinputAND_1/fourinputNAND_0/a_76_n14# 0.04fF
+C22 vdd XNOR_1/XOR_0/NAND_1/w_0_0# 0.05fF
+C23 fiveinputAND_0/not_0/in XNOR_2/out 0.16fF
+C24 XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_0/w_32_0# 0.03fF
+C25 fourinputOR_0/fourinputNOR_0/w_64_0# fourinputOR_0/fourinputNOR_0/a_45_6# 0.03fF
+C26 vdd NOR_0/w_0_0# 0.05fF
+C27 vdd fourinputAND_0/not_0/in 1.27fF
+C28 not_1/w_0_0# B2 0.06fF
+C29 XNOR_0/out AND_0/out 0.06fF
+C30 XNOR_3/XOR_0/NAND_3/in2 vdd 0.25fF
+C31 NOR_0/w_0_0# greater 0.06fF
+C32 gnd not_3/out 0.35fF
+C33 fourinputOR_0/in4 fiveinputAND_0/not_0/w_0_0# 0.03fF
+C34 XNOR_1/out fourinputAND_1/fourinputNAND_0/w_63_0# 0.06fF
+C35 A0 vdd 0.06fF
+C36 vdd fourinputAND_1/fourinputNAND_0/w_100_0# 0.05fF
+C37 AND_0/NAND_0/a_6_n14# AND_0/not_0/in 0.12fF
+C38 vdd fourinputOR_0/fourinputNOR_0/w_32_0# 0.03fF
+C39 vdd XNOR_2/XOR_0/NAND_2/in1 0.25fF
+C40 XNOR_3/XOR_0/NAND_1/a_6_n14# gnd 0.57fF
+C41 XNOR_3/XOR_0/NAND_3/in1 XNOR_3/XOR_0/NAND_1/a_6_n14# 0.12fF
+C42 not_3/out fiveinputAND_0/fiveinputNAND_0/a_6_n14# 0.10fF
+C43 fourinputAND_0/not_0/in fourinputAND_0/fourinputNAND_0/a_6_n14# 0.11fF
+C44 AND_0/not_0/in AND_0/NAND_0/w_0_0# 0.03fF
+C45 XNOR_3/not_0/in XNOR_3/out 0.02fF
+C46 fourinputAND_0/not_0/in fourinputAND_0/not_0/w_0_0# 0.06fF
+C47 AND_0/not_0/w_0_0# AND_0/out 0.03fF
+C48 XNOR_1/XOR_0/NAND_3/a_6_n14# XNOR_1/not_0/in 0.12fF
+C49 XNOR_3/XOR_0/NAND_2/w_32_0# vdd 0.05fF
+C50 XNOR_0/XOR_0/NAND_3/in2 XNOR_0/XOR_0/NAND_2/w_32_0# 0.03fF
+C51 gnd AND_0/not_0/in 0.04fF
+C52 fourinputOR_0/not_0/in fourinputOR_0/in3 0.15fF
+C53 not_1/out B2 0.02fF
+C54 B1 XNOR_2/XOR_0/NAND_0/w_32_0# 0.06fF
+C55 vdd not_3/out 0.07fF
+C56 gnd XNOR_1/XOR_0/NAND_3/in2 0.07fF
+C57 not_2/out not_2/w_0_0# 0.03fF
+C58 fiveinputAND_0/fiveinputNAND_0/a_113_n14# XNOR_0/out 0.14fF
+C59 threeinputAND_0/not_0/in fourinputOR_0/in2 0.02fF
+C60 vdd XNOR_3/XOR_0/NAND_0/w_0_0# 0.05fF
+C61 fourinputAND_0/not_0/in fourinputAND_0/fourinputNAND_0/w_100_0# 0.03fF
+C62 gnd fiveinputAND_0/not_0/in 0.01fF
+C63 A3 AND_0/NAND_0/w_32_0# 0.06fF
+C64 fourinputOR_0/fourinputNOR_0/w_32_0# fourinputOR_0/fourinputNOR_0/a_45_6# 0.03fF
+C65 gnd Equal 0.08fF
+C66 XNOR_0/not_0/in XNOR_0/out 0.02fF
+C67 fourinputOR_0/not_0/in AND_0/out 0.67fF
+C68 fourinputAND_1/not_0/in XNOR_2/out 0.01fF
+C69 XNOR_1/out fiveinputAND_0/fiveinputNAND_0/w_63_0# 0.06fF
+C70 vdd AND_0/not_0/in 0.29fF
+C71 threeinputAND_0/not_0/w_0_0# fourinputOR_0/in2 0.03fF
+C72 gnd XNOR_1/XOR_0/NAND_2/in1 0.15fF
+C73 vdd XNOR_0/XOR_0/NAND_2/w_32_0# 0.05fF
+C74 gnd fourinputAND_0/fourinputNAND_0/a_76_n14# 0.04fF
+C75 not_3/out fourinputOR_0/in4 0.04fF
+C76 fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/w_32_0# 0.03fF
+C77 fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/a_6_n14# 0.11fF
+C78 XNOR_3/XOR_0/NAND_2/a_6_n14# gnd 0.59fF
+C79 gnd threeinputAND_0/threeinputNAND_0/a_45_n14# 0.04fF
+C80 not_2/out XNOR_2/out 0.06fF
+C81 vdd XNOR_3/not_0/w_0_0# 0.05fF
+C82 XNOR_2/not_0/in XNOR_2/not_0/w_0_0# 0.06fF
+C83 vdd XNOR_1/XOR_0/NAND_3/in2 0.25fF
+C84 vdd AND_0/out 0.06fF
+C85 fourinputOR_0/not_0/in fourinputOR_0/fourinputNOR_0/a_77_6# 0.04fF
+C86 A1 XNOR_0/out 0.06fF
+C87 XNOR_2/XOR_0/NAND_0/w_32_0# XNOR_2/XOR_0/NAND_2/in1 0.03fF
+C88 XNOR_3/XOR_0/NAND_3/w_32_0# vdd 0.05fF
+C89 XNOR_2/out XNOR_0/out 0.51fF
+C90 A3 XNOR_0/XOR_0/NAND_1/w_0_0# 0.06fF
+C91 XNOR_0/XOR_0/NAND_3/in1 XNOR_0/XOR_0/NAND_1/w_0_0# 0.03fF
+C92 fourinputAND_0/not_0/in fourinputAND_0/fourinputNAND_0/w_32_0# 0.03fF
+C93 vdd XNOR_1/XOR_0/NAND_3/w_32_0# 0.05fF
+C94 threeinputAND_0/threeinputNAND_0/w_63_0# XNOR_0/out 0.06fF
+C95 A3 XNOR_0/out 0.01fF
+C96 threeinputAND_0/not_0/in threeinputAND_0/not_0/w_0_0# 0.06fF
+C97 XNOR_0/XOR_0/NAND_3/w_0_0# XNOR_0/not_0/in 0.03fF
+C98 vdd fiveinputAND_0/not_0/in 2.81fF
+C99 XNOR_2/XOR_0/NAND_0/a_6_n14# gnd 0.57fF
+C100 XNOR_2/XOR_0/NAND_3/w_0_0# XNOR_2/not_0/in 0.03fF
+C101 vdd Equal 0.12fF
+C102 XNOR_2/out XNOR_2/not_0/w_0_0# 0.03fF
+C103 gnd XNOR_3/XOR_0/NAND_0/a_6_n14# 0.57fF
+C104 vdd fourinputAND_1/fourinputNAND_0/w_0_0# 0.05fF
+C105 threeinputAND_0/not_0/in threeinputAND_0/threeinputNAND_0/w_32_0# 0.03fF
+C106 A0 B0 0.13fF
+C107 XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_2/w_0_0# 0.06fF
+C108 vdd XNOR_1/XOR_0/NAND_2/in1 0.25fF
+C109 fourinputOR_0/in2 fourinputOR_0/fourinputNOR_0/w_32_0# 0.06fF
+C110 vdd fourinputOR_0/fourinputNOR_0/a_13_6# 0.21fF
+C111 fourinputOR_0/not_0/in fourinputOR_0/not_0/w_0_0# 0.06fF
+C112 gnd XNOR_1/XOR_0/NAND_3/in1 0.11fF
+C113 XNOR_1/not_0/in XNOR_1/XOR_0/NAND_3/w_32_0# 0.03fF
+C114 XNOR_0/XOR_0/NAND_3/in2 XNOR_0/XOR_0/NAND_2/a_6_n14# 0.12fF
+C115 gnd B2 0.13fF
+C116 gnd A2 1.10fF
+C117 XNOR_1/out A1 0.06fF
+C118 lesser Equal 0.13fF
+C119 XNOR_1/out XNOR_2/out 0.21fF
+C120 gnd XNOR_0/XOR_0/NAND_2/a_6_n14# 0.59fF
+C121 XNOR_0/XOR_0/NAND_3/w_0_0# XNOR_0/XOR_0/NAND_3/in1 0.06fF
+C122 XNOR_2/XOR_0/NAND_2/w_0_0# XNOR_2/XOR_0/NAND_3/in2 0.03fF
+C123 vdd not_3/w_0_0# 0.05fF
+C124 XNOR_3/XOR_0/NAND_2/w_32_0# B0 0.06fF
+C125 fourinputOR_0/in4 fiveinputAND_0/not_0/in 0.16fF
+C126 vdd fiveinputAND_0/fiveinputNAND_0/w_100_0# 0.05fF
+C127 gnd fourinputAND_1/not_0/in 0.01fF
+C128 Equal fourinputOR_0/in4 1.13fF
+C129 vdd fourinputOR_0/fourinputNOR_0/w_97_0# 0.03fF
+C130 XNOR_3/XOR_0/NAND_3/a_6_n14# gnd 0.57fF
+C131 XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_2/w_0_0# 0.03fF
+C132 XNOR_3/XOR_0/NAND_2/in1 gnd 0.15fF
+C133 A1 XNOR_2/XOR_0/NAND_0/w_0_0# 0.06fF
+C134 XNOR_2/out AND_0/out 0.13fF
+C135 NOR_0/w_32_0# vdd 0.03fF
+C136 threeinputAND_0/threeinputNAND_0/w_0_0# not_1/out 0.06fF
+C137 B0 not_3/out 0.02fF
+C138 not_3/out fiveinputAND_0/fiveinputNAND_0/w_0_0# 0.06fF
+C139 gnd fourinputAND_1/fourinputNAND_0/a_6_n14# 0.47fF
+C140 not_1/out threeinputAND_0/threeinputNAND_0/a_6_n14# 0.02fF
+C141 vdd XNOR_1/XOR_0/NAND_2/w_32_0# 0.05fF
+C142 gnd not_2/out 0.08fF
+C143 XNOR_2/out fiveinputAND_0/fiveinputNAND_0/w_133_0# 0.06fF
+C144 XNOR_1/XOR_0/NAND_3/in1 XNOR_1/XOR_0/NAND_3/w_0_0# 0.06fF
+C145 gnd XNOR_0/out 0.98fF
+C146 vdd XNOR_1/XOR_0/NAND_3/in1 0.25fF
+C147 vdd B2 0.13fF
+C148 vdd AND_0/NAND_0/w_32_0# 0.05fF
+C149 gnd XNOR_2/XOR_0/NAND_3/in1 0.11fF
+C150 not_1/w_0_0# not_1/out 0.03fF
+C151 fourinputOR_0/fourinputNOR_0/a_13_6# fourinputOR_0/fourinputNOR_0/a_45_6# 0.04fF
+C152 XNOR_2/XOR_0/NAND_1/w_32_0# XNOR_2/XOR_0/NAND_3/in1 0.03fF
+C153 XNOR_3/not_0/in XNOR_3/not_0/w_0_0# 0.06fF
+C154 NOR_0/w_32_0# lesser 0.03fF
+C155 XNOR_1/XOR_0/NAND_2/in1 XNOR_1/XOR_0/NAND_2/w_0_0# 0.06fF
+C156 vdd XNOR_2/XOR_0/NAND_2/w_0_0# 0.05fF
+C157 A1 fourinputAND_0/fourinputNAND_0/a_45_n14# 0.21fF
+C158 XNOR_3/XOR_0/NAND_3/w_32_0# XNOR_3/not_0/in 0.03fF
+C159 fourinputOR_0/fourinputNOR_0/w_97_0# fourinputOR_0/in4 0.06fF
+C160 vdd fourinputAND_1/not_0/in 1.27fF
+C161 vdd not_0/w_0_0# 0.05fF
+C162 XNOR_3/XOR_0/NAND_2/in1 vdd 0.25fF
+C163 gnd fourinputOR_0/in3 0.79fF
+C164 vdd XNOR_0/XOR_0/NAND_1/w_0_0# 0.05fF
+C165 XNOR_3/not_0/w_0_0# XNOR_3/out 0.03fF
+C166 vdd not_2/out 0.07fF
+C167 vdd fourinputAND_0/fourinputNAND_0/w_63_0# 0.05fF
+C168 Equal fourinputAND_1/not_0/w_0_0# 0.03fF
+C169 XNOR_1/out gnd 0.69fF
+C170 vdd XNOR_0/out 0.37fF
+C171 gnd XNOR_1/XOR_0/NAND_2/a_6_n14# 0.59fF
+C172 XNOR_3/XOR_0/NAND_2/w_32_0# XNOR_3/XOR_0/NAND_3/in2 0.03fF
+C173 not_0/out AND_0/NAND_0/w_0_0# 0.06fF
+C174 vdd XNOR_2/XOR_0/NAND_3/in1 0.25fF
+C175 gnd XNOR_1/XOR_0/NAND_1/a_6_n14# 0.57fF
+C176 fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/w_0_0# 0.03fF
+C177 A3 XNOR_0/XOR_0/NAND_0/w_0_0# 0.06fF
+C178 NOR_0/a_13_6# vdd 0.21fF
+C179 B3 XNOR_0/XOR_0/NAND_2/w_32_0# 0.06fF
+C180 gnd not_0/out 0.08fF
+C181 vdd XNOR_2/not_0/w_0_0# 0.05fF
+C182 not_2/out fourinputAND_0/fourinputNAND_0/a_6_n14# 0.02fF
+C183 XNOR_3/out fourinputAND_1/fourinputNAND_0/w_0_0# 0.06fF
+C184 gnd AND_0/out 0.54fF
+C185 XNOR_2/not_0/in XNOR_2/out 0.02fF
+C186 XNOR_2/XOR_0/NAND_3/in1 XNOR_2/XOR_0/NAND_1/a_6_n14# 0.12fF
+C187 vdd fourinputOR_0/in3 0.18fF
+C188 vdd AND_0/not_0/w_0_0# 0.05fF
+C189 vdd fourinputAND_1/fourinputNAND_0/w_63_0# 0.05fF
+C190 gnd fourinputOR_0/not_0/in 0.94fF
+C191 vdd XNOR_0/XOR_0/NAND_3/w_0_0# 0.05fF
+C192 NOR_0/a_13_6# lesser 0.04fF
+C193 vdd XNOR_0/XOR_0/NAND_0/w_32_0# 0.05fF
+C194 vdd fourinputAND_1/fourinputNAND_0/w_32_0# 0.05fF
+C195 vdd XNOR_2/XOR_0/NAND_3/w_0_0# 0.05fF
+C196 XNOR_2/out A1 0.11fF
+C197 A0 XNOR_3/XOR_0/NAND_0/w_0_0# 0.06fF
+C198 vdd XNOR_1/out 0.36fF
+C199 XNOR_1/XOR_0/NAND_0/a_6_n14# XNOR_1/XOR_0/NAND_2/in1 0.12fF
+C200 B0 not_3/w_0_0# 0.06fF
+C201 gnd threeinputAND_0/threeinputNAND_0/a_6_n14# 0.47fF
+C202 XNOR_1/XOR_0/NAND_0/w_0_0# XNOR_1/XOR_0/NAND_2/in1 0.03fF
+C203 fiveinputAND_0/not_0/in fiveinputAND_0/not_0/w_0_0# 0.06fF
+C204 vdd fourinputAND_0/fourinputNAND_0/w_0_0# 0.05fF
+C205 fourinputOR_0/in3 fourinputAND_0/not_0/w_0_0# 0.03fF
+C206 XNOR_0/not_0/w_0_0# XNOR_0/out 0.03fF
+C207 vdd not_0/out 0.07fF
+C208 XNOR_1/out XNOR_1/not_0/w_0_0# 0.03fF
+C209 vdd AND_0/out 0.76fF
+C210 vdd XNOR_2/XOR_0/NAND_0/w_0_0# 0.05fF
+C211 vdd XNOR_1/XOR_0/NAND_1/w_32_0# 0.05fF
+C212 XNOR_0/out fourinputAND_0/fourinputNAND_0/w_100_0# 0.06fF
+C213 XNOR_3/XOR_0/NAND_3/w_32_0# XNOR_3/XOR_0/NAND_3/in2 0.06fF
+C214 vdd fiveinputAND_0/fiveinputNAND_0/w_133_0# 0.05fF
+C215 vdd XNOR_3/XOR_0/NAND_0/w_32_0# 0.05fF
+C216 XNOR_1/out XNOR_1/not_0/in 0.02fF
+C217 XNOR_3/not_0/in XNOR_3/XOR_0/NAND_3/a_6_n14# 0.12fF
+C218 vdd fourinputOR_0/not_0/in 0.10fF
+C219 gnd fiveinputAND_0/fiveinputNAND_0/a_113_n14# 0.04fF
+C220 vdd threeinputAND_0/threeinputNAND_0/w_0_0# 0.05fF
+C221 fourinputAND_1/not_0/in fourinputAND_1/not_0/w_0_0# 0.06fF
+C222 vdd fourinputOR_0/fourinputNOR_0/a_77_6# 0.18fF
+C223 fourinputOR_0/not_0/in greater 0.02fF
+C224 vdd XNOR_1/XOR_0/NAND_0/w_32_0# 0.05fF
+C225 XNOR_0/not_0/in gnd 0.03fF
+C226 gnd XNOR_2/not_0/in 0.03fF
+C227 vdd vdd 0.05fF
+C228 vdd fiveinputAND_0/fiveinputNAND_0/w_63_0# 0.05fF
+C229 A2 XNOR_1/XOR_0/NAND_0/w_0_0# 0.06fF
+C230 vdd not_1/w_0_0# 0.05fF
+C231 gnd not_1/out 0.08fF
+C232 XNOR_3/XOR_0/NAND_2/a_6_n14# XNOR_3/XOR_0/NAND_3/in2 0.12fF
+C233 XNOR_0/XOR_0/NAND_0/w_32_0# XNOR_0/XOR_0/NAND_2/in1 0.03fF
+C234 fourinputAND_1/fourinputNAND_0/a_45_n14# fourinputAND_1/fourinputNAND_0/a_76_n14# 0.04fF
+C235 fiveinputAND_0/fiveinputNAND_0/a_45_n14# fiveinputAND_0/fiveinputNAND_0/a_6_n14# 0.04fF
+C236 fourinputOR_0/in4 fourinputOR_0/not_0/in 0.10fF
+C237 gnd A1 1.58fF
+C238 fourinputAND_0/fourinputNAND_0/a_6_n14# fourinputAND_0/fourinputNAND_0/a_45_n14# 0.04fF
+C239 B0 XNOR_0/out 0.06fF
+C240 fourinputOR_0/fourinputNOR_0/a_13_6# fourinputOR_0/fourinputNOR_0/w_32_0# 0.03fF
+C241 gnd XNOR_2/out 0.31fF
+C242 vdd fourinputOR_0/not_0/w_0_0# 0.05fF
+C243 vdd XNOR_0/XOR_0/NAND_0/w_0_0# 0.05fF
+C244 gnd A3 1.03fF
+C245 XNOR_3/XOR_0/NAND_3/in1 XNOR_3/XOR_0/NAND_1/w_0_0# 0.03fF
+C246 gnd XNOR_0/XOR_0/NAND_3/in1 0.11fF
+C247 vdd not_2/w_0_0# 0.05fF
+C248 B3 not_0/w_0_0# 0.06fF
+C249 greater fourinputOR_0/not_0/w_0_0# 0.03fF
+C250 XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_1/w_32_0# 0.06fF
+C251 A2 threeinputAND_0/threeinputNAND_0/w_32_0# 0.06fF
+C252 vdd XNOR_0/not_0/in 0.25fF
+C253 fourinputOR_0/fourinputNOR_0/a_77_6# fourinputOR_0/fourinputNOR_0/a_45_6# 0.04fF
+C254 XNOR_1/XOR_0/NAND_3/in1 XNOR_1/XOR_0/NAND_1/w_0_0# 0.03fF
+C255 vdd XNOR_2/not_0/in 0.25fF
+C256 A2 XNOR_1/XOR_0/NAND_1/w_0_0# 0.06fF
+C257 vdd not_1/out 0.07fF
+C258 XNOR_2/XOR_0/NAND_0/a_6_n14# XNOR_2/XOR_0/NAND_2/in1 0.12fF
+C259 B1 not_2/out 0.02fF
+C260 XNOR_1/out fourinputOR_0/in2 0.06fF
+C261 fourinputOR_0/in3 fourinputOR_0/fourinputNOR_0/w_64_0# 0.06fF
+C262 B1 XNOR_0/out 0.06fF
+C263 XNOR_1/out B0 0.07fF
+C264 vdd XNOR_2/out 0.48fF
+C265 not_3/out not_3/w_0_0# 0.03fF
+C266 vdd threeinputAND_0/threeinputNAND_0/w_63_0# 0.05fF
+C267 vdd XNOR_3/XOR_0/NAND_1/w_0_0# 0.05fF
+C268 vdd XNOR_0/XOR_0/NAND_3/in1 0.25fF
+C269 XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_3/w_32_0# 0.06fF
+C270 gnd AND_0/NAND_0/a_6_n14# 0.57fF
+C271 fourinputOR_0/in2 AND_0/out 1.17fF
+C272 fourinputAND_1/fourinputNAND_0/w_100_0# fourinputAND_1/not_0/in 0.03fF
+C273 XNOR_2/XOR_0/NAND_3/in1 XNOR_2/XOR_0/NAND_1/w_0_0# 0.03fF
+C274 XNOR_2/XOR_0/NAND_2/w_0_0# XNOR_2/XOR_0/NAND_2/in1 0.06fF
+C275 B3 XNOR_0/XOR_0/NAND_0/w_32_0# 0.06fF
+C276 fourinputAND_0/not_0/in fourinputAND_0/fourinputNAND_0/w_63_0# 0.03fF
+C277 XNOR_0/XOR_0/NAND_3/w_32_0# XNOR_0/not_0/in 0.03fF
+C278 fourinputOR_0/not_0/in fourinputOR_0/in2 0.11fF
+C279 B0 XNOR_3/XOR_0/NAND_0/w_32_0# 0.06fF
+C280 fourinputAND_0/not_0/in XNOR_0/out 0.01fF
+C281 XNOR_0/XOR_0/NAND_3/in2 gnd 0.07fF
+C282 XNOR_0/not_0/in XNOR_0/not_0/w_0_0# 0.06fF
+C283 XNOR_2/XOR_0/NAND_3/w_32_0# XNOR_2/not_0/in 0.03fF
+C284 XNOR_0/XOR_0/NAND_2/in1 XNOR_0/XOR_0/NAND_0/w_0_0# 0.03fF
+C285 gnd XNOR_2/XOR_0/NAND_3/in2 0.07fF
+C286 NOR_0/a_13_6# NOR_0/w_0_0# 0.03fF
+C287 XNOR_3/XOR_0/NAND_3/in1 gnd 0.11fF
+C288 A0 XNOR_0/out 0.06fF
+C289 XNOR_1/out B1 0.07fF
+C290 XNOR_3/XOR_0/NAND_2/w_0_0# vdd 0.05fF
+C291 B3 not_0/out 0.02fF
+C292 XNOR_0/XOR_0/NAND_3/in2 XNOR_0/XOR_0/NAND_2/w_0_0# 0.03fF
+C293 fourinputOR_0/fourinputNOR_0/a_77_6# fourinputOR_0/fourinputNOR_0/w_64_0# 0.03fF
+C294 gnd fiveinputAND_0/fiveinputNAND_0/a_6_n14# 0.35fF
+C295 fourinputAND_0/not_0/in fourinputOR_0/in3 0.02fF
+C296 threeinputAND_0/not_0/in threeinputAND_0/threeinputNAND_0/w_0_0# 0.03fF
+C297 XNOR_2/XOR_0/NAND_2/w_32_0# XNOR_2/XOR_0/NAND_3/in2 0.03fF
+C298 threeinputAND_0/not_0/in threeinputAND_0/threeinputNAND_0/a_6_n14# 0.11fF
+C299 vdd AND_0/NAND_0/w_0_0# 0.05fF
+C300 gnd XNOR_0/XOR_0/NAND_0/a_6_n14# 0.57fF
+C301 AND_0/NAND_0/w_32_0# AND_0/not_0/in 0.03fF
+C302 XNOR_1/out fourinputAND_0/not_0/in 0.03fF
+C303 XNOR_3/XOR_0/NAND_3/in1 XNOR_3/XOR_0/NAND_3/w_0_0# 0.06fF
+C304 fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/w_100_0# 0.03fF
+C305 XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_0/w_0_0# 0.03fF
+C306 vdd XNOR_0/XOR_0/NAND_3/in2 0.25fF
+C307 XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_2/w_32_0# 0.03fF
+C308 A0 XNOR_1/out 0.10fF
+C309 vdd XNOR_2/XOR_0/NAND_3/in2 0.25fF
+C310 vdd gnd 2.14fF
+C311 XNOR_3/XOR_0/NAND_3/in1 vdd 0.25fF
+C312 fourinputAND_0/not_0/in fourinputAND_0/fourinputNAND_0/w_0_0# 0.03fF
+C313 vdd XNOR_2/XOR_0/NAND_1/w_32_0# 0.05fF
+C314 gnd greater 0.08fF
+C315 NOR_0/w_32_0# Equal 0.06fF
+C316 vdd XNOR_0/XOR_0/NAND_2/w_0_0# 0.05fF
+C317 vdd fiveinputAND_0/fiveinputNAND_0/w_32_0# 0.05fF
+C318 gnd XNOR_2/XOR_0/NAND_1/a_6_n14# 0.57fF
+C319 XNOR_1/out fourinputAND_1/fourinputNAND_0/a_76_n14# 0.23fF
+C320 gnd fourinputAND_0/fourinputNAND_0/a_6_n14# 0.47fF
+C321 lesser gnd 0.41fF
+C322 fourinputAND_0/fourinputNAND_0/w_32_0# A1 0.06fF
+C323 vdd XNOR_2/XOR_0/NAND_2/w_32_0# 0.05fF
+C324 gnd XNOR_1/not_0/in 0.03fF
+C325 XNOR_2/out fourinputOR_0/in2 0.13fF
+C326 XNOR_2/XOR_0/NAND_0/w_0_0# XNOR_2/XOR_0/NAND_2/in1 0.03fF
+C327 XNOR_3/XOR_0/NAND_3/w_0_0# vdd 0.05fF
+C328 XNOR_1/out fiveinputAND_0/fiveinputNAND_0/a_76_n14# 0.12fF
+C329 XNOR_0/XOR_0/NAND_3/in1 XNOR_0/XOR_0/NAND_1/w_32_0# 0.03fF
+C330 gnd fourinputOR_0/in4 0.21fF
+C331 B0 XNOR_2/out 0.06fF
+C332 vdd XNOR_1/XOR_0/NAND_3/w_0_0# 0.05fF
+C333 Equal fourinputAND_1/not_0/in 0.02fF
+C334 B1 not_2/w_0_0# 0.06fF
+C335 XNOR_0/XOR_0/NAND_3/w_32_0# XNOR_0/XOR_0/NAND_3/in2 0.06fF
+C336 fourinputAND_1/not_0/in fourinputAND_1/fourinputNAND_0/w_0_0# 0.03fF
+C337 A2 threeinputAND_0/threeinputNAND_0/a_45_n14# 0.18fF
+C338 XNOR_0/not_0/in XNOR_0/XOR_0/NAND_3/a_6_n14# 0.12fF
+C339 fourinputAND_1/fourinputNAND_0/a_6_n14# fourinputAND_1/fourinputNAND_0/a_45_n14# 0.04fF
+C340 XNOR_2/XOR_0/NAND_3/w_32_0# XNOR_2/XOR_0/NAND_3/in2 0.06fF
+C341 vdd greater 0.32fF
+C342 XNOR_2/not_0/in XNOR_2/XOR_0/NAND_3/a_6_n14# 0.12fF
+C343 AND_0/not_0/in AND_0/not_0/w_0_0# 0.06fF
+C344 vdd XNOR_1/not_0/w_0_0# 0.05fF
+C345 fourinputAND_1/fourinputNAND_0/a_45_n14# XNOR_0/out 0.21fF
+C346 threeinputAND_0/not_0/in threeinputAND_0/threeinputNAND_0/w_63_0# 0.03fF
+C347 lesser vdd 0.37fF
+C348 vdd fourinputAND_0/not_0/w_0_0# 0.05fF
+C349 gnd XNOR_0/XOR_0/NAND_2/in1 0.15fF
+C350 XNOR_1/not_0/in XNOR_1/XOR_0/NAND_3/w_0_0# 0.03fF
+C351 vdd XNOR_1/not_0/in 0.25fF
+C352 B1 A1 0.11fF
+C353 B3 A3 0.08fF
+C354 B2 XNOR_1/XOR_0/NAND_2/w_32_0# 0.06fF
+C355 vdd fourinputOR_0/in4 0.93fF
+C356 XNOR_2/XOR_0/NAND_2/a_6_n14# XNOR_2/XOR_0/NAND_3/in2 0.12fF
+C357 gnd XNOR_2/XOR_0/NAND_2/a_6_n14# 0.59fF
+C358 XNOR_0/XOR_0/NAND_2/w_0_0# XNOR_0/XOR_0/NAND_2/in1 0.06fF
+C359 XNOR_1/XOR_0/NAND_3/in2 XNOR_1/XOR_0/NAND_2/a_6_n14# 0.12fF
+C360 AND_0/not_0/in AND_0/out 0.02fF
+C361 A2 B2 0.13fF
+C362 XNOR_3/XOR_0/NAND_2/in1 XNOR_3/XOR_0/NAND_0/a_6_n14# 0.12fF
+C363 XNOR_3/not_0/in gnd 0.03fF
+C364 vdd XNOR_0/XOR_0/NAND_3/w_32_0# 0.05fF
+C365 XNOR_1/not_0/in XNOR_1/not_0/w_0_0# 0.06fF
+C366 A1 XNOR_2/XOR_0/NAND_1/w_0_0# 0.06fF
+C367 vdd XNOR_2/XOR_0/NAND_3/w_32_0# 0.05fF
+C368 A0 fiveinputAND_0/fiveinputNAND_0/a_45_n14# 0.14fF
+C369 vdd fourinputOR_0/fourinputNOR_0/a_45_6# 0.17fF
+C370 vdd XNOR_0/not_0/w_0_0# 0.05fF
+C371 XNOR_0/XOR_0/NAND_2/in1 XNOR_0/XOR_0/NAND_0/a_6_n14# 0.12fF
+C372 fiveinputAND_0/fiveinputNAND_0/w_100_0# XNOR_0/out 0.06fF
+C373 vdd XNOR_1/XOR_0/NAND_2/w_0_0# 0.05fF
+C374 vdd fourinputAND_0/fourinputNAND_0/w_100_0# 0.05fF
+C375 gnd fourinputOR_0/in2 0.16fF
+C376 vdd XNOR_0/XOR_0/NAND_2/in1 0.25fF
+C377 fiveinputAND_0/fiveinputNAND_0/a_76_n14# fiveinputAND_0/fiveinputNAND_0/a_113_n14# 0.04fF
+C378 gnd B0 0.13fF
+C379 XNOR_0/XOR_0/NAND_3/in1 XNOR_0/XOR_0/NAND_1/a_6_n14# 0.12fF
+C380 A0 XNOR_2/out 0.06fF
+C381 gnd XNOR_3/out 0.10fF
+C382 vdd XNOR_2/XOR_0/NAND_0/w_32_0# 0.05fF
+C383 XNOR_1/out fourinputAND_0/fourinputNAND_0/a_76_n14# 0.23fF
+C384 NOR_0/w_32_0# NOR_0/a_13_6# 0.03fF
+C385 fourinputAND_1/fourinputNAND_0/w_100_0# XNOR_2/out 0.06fF
+C386 XNOR_3/XOR_0/NAND_3/w_0_0# XNOR_3/not_0/in 0.03fF
+C387 A0 XNOR_3/XOR_0/NAND_1/w_0_0# 0.06fF
+C388 B2 XNOR_0/out 0.07fF
+C389 A2 XNOR_0/out 0.06fF
+C390 fiveinputAND_0/fiveinputNAND_0/a_45_n14# fiveinputAND_0/fiveinputNAND_0/a_76_n14# 0.04fF
+C391 fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/w_133_0# 0.03fF
+C392 XNOR_3/not_0/in vdd 0.25fF
+C393 gnd XNOR_1/XOR_0/NAND_0/a_6_n14# 0.57fF
+C394 fourinputAND_1/not_0/in fourinputAND_1/fourinputNAND_0/a_6_n14# 0.11fF
+C395 threeinputAND_0/not_0/in gnd 0.75fF
+C396 XNOR_1/XOR_0/NAND_2/in1 XNOR_1/XOR_0/NAND_1/w_32_0# 0.06fF
+C397 vdd fourinputAND_1/not_0/w_0_0# 0.05fF
+C398 gnd B3 0.20fF
+C399 vdd XNOR_0/XOR_0/NAND_1/w_32_0# 0.05fF
+C400 vdd fourinputAND_0/fourinputNAND_0/w_32_0# 0.05fF
+C401 XNOR_0/XOR_0/NAND_3/a_6_n14# gnd 0.57fF
+C402 XNOR_3/XOR_0/NAND_1/w_32_0# XNOR_3/XOR_0/NAND_3/in1 0.03fF
+C403 vdd fourinputOR_0/in2 0.95fF
+C404 gnd XNOR_2/XOR_0/NAND_3/a_6_n14# 0.57fF
+C405 gnd B1 0.15fF
+C406 XNOR_3/XOR_0/NAND_2/w_0_0# XNOR_3/XOR_0/NAND_3/in2 0.03fF
+C407 vdd B0 0.06fF
+C408 XNOR_1/XOR_0/NAND_0/w_32_0# XNOR_1/XOR_0/NAND_2/in1 0.03fF
+C409 vdd fiveinputAND_0/fiveinputNAND_0/w_0_0# 0.05fF
+C410 fiveinputAND_0/not_0/in fiveinputAND_0/fiveinputNAND_0/w_63_0# 0.03fF
+C411 vdd XNOR_3/out 0.36fF
+C412 vdd fourinputOR_0/fourinputNOR_0/w_64_0# 0.03fF
+C413 threeinputAND_0/threeinputNAND_0/a_45_n14# threeinputAND_0/threeinputNAND_0/a_6_n14# 0.04fF
+C414 fourinputAND_0/fourinputNAND_0/a_76_n14# fourinputAND_0/fourinputNAND_0/a_45_n14# 0.04fF
+C415 fourinputAND_1/fourinputNAND_0/w_63_0# fourinputAND_1/not_0/in 0.03fF
+C416 fourinputOR_0/fourinputNOR_0/a_13_6# vdd 0.03fF
+C417 XNOR_1/XOR_0/NAND_1/a_6_n14# XNOR_1/XOR_0/NAND_3/in1 0.12fF
+C418 vdd threeinputAND_0/not_0/in 1.58fF
+C419 fourinputOR_0/fourinputNOR_0/w_97_0# fourinputOR_0/not_0/in 0.03fF
+C420 vdd XNOR_1/XOR_0/NAND_0/w_0_0# 0.05fF
+C421 B1 XNOR_2/XOR_0/NAND_2/w_32_0# 0.06fF
+C422 gnd XNOR_0/XOR_0/NAND_1/a_6_n14# 0.57fF
+C423 fourinputAND_1/not_0/in fourinputAND_1/fourinputNAND_0/w_32_0# 0.03fF
+C424 gnd XNOR_1/XOR_0/NAND_3/a_6_n14# 0.57fF
+C425 gnd fourinputAND_0/not_0/in 0.01fF
+C426 fourinputOR_0/fourinputNOR_0/w_97_0# fourinputOR_0/fourinputNOR_0/a_77_6# 0.03fF
+C427 XNOR_1/out fourinputAND_1/not_0/in 0.03fF
+C428 XNOR_3/XOR_0/NAND_3/in2 gnd 0.07fF
+C429 vdd B3 0.06fF
+C430 lesser Gnd 0.58fF
+C431 NOR_0/a_13_6# Gnd 0.02fF
+C432 NOR_0/w_32_0# Gnd 0.40fF
+C433 NOR_0/w_0_0# Gnd 0.40fF
+C434 vdd Gnd 8.34fF
+C435 XNOR_3/XOR_0/NAND_3/a_6_n14# Gnd 0.14fF
+C436 XNOR_3/not_0/in Gnd 0.76fF
+C437 XNOR_3/XOR_0/NAND_3/in2 Gnd 0.76fF
+C438 XNOR_3/XOR_0/NAND_3/w_32_0# Gnd 0.40fF
+C439 XNOR_3/XOR_0/NAND_3/w_0_0# Gnd 0.40fF
+C440 XNOR_3/XOR_0/NAND_2/a_6_n14# Gnd 0.14fF
+C441 XNOR_3/XOR_0/NAND_2/w_32_0# Gnd 0.40fF
+C442 XNOR_3/XOR_0/NAND_2/w_0_0# Gnd 0.40fF
+C443 XNOR_3/XOR_0/NAND_1/a_6_n14# Gnd 0.14fF
+C444 XNOR_3/XOR_0/NAND_3/in1 Gnd 0.78fF
+C445 XNOR_3/XOR_0/NAND_1/w_32_0# Gnd 0.40fF
+C446 XNOR_3/XOR_0/NAND_1/w_0_0# Gnd 0.40fF
+C447 XNOR_3/XOR_0/NAND_0/a_6_n14# Gnd 0.14fF
+C448 XNOR_3/XOR_0/NAND_2/in1 Gnd 0.97fF
+C449 B0 Gnd 1.24fF
+C450 A0 Gnd 2.34fF
+C451 XNOR_3/XOR_0/NAND_0/w_32_0# Gnd 0.40fF
+C452 XNOR_3/XOR_0/NAND_0/w_0_0# Gnd 0.40fF
+C453 XNOR_3/not_0/w_0_0# Gnd 0.40fF
+C454 XNOR_2/XOR_0/NAND_3/a_6_n14# Gnd 0.14fF
+C455 XNOR_2/not_0/in Gnd 0.76fF
+C456 XNOR_2/XOR_0/NAND_3/in2 Gnd 0.76fF
+C457 XNOR_2/XOR_0/NAND_3/w_32_0# Gnd 0.40fF
+C458 XNOR_2/XOR_0/NAND_3/w_0_0# Gnd 0.40fF
+C459 XNOR_2/XOR_0/NAND_2/a_6_n14# Gnd 0.14fF
+C460 XNOR_2/XOR_0/NAND_2/w_32_0# Gnd 0.40fF
+C461 XNOR_2/XOR_0/NAND_2/w_0_0# Gnd 0.40fF
+C462 XNOR_2/XOR_0/NAND_1/a_6_n14# Gnd 0.14fF
+C463 XNOR_2/XOR_0/NAND_3/in1 Gnd 0.78fF
+C464 XNOR_2/XOR_0/NAND_1/w_32_0# Gnd 0.40fF
+C465 XNOR_2/XOR_0/NAND_1/w_0_0# Gnd 0.40fF
+C466 gnd Gnd 17.89fF
+C467 XNOR_2/XOR_0/NAND_0/a_6_n14# Gnd 0.14fF
+C468 XNOR_2/XOR_0/NAND_2/in1 Gnd 0.97fF
+C469 B1 Gnd 1.15fF
+C470 A1 Gnd 2.15fF
+C471 XNOR_2/XOR_0/NAND_0/w_32_0# Gnd 0.40fF
+C472 XNOR_2/XOR_0/NAND_0/w_0_0# Gnd 0.40fF
+C473 XNOR_2/not_0/w_0_0# Gnd 0.40fF
+C474 XNOR_0/XOR_0/NAND_3/a_6_n14# Gnd 0.14fF
+C475 XNOR_0/not_0/in Gnd 0.76fF
+C476 XNOR_0/XOR_0/NAND_3/in2 Gnd 0.76fF
+C477 XNOR_0/XOR_0/NAND_3/w_32_0# Gnd 0.40fF
+C478 XNOR_0/XOR_0/NAND_3/w_0_0# Gnd 0.40fF
+C479 XNOR_0/XOR_0/NAND_2/a_6_n14# Gnd 0.14fF
+C480 XNOR_0/XOR_0/NAND_2/w_32_0# Gnd 0.40fF
+C481 XNOR_0/XOR_0/NAND_2/w_0_0# Gnd 0.40fF
+C482 XNOR_0/XOR_0/NAND_1/a_6_n14# Gnd 0.14fF
+C483 XNOR_0/XOR_0/NAND_3/in1 Gnd 0.78fF
+C484 XNOR_0/XOR_0/NAND_1/w_32_0# Gnd 0.40fF
+C485 XNOR_0/XOR_0/NAND_1/w_0_0# Gnd 0.40fF
+C486 XNOR_0/XOR_0/NAND_0/a_6_n14# Gnd 0.14fF
+C487 XNOR_0/XOR_0/NAND_2/in1 Gnd 0.97fF
+C488 B3 Gnd 1.10fF
+C489 A3 Gnd 2.98fF
+C490 XNOR_0/XOR_0/NAND_0/w_32_0# Gnd 0.40fF
+C491 XNOR_0/XOR_0/NAND_0/w_0_0# Gnd 0.40fF
+C492 XNOR_0/not_0/w_0_0# Gnd 0.40fF
+C493 XNOR_1/XOR_0/NAND_3/a_6_n14# Gnd 0.14fF
+C494 XNOR_1/not_0/in Gnd 0.76fF
+C495 XNOR_1/XOR_0/NAND_3/in2 Gnd 0.76fF
+C496 XNOR_1/XOR_0/NAND_3/w_32_0# Gnd 0.40fF
+C497 XNOR_1/XOR_0/NAND_3/w_0_0# Gnd 0.40fF
+C498 XNOR_1/XOR_0/NAND_2/a_6_n14# Gnd 0.14fF
+C499 XNOR_1/XOR_0/NAND_2/w_32_0# Gnd 0.40fF
+C500 XNOR_1/XOR_0/NAND_2/w_0_0# Gnd 0.40fF
+C501 XNOR_1/XOR_0/NAND_1/a_6_n14# Gnd 0.14fF
+C502 XNOR_1/XOR_0/NAND_3/in1 Gnd 0.78fF
+C503 XNOR_1/XOR_0/NAND_1/w_32_0# Gnd 0.40fF
+C504 XNOR_1/XOR_0/NAND_1/w_0_0# Gnd 0.40fF
+C505 XNOR_1/XOR_0/NAND_0/a_6_n14# Gnd 0.14fF
+C506 XNOR_1/XOR_0/NAND_2/in1 Gnd 0.97fF
+C507 B2 Gnd 1.17fF
+C508 A2 Gnd 1.74fF
+C509 XNOR_1/XOR_0/NAND_0/w_32_0# Gnd 0.40fF
+C510 XNOR_1/XOR_0/NAND_0/w_0_0# Gnd 0.40fF
+C511 XNOR_1/not_0/w_0_0# Gnd 0.40fF
+C512 fiveinputAND_0/fiveinputNAND_0/a_113_n14# Gnd 0.08fF
+C513 fiveinputAND_0/fiveinputNAND_0/a_76_n14# Gnd 0.05fF
+C514 fiveinputAND_0/fiveinputNAND_0/a_45_n14# Gnd 0.07fF
+C515 fiveinputAND_0/fiveinputNAND_0/a_6_n14# Gnd 0.14fF
+C516 XNOR_2/out Gnd 1.52fF
+C517 not_3/out Gnd 1.44fF
+C518 fiveinputAND_0/fiveinputNAND_0/w_133_0# Gnd 0.43fF
+C519 fiveinputAND_0/fiveinputNAND_0/w_63_0# Gnd 0.43fF
+C520 fiveinputAND_0/fiveinputNAND_0/w_32_0# Gnd 0.43fF
+C521 fiveinputAND_0/fiveinputNAND_0/w_0_0# Gnd 0.43fF
+C522 fiveinputAND_0/not_0/in Gnd 1.48fF
+C523 fiveinputAND_0/not_0/w_0_0# Gnd 0.40fF
+C524 fourinputOR_0/in2 Gnd 1.03fF
+C525 threeinputAND_0/not_0/in Gnd 0.76fF
+C526 threeinputAND_0/not_0/w_0_0# Gnd 0.40fF
+C527 threeinputAND_0/threeinputNAND_0/a_45_n14# Gnd 0.07fF
+C528 threeinputAND_0/threeinputNAND_0/a_6_n14# Gnd 0.14fF
+C529 XNOR_0/out Gnd 0.53fF
+C530 not_1/out Gnd 0.29fF
+C531 threeinputAND_0/threeinputNAND_0/w_63_0# Gnd 0.39fF
+C532 threeinputAND_0/threeinputNAND_0/w_32_0# Gnd 0.40fF
+C533 threeinputAND_0/threeinputNAND_0/w_0_0# Gnd 0.40fF
+C534 fourinputAND_1/fourinputNAND_0/a_76_n14# Gnd 0.05fF
+C535 fourinputAND_1/fourinputNAND_0/a_45_n14# Gnd 0.07fF
+C536 fourinputAND_1/fourinputNAND_0/a_6_n14# Gnd 0.14fF
+C537 fourinputAND_1/not_0/in Gnd 1.84fF
+C538 XNOR_3/out Gnd 0.61fF
+C539 fourinputAND_1/fourinputNAND_0/w_100_0# Gnd 0.40fF
+C540 fourinputAND_1/fourinputNAND_0/w_63_0# Gnd 0.40fF
+C541 fourinputAND_1/fourinputNAND_0/w_32_0# Gnd 0.40fF
+C542 fourinputAND_1/fourinputNAND_0/w_0_0# Gnd 0.40fF
+C543 fourinputAND_1/not_0/w_0_0# Gnd 0.40fF
+C544 fourinputAND_0/fourinputNAND_0/a_76_n14# Gnd 0.05fF
+C545 fourinputAND_0/fourinputNAND_0/a_45_n14# Gnd 0.07fF
+C546 fourinputAND_0/fourinputNAND_0/a_6_n14# Gnd 0.14fF
+C547 fourinputAND_0/not_0/in Gnd 1.84fF
+C548 not_2/out Gnd 0.30fF
+C549 fourinputAND_0/fourinputNAND_0/w_100_0# Gnd 0.40fF
+C550 fourinputAND_0/fourinputNAND_0/w_63_0# Gnd 0.40fF
+C551 fourinputAND_0/fourinputNAND_0/w_32_0# Gnd 0.40fF
+C552 fourinputAND_0/fourinputNAND_0/w_0_0# Gnd 0.40fF
+C553 fourinputOR_0/in3 Gnd 1.03fF
+C554 fourinputAND_0/not_0/w_0_0# Gnd 0.40fF
+C555 not_3/w_0_0# Gnd 0.40fF
+C556 not_2/w_0_0# Gnd 0.40fF
+C557 not_1/w_0_0# Gnd 0.40fF
+C558 not_0/w_0_0# Gnd 0.40fF
+C559 AND_0/not_0/in Gnd 0.76fF
+C560 AND_0/out Gnd 1.01fF
+C561 AND_0/not_0/w_0_0# Gnd 0.40fF
+C562 AND_0/NAND_0/a_6_n14# Gnd 0.14fF
+C563 not_0/out Gnd 0.28fF
+C564 AND_0/NAND_0/w_32_0# Gnd 0.40fF
+C565 AND_0/NAND_0/w_0_0# Gnd 0.40fF
+C566 greater Gnd 1.31fF
+C567 fourinputOR_0/not_0/in Gnd 1.09fF
+C568 fourinputOR_0/not_0/w_0_0# Gnd 0.40fF
+C569 fourinputOR_0/fourinputNOR_0/a_77_6# Gnd 0.02fF
+C570 fourinputOR_0/fourinputNOR_0/a_45_6# Gnd 0.02fF
+C571 fourinputOR_0/fourinputNOR_0/a_13_6# Gnd 0.02fF
+C572 fourinputOR_0/in4 Gnd 0.13fF
+C573 fourinputOR_0/fourinputNOR_0/w_97_0# Gnd 0.03fF
+C574 fourinputOR_0/fourinputNOR_0/w_64_0# Gnd 0.40fF
+C575 fourinputOR_0/fourinputNOR_0/w_32_0# Gnd 0.40fF
+C576 vdd Gnd 0.40fF
+
+
+.tran 1n 300n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(A0) v(A1)+2 v(A2)+4 v(A3)+6
+plot v(B0) v(B1)+2 v(B2)+4 v(B3)+6
+plot v(greater) v(Equal)+2 v(lesser)+4
+.end
+.endc

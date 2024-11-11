@@ -1,0 +1,52 @@
+magic
+tech scmos
+timestamp 1699643694
+<< metal1 >>
+rect -25 66 -20 67
+rect -8 65 -3 66
+rect -39 56 28 57
+rect -39 55 32 56
+rect -39 54 28 55
+rect -39 19 -36 54
+rect -11 44 1 47
+rect -11 41 -8 44
+rect -39 15 -32 19
+rect -11 16 -10 19
+rect 0 12 3 24
+rect 158 20 160 24
+rect -8 2 5 4
+rect -8 1 2 2
+rect -1 -11 4 -10
+rect 53 -13 58 -11
+rect 83 -13 88 -11
+rect 120 -13 125 -11
+<< m2contact >>
+rect -25 61 -20 66
+rect -8 60 -3 65
+rect -25 41 -20 46
+rect -10 14 -5 19
+rect -1 7 4 12
+rect -1 -10 4 -5
+<< metal2 >>
+rect -24 46 -21 61
+rect -7 19 -4 60
+rect -5 16 -4 19
+rect 0 -5 3 7
+use not  not_0
+timestamp 1698566035
+transform 1 0 -33 0 1 22
+box 0 -21 25 19
+use fiveinputNAND  fiveinputNAND_0
+timestamp 1699183758
+transform 1 0 1 0 1 27
+box -1 -38 164 30
+<< labels >>
+rlabel metal1 83 -13 88 -11 1 in3
+rlabel metal1 120 -13 125 -11 1 in4
+rlabel metal1 158 20 160 24 1 in5
+rlabel metal1 -8 1 -2 4 1 gnd
+rlabel metal1 53 -13 58 -11 1 in2
+rlabel metal1 -25 66 -20 67 5 vdd
+rlabel metal1 -8 65 -3 66 5 out
+rlabel metal1 -1 -11 4 -10 1 in1
+<< end >>

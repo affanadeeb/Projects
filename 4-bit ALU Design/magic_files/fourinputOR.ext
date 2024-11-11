@@ -1,0 +1,35 @@
+timestamp 1699643964
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use not not_0 1 0 -35 0 1 46
+use fourinputNOR fourinputNOR_0 1 0 1 0 1 47
+node "in2" 0 13.6035 56 -3 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 12 0 0 0 0 0 0 0 0 0 0
+node "in3" 0 13.6035 99 -2 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 12 0 0 0 0 0 0 0 0 0 0
+node "gnd" 1 73.9011 -13 20 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 69 52 0 0 0 0 0 0 0 0 0 0
+node "in1" 2 406.168 -2 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 70 52 122 82 0 0 0 0 0 0 0 0
+node "in4" 0 11.2836 139 41 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "m1_n41_9#" 3 311.301 -41 9 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 313 212 0 0 0 0 0 0 0 0 0 0
+node "vdd" 0 50.2875 -14 63 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 45 36 0 0 0 0 0 0 0 0 0 0
+node "out" 2 486.965 -13 38 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 60 44 134 90 0 0 0 0 0 0 0 0
+cap "m1_n41_9#" "in1" 131.907
+cap "gnd" "in1" 92.633
+cap "out" "vdd" 131.907
+cap "not_0/w_0_0#" "not_0/in" -1.42109e-14
+cap "fourinputNOR_0/w_0_0#" "fourinputNOR_0/in1" -1.42109e-14
+cap "not_0/gnd" "fourinputNOR_0/in1" 65.9808
+cap "not_0/gnd" "not_0/in" 30.9285
+cap "fourinputNOR_0/w_0_0#" "not_0/vdd" 7.10543e-15
+merge "not_0/out" "out" -21.672 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fourinputNOR_0/gnd" "not_0/gnd" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "not_0/gnd" "gnd"
+merge "fourinputNOR_0/in1" "in1" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "fourinputNOR_0/in2" "in2" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fourinputNOR_0/in3" "in3" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "fourinputNOR_0/vdd" "not_0/vdd" -20.5632 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 -18 0 0 0 0 0 0 0 0 0 0
+merge "not_0/vdd" "vdd"
+merge "fourinputNOR_0/in4" "in4" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "fourinputNOR_0/out" "not_0/in" -14.028 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14 0 0 0 0 0 0 0 0 0 0
+merge "not_0/in" "m1_n41_9#"

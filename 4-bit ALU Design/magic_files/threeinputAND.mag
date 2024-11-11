@@ -1,0 +1,41 @@
+magic
+tech scmos
+timestamp 1699641646
+<< metal1 >>
+rect 22 106 33 109
+rect 1 56 6 58
+rect 22 56 25 106
+rect 28 83 34 87
+rect 55 84 58 87
+rect 28 65 31 83
+rect 58 71 101 72
+rect 57 69 101 71
+rect -1 30 0 34
+rect 86 23 89 34
+rect 98 13 101 69
+rect 83 11 101 13
+rect 82 10 101 11
+rect 1 8 6 10
+rect 85 0 90 2
+rect 56 -1 61 0
+<< m2contact >>
+rect 85 18 90 23
+rect 85 2 90 7
+<< metal2 >>
+rect 86 7 89 18
+use not  not_0
+timestamp 1698566035
+transform 1 0 33 0 1 90
+box 0 -21 25 19
+use threeinputNAND  threeinputNAND_0
+timestamp 1699641626
+transform 1 0 1 0 1 37
+box -1 -37 94 28
+<< labels >>
+rlabel metal1 55 84 58 87 1 out
+rlabel metal1 1 8 6 10 3 gnd
+rlabel metal1 1 56 6 58 3 vdd
+rlabel metal1 -1 30 0 34 3 in1
+rlabel metal1 56 -1 61 0 1 in2
+rlabel metal1 85 0 90 2 1 in3
+<< end >>

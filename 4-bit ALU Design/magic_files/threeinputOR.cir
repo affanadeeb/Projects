@@ -1,0 +1,88 @@
+Three Input NOR gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+vin3 in3 gnd  PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+
+
+M1000 not_0/in in1 gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=80 ps=72
+M1001 not_0/in in3 threeinputNOR_0/a_45_6# vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1002 threeinputNOR_0/a_77_n14# in3 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1003 threeinputNOR_0/a_13_6# in1 vdd threeinputNOR_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1004 gnd in2 not_0/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 threeinputNOR_0/a_45_6# in2 threeinputNOR_0/a_13_6# threeinputNOR_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 out not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1007 out not_0/in vdd not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 threeinputNOR_0/a_45_6# threeinputNOR_0/a_13_6# 0.04fF
+C1 vdd not_0/w_0_0# 0.05fF
+C2 in3 vdd 0.06fF
+C3 gnd threeinputNOR_0/a_77_n14# 0.04fF
+C4 threeinputNOR_0/a_45_6# not_0/in 0.04fF
+C5 threeinputNOR_0/a_13_6# threeinputNOR_0/w_0_0# 0.03fF
+C6 threeinputNOR_0/a_45_6# vdd 0.03fF
+C7 vdd threeinputNOR_0/w_32_0# 0.03fF
+C8 threeinputNOR_0/w_32_0# in2 0.06fF
+C9 not_0/in vdd 0.03fF
+C10 vdd threeinputNOR_0/a_13_6# 0.21fF
+C11 threeinputNOR_0/a_45_6# vdd 0.17fF
+C12 not_0/in out 0.02fF
+C13 vdd not_0/in 0.23fF
+C14 not_0/in in2 0.13fF
+C15 in3 gnd 0.09fF
+C16 in3 threeinputNOR_0/a_77_n14# 0.13fF
+C17 vdd threeinputNOR_0/w_0_0# 0.05fF
+C18 vdd vdd 0.03fF
+C19 vdd out 0.07fF
+C20 in1 threeinputNOR_0/w_0_0# 0.06fF
+C21 gnd not_0/in 0.32fF
+C22 not_0/in threeinputNOR_0/a_77_n14# 0.04fF
+C23 gnd out 0.08fF
+C24 not_0/in not_0/w_0_0# 0.06fF
+C25 gnd in2 0.08fF
+C26 threeinputNOR_0/a_13_6# threeinputNOR_0/w_32_0# 0.03fF
+C27 threeinputNOR_0/a_45_6# threeinputNOR_0/w_32_0# 0.03fF
+C28 in3 not_0/in 0.52fF
+C29 not_0/w_0_0# out 0.03fF
+C30 out Gnd 0.06fF
+C31 not_0/w_0_0# Gnd 0.40fF
+C32 threeinputNOR_0/a_77_n14# Gnd 0.04fF
+C33 gnd Gnd 0.87fF
+C34 not_0/in Gnd 0.98fF
+C35 threeinputNOR_0/a_45_6# Gnd 0.02fF
+C36 threeinputNOR_0/a_13_6# Gnd 0.02fF
+C37 vdd Gnd 0.35fF
+C38 in3 Gnd 0.41fF
+C39 in2 Gnd 0.66fF
+C40 in1 Gnd 0.18fF
+C41 vdd Gnd 0.40fF
+C42 threeinputNOR_0/w_32_0# Gnd 0.40fF
+C43 threeinputNOR_0/w_0_0# Gnd 0.40fF
+
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(in3)+4 v(out)+6
+.end
+.endc

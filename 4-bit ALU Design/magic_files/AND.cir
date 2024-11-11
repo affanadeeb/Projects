@@ -1,0 +1,66 @@
+AND gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+
+M1000 not_0/in in1 NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1001 not_0/in in1 vdd vdd CMOSP w=4 l=2
++  ad=40 pd=36 as=60 ps=54
+M1002 gnd in2 NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1003 vdd in2 not_0/in NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 out not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1005 out not_0/in vdd not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 out gnd 0.08fF
+C1 not_0/in gnd 0.04fF
+C2 in2 gnd 0.20fF
+C3 not_0/in NAND_0/a_6_n14# 0.12fF
+C4 not_0/w_0_0# vdd 0.05fF
+C5 vdd in1 0.06fF
+C6 not_0/w_0_0# out 0.03fF
+C7 NAND_0/w_32_0# vdd 0.05fF
+C8 NAND_0/a_6_n14# gnd 0.57fF
+C9 not_0/w_0_0# not_0/in 0.06fF
+C10 NAND_0/w_32_0# not_0/in 0.03fF
+C11 NAND_0/w_32_0# in2 0.06fF
+C12 out vdd 0.07fF
+C13 not_0/in vdd 0.29fF
+C14 not_0/in out 0.02fF
+C15 vdd vdd 0.05fF
+C16 vdd gnd 0.02fF
+C17 vdd not_0/in 0.03fF
+C18 not_0/in Gnd 0.76fF
+C19 out Gnd 0.07fF
+C20 not_0/w_0_0# Gnd 0.40fF
+C21 gnd Gnd 0.50fF
+C22 NAND_0/a_6_n14# Gnd 0.14fF
+C23 vdd Gnd 0.38fF
+C24 in2 Gnd 0.47fF
+C25 in1 Gnd 0.19fF
+C26 NAND_0/w_32_0# Gnd 0.40fF
+C27 vdd Gnd 0.40fF
+
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(out)+4
+.end
+.endc

@@ -1,0 +1,66 @@
+OR gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+
+M1000 out NOT_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=60 ps=54
+M1001 out NOT_0/in vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1002 NOT_0/in in1 gnd Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1003 NOR_0/a_13_6# in1 vdd NOR_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1004 gnd in2 NOT_0/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 NOT_0/in in2 NOR_0/a_13_6# NOR_0/w_32_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 out NOT_0/in 0.02fF
+C1 gnd in2 0.11fF
+C2 NOR_0/w_32_0# NOT_0/in 0.03fF
+C3 out vdd 0.07fF
+C4 NOR_0/w_32_0# NOR_0/a_13_6# 0.03fF
+C5 NOR_0/w_32_0# vdd 0.03fF
+C6 gnd NOT_0/in 0.60fF
+C7 NOT_0/in vdd 0.06fF
+C8 vdd vdd 0.05fF
+C9 in1 NOR_0/w_0_0# 0.06fF
+C10 NOT_0/in in2 0.26fF
+C11 NOR_0/a_13_6# NOR_0/w_0_0# 0.03fF
+C12 vdd NOR_0/w_0_0# 0.05fF
+C13 out gnd 0.08fF
+C14 out vdd 0.03fF
+C15 NOR_0/a_13_6# NOT_0/in 0.04fF
+C16 NOR_0/w_32_0# in2 0.06fF
+C17 NOT_0/in vdd 0.11fF
+C18 NOR_0/a_13_6# vdd 0.21fF
+C19 vdd Gnd 0.31fF
+C20 gnd Gnd 0.59fF
+C21 NOT_0/in Gnd 0.77fF
+C22 NOR_0/a_13_6# Gnd 0.02fF
+C23 in2 Gnd 0.83fF
+C24 in1 Gnd 0.19fF
+C25 NOR_0/w_32_0# Gnd 0.40fF
+C26 NOR_0/w_0_0# Gnd 0.40fF
+C27 out Gnd 0.07fF
+C28 vdd Gnd 0.40fF
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(out)+4
+.end
+.endc

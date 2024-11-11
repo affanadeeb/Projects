@@ -1,0 +1,90 @@
+Five Input NAND circuit
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+vin3 in3 gnd  PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+vin4 in4 gnd  PULSE(0 1.8 0ns 100ps 100ps 160ns 320ns)
+vin5 in5 gnd  PULSE(0 1.8 0ns 100ps 100ps 320ns 640ns)
+
+M1000 out in1 a_6_n14# gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1001 a_113_n14# in4 a_76_n14# gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1002 out in5 vdd vdd CMOSP w=4 l=2
++  ad=100 pd=90 as=100 ps=90
+M1003 out in3 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 out in1 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 gnd in5 a_113_n14# gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1006 a_76_n14# in3 a_45_n14# gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1007 a_45_n14# in2 a_6_n14# gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 vdd in2 out vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 vdd in4 out vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 vdd vdd 0.05fF
+C1 vdd vdd 0.05fF
+C2 vdd in3 0.06fF
+C3 a_45_n14# a_6_n14# 0.04fF
+C4 vdd in1 0.06fF
+C5 a_76_n14# a_113_n14# 0.04fF
+C6 in5 vdd 0.06fF
+C7 gnd a_6_n14# 0.47fF
+C8 a_45_n14# in2 0.06fF
+C9 vdd out 0.03fF
+C10 a_76_n14# in3 0.08fF
+C11 vdd out 0.03fF
+C12 a_45_n14# a_76_n14# 0.04fF
+C13 vdd out 2.10fF
+C14 vdd in2 0.06fF
+C15 vdd vdd 0.05fF
+C16 vdd vdd 0.05fF
+C17 gnd a_113_n14# 0.04fF
+C18 a_113_n14# in4 0.06fF
+C19 vdd out 0.03fF
+C20 vdd in4 0.06fF
+C21 vdd vdd 0.05fF
+C22 vdd out 0.03fF
+C23 vdd out 0.03fF
+C24 out a_6_n14# 0.11fF
+C25 gnd gnd 0.49fF
+C26 a_113_n14# gnd 0.08fF
+C27 a_76_n14# gnd 0.03fF
+C28 a_45_n14# gnd 0.07fF
+C29 a_6_n14# gnd 0.14fF
+C30 in5 gnd 0.17fF
+C31 in4 gnd 0.18fF
+C32 in3 gnd 0.17fF
+C33 in2 gnd 0.17fF
+C34 vdd gnd 0.18fF
+C35 in1 gnd 0.17fF
+C36 out gnd 0.51fF
+C37 vdd gnd 0.40fF
+C38 vdd gnd 0.40fF
+C39 vdd gnd 0.39fF
+C40 vdd gnd 0.40fF
+C41 vdd gnd 0.40fF
+
+.tran 0.1n 800n 
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(in3)+4 v(in4)+6 v(in5)+8 v(out)+10
+.end
+.endc

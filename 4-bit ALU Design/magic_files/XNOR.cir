@@ -1,0 +1,133 @@
+XNOR gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+
+M1000 out not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=100 ps=90
+M1001 out not_0/in vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=180 ps=162
+M1002 XOR_0/NAND_2/in1 in1 XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1003 XOR_0/NAND_2/in1 in1 vdd XOR_0/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1004 gnd in2 XOR_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 vdd in2 XOR_0/NAND_2/in1 XOR_0/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 XOR_0/NAND_3/in1 in1 XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1007 XOR_0/NAND_3/in1 in1 vdd XOR_0/NAND_1/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1008 gnd XOR_0/NAND_2/in1 XOR_0/NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 vdd XOR_0/NAND_2/in1 XOR_0/NAND_3/in1 XOR_0/NAND_1/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 XOR_0/NAND_3/in2 XOR_0/NAND_2/in1 XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1011 XOR_0/NAND_3/in2 XOR_0/NAND_2/in1 vdd XOR_0/NAND_2/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1012 gnd in2 XOR_0/NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1013 vdd in2 XOR_0/NAND_3/in2 XOR_0/NAND_2/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 not_0/in XOR_0/NAND_3/in1 XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1015 not_0/in XOR_0/NAND_3/in1 vdd XOR_0/NAND_3/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1016 gnd XOR_0/NAND_3/in2 XOR_0/NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1017 vdd XOR_0/NAND_3/in2 not_0/in XOR_0/NAND_3/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 not_0/in vdd 0.06fF
+C1 XOR_0/NAND_2/in1 XOR_0/NAND_0/w_0_0# 0.03fF
+C2 vdd vdd 0.05fF
+C3 gnd out 0.08fF
+C4 not_0/in out 0.02fF
+C5 XOR_0/NAND_2/in1 XOR_0/NAND_1/w_32_0# 0.06fF
+C6 vdd out 0.30fF
+C7 gnd in2 0.02fF
+C8 XOR_0/NAND_0/w_32_0# in2 0.06fF
+C9 XOR_0/NAND_2/in1 XOR_0/NAND_0/a_6_n14# 0.12fF
+C10 gnd in1 0.73fF
+C11 XOR_0/NAND_2/w_0_0# XOR_0/NAND_3/in2 0.03fF
+C12 XOR_0/NAND_1/w_0_0# in1 0.06fF
+C13 XOR_0/NAND_3/in1 XOR_0/NAND_1/w_32_0# 0.03fF
+C14 vdd in2 0.06fF
+C15 vdd XOR_0/NAND_2/w_0_0# 0.05fF
+C16 XOR_0/NAND_3/in1 XOR_0/NAND_3/w_0_0# 0.06fF
+C17 out vdd 0.03fF
+C18 vdd XOR_0/NAND_0/w_0_0# 0.05fF
+C19 XOR_0/NAND_2/w_32_0# XOR_0/NAND_3/in2 0.03fF
+C20 gnd XOR_0/NAND_2/in1 0.15fF
+C21 XOR_0/NAND_2/in1 XOR_0/NAND_0/w_32_0# 0.03fF
+C22 gnd XOR_0/NAND_0/a_6_n14# 0.57fF
+C23 XOR_0/NAND_3/in1 XOR_0/NAND_1/a_6_n14# 0.12fF
+C24 vdd XOR_0/NAND_2/w_32_0# 0.05fF
+C25 XOR_0/NAND_3/in1 gnd 0.11fF
+C26 vdd XOR_0/NAND_2/in1 0.25fF
+C27 vdd XOR_0/NAND_1/w_32_0# 0.05fF
+C28 XOR_0/NAND_3/in1 XOR_0/NAND_1/w_0_0# 0.03fF
+C29 not_0/in XOR_0/NAND_3/w_0_0# 0.03fF
+C30 vdd XOR_0/NAND_3/w_0_0# 0.05fF
+C31 vdd XOR_0/NAND_3/in1 0.25fF
+C32 gnd XOR_0/NAND_3/a_6_n14# 0.57fF
+C33 XOR_0/NAND_3/w_32_0# XOR_0/NAND_3/in2 0.06fF
+C34 gnd XOR_0/NAND_1/a_6_n14# 0.57fF
+C35 gnd XOR_0/NAND_3/in2 0.07fF
+C36 not_0/in XOR_0/NAND_3/a_6_n14# 0.12fF
+C37 not_0/in XOR_0/NAND_3/w_32_0# 0.03fF
+C38 vdd XOR_0/NAND_3/w_32_0# 0.05fF
+C39 gnd not_0/in 0.03fF
+C40 vdd gnd 0.42fF
+C41 vdd XOR_0/NAND_3/in2 0.25fF
+C42 vdd XOR_0/NAND_0/w_32_0# 0.05fF
+C43 vdd XOR_0/NAND_1/w_0_0# 0.05fF
+C44 vdd not_0/in 0.25fF
+C45 XOR_0/NAND_0/w_0_0# in1 0.06fF
+C46 gnd XOR_0/NAND_2/a_6_n14# 0.59fF
+C47 XOR_0/NAND_2/a_6_n14# XOR_0/NAND_3/in2 0.12fF
+C48 XOR_0/NAND_2/w_32_0# in2 0.06fF
+C49 XOR_0/NAND_2/in1 XOR_0/NAND_2/w_0_0# 0.06fF
+C50 gnd Gnd 2.55fF
+C51 XOR_0/NAND_3/a_6_n14# Gnd 0.14fF
+C52 not_0/in Gnd 0.76fF
+C53 vdd Gnd 0.48fF
+C54 XOR_0/NAND_3/in2 Gnd 0.76fF
+C55 XOR_0/NAND_3/in1 Gnd 0.78fF
+C56 XOR_0/NAND_3/w_32_0# Gnd 0.40fF
+C57 XOR_0/NAND_3/w_0_0# Gnd 0.40fF
+C58 XOR_0/NAND_2/a_6_n14# Gnd 0.14fF
+C59 XOR_0/NAND_2/in1 Gnd 0.97fF
+C60 XOR_0/NAND_2/w_32_0# Gnd 0.40fF
+C61 XOR_0/NAND_2/w_0_0# Gnd 0.40fF
+C62 XOR_0/NAND_1/a_6_n14# Gnd 0.14fF
+C63 in1 Gnd 1.01fF
+C64 XOR_0/NAND_1/w_32_0# Gnd 0.40fF
+C65 XOR_0/NAND_1/w_0_0# Gnd 0.40fF
+C66 XOR_0/NAND_0/a_6_n14# Gnd 0.14fF
+C67 in2 Gnd 0.46fF
+C68 XOR_0/NAND_0/w_32_0# Gnd 0.40fF
+C69 XOR_0/NAND_0/w_0_0# Gnd 0.40fF
+C70 out Gnd 0.12fF
+C71 vdd Gnd 0.40fF
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(out)+4
+.end
+.endc

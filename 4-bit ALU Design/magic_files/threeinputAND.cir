@@ -1,0 +1,80 @@
+Three Input AND gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+vin3 in3 gnd  PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+
+M1000 not_0/in in1 threeinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1001 not_0/in in3 vdd vdd CMOSP w=4 l=2
++  ad=60 pd=54 as=80 ps=72
+M1002 not_0/in in1 vdd threeinputNAND_0/w_0_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 gnd in3 threeinputNAND_0/a_45_n14# Gnd CMOSN w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1004 threeinputNAND_0/a_45_n14# in2 threeinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 vdd in2 not_0/in threeinputNAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 out not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1007 out not_0/in vdd not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 threeinputNAND_0/a_45_n14# gnd 0.04fF
+C1 threeinputNAND_0/a_45_n14# threeinputNAND_0/a_6_n14# 0.04fF
+C2 not_0/w_0_0# vdd 0.05fF
+C3 not_0/in vdd 1.58fF
+C4 out vdd 0.07fF
+C5 vdd not_0/in 0.03fF
+C6 vdd in3 0.06fF
+C7 vdd vdd 0.05fF
+C8 threeinputNAND_0/w_32_0# in2 0.06fF
+C9 threeinputNAND_0/w_0_0# in1 0.06fF
+C10 threeinputNAND_0/w_32_0# not_0/in 0.03fF
+C11 gnd in2 0.13fF
+C12 threeinputNAND_0/w_0_0# not_0/in 0.03fF
+C13 gnd threeinputNAND_0/a_6_n14# 0.47fF
+C14 gnd not_0/in 0.75fF
+C15 gnd out 0.08fF
+C16 threeinputNAND_0/w_32_0# vdd 0.05fF
+C17 gnd in3 0.27fF
+C18 not_0/w_0_0# not_0/in 0.06fF
+C19 not_0/in threeinputNAND_0/a_6_n14# 0.11fF
+C20 threeinputNAND_0/w_0_0# vdd 0.05fF
+C21 out not_0/w_0_0# 0.03fF
+C22 out not_0/in 0.02fF
+C23 threeinputNAND_0/a_45_n14# in2 0.18fF
+C24 gnd Gnd 0.75fF
+C25 vdd Gnd 0.44fF
+C26 out Gnd 0.07fF
+C27 not_0/w_0_0# Gnd 0.40fF
+C28 threeinputNAND_0/a_45_n14# Gnd 0.07fF
+C29 threeinputNAND_0/a_6_n14# Gnd 0.14fF
+C30 in3 Gnd 0.49fF
+C31 in2 Gnd 0.56fF
+C32 in1 Gnd 0.18fF
+C33 not_0/in Gnd 0.76fF
+C34 vdd Gnd 0.39fF
+C35 threeinputNAND_0/w_32_0# Gnd 0.40fF
+C36 threeinputNAND_0/w_0_0# Gnd 0.40fF
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(in3)+4 v(out)+6
+.end
+.endc
+

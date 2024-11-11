@@ -1,0 +1,42 @@
+magic
+tech scmos
+timestamp 1699642970
+<< metal1 >>
+rect 61 121 65 122
+rect 183 121 198 124
+rect 59 95 60 99
+rect 186 95 187 99
+rect 220 99 221 102
+rect 184 93 187 95
+rect 197 85 199 87
+rect 178 82 200 85
+rect 61 74 65 75
+rect 184 65 189 67
+rect 118 64 123 65
+rect 149 64 154 65
+<< m2contact >>
+rect 194 97 199 102
+rect 184 88 189 93
+rect 184 67 189 72
+<< metal2 >>
+rect 157 126 192 129
+rect 189 102 192 126
+rect 189 99 194 102
+rect 185 72 188 88
+use not  not_0
+timestamp 1698566035
+transform 1 0 198 0 1 105
+box 0 -21 25 19
+use fourinputNAND  fourinputNAND_0
+timestamp 1699642147
+transform 1 0 61 0 1 102
+box -1 -37 125 28
+<< labels >>
+rlabel metal1 61 121 65 122 3 vdd
+rlabel metal1 61 74 65 75 3 gnd
+rlabel metal1 59 95 60 99 3 in1
+rlabel metal1 118 64 123 65 1 in2
+rlabel metal1 149 64 154 65 1 in3
+rlabel metal1 184 65 189 67 1 in4
+rlabel metal1 220 99 221 102 7 out
+<< end >>

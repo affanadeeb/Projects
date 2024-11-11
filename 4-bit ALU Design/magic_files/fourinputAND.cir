@@ -1,0 +1,96 @@
+Four Input NAND gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+vin3 in3 gnd  PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+vin4 in4 gnd  PULSE(0 1.8 0ns 100ps 100ps 160ns 320ns)
+
+M1000 out not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1001 out not_0/in vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=100 ps=90
+M1002 not_0/in in1 fourinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1003 gnd in4 fourinputNAND_0/a_76_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1004 not_0/in in3 vdd fourinputNAND_0/w_63_0# CMOSP w=4 l=2
++  ad=80 pd=72 as=0 ps=0
+M1005 not_0/in in1 vdd fourinputNAND_0/w_0_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1006 fourinputNAND_0/a_76_n14# in3 fourinputNAND_0/a_45_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=40 ps=36
+M1007 fourinputNAND_0/a_45_n14# in2 fourinputNAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 vdd in2 not_0/in fourinputNAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 vdd in4 not_0/in fourinputNAND_0/w_100_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 fourinputNAND_0/a_45_n14# fourinputNAND_0/a_6_n14# 0.04fF
+C1 fourinputNAND_0/w_63_0# vdd 0.05fF
+C2 in2 gnd 0.13fF
+C3 vdd vdd 0.05fF
+C4 fourinputNAND_0/w_0_0# vdd 0.05fF
+C5 not_0/in in3 0.03fF
+C6 not_0/in fourinputNAND_0/w_32_0# 0.03fF
+C7 fourinputNAND_0/w_0_0# in1 0.06fF
+C8 out vdd 0.07fF
+C9 not_0/in in4 0.01fF
+C10 not_0/in vdd 1.27fF
+C11 fourinputNAND_0/a_6_n14# gnd 0.47fF
+C12 out gnd 0.08fF
+C13 vdd fourinputNAND_0/w_32_0# 0.05fF
+C14 not_0/in gnd 0.01fF
+C15 in3 fourinputNAND_0/a_76_n14# 0.23fF
+C16 gnd in3 0.13fF
+C17 fourinputNAND_0/a_45_n14# fourinputNAND_0/a_76_n14# 0.04fF
+C18 gnd in4 0.16fF
+C19 not_0/in fourinputNAND_0/w_100_0# 0.03fF
+C20 out vdd 0.03fF
+C21 gnd fourinputNAND_0/a_76_n14# 0.04fF
+C22 fourinputNAND_0/a_45_n14# in2 0.21fF
+C23 fourinputNAND_0/w_100_0# in4 0.06fF
+C24 in2 fourinputNAND_0/w_32_0# 0.06fF
+C25 fourinputNAND_0/w_63_0# not_0/in 0.03fF
+C26 not_0/in vdd 0.06fF
+C27 not_0/in fourinputNAND_0/w_0_0# 0.03fF
+C28 vdd fourinputNAND_0/w_100_0# 0.05fF
+C29 fourinputNAND_0/w_63_0# in3 0.06fF
+C30 not_0/in fourinputNAND_0/a_6_n14# 0.11fF
+C31 out not_0/in 0.02fF
+C32 gnd Gnd 0.57fF
+C33 vdd Gnd 0.32fF
+C34 fourinputNAND_0/a_76_n14# Gnd 0.05fF
+C35 fourinputNAND_0/a_45_n14# Gnd 0.07fF
+C36 fourinputNAND_0/a_6_n14# Gnd 0.14fF
+C37 not_0/in Gnd 1.84fF
+C38 in4 Gnd 0.54fF
+C39 in3 Gnd 0.57fF
+C40 in2 Gnd 0.56fF
+C41 in1 Gnd 0.18fF
+C42 fourinputNAND_0/w_100_0# Gnd 0.40fF
+C43 fourinputNAND_0/w_63_0# Gnd 0.40fF
+C44 fourinputNAND_0/w_32_0# Gnd 0.40fF
+C45 fourinputNAND_0/w_0_0# Gnd 0.40fF
+C46 out Gnd 0.06fF
+C47 vdd Gnd 0.40fF
+
+
+.tran 0.1n 400n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(in3)+4 v(in4)+6 v(out)+8
+.end
+.endc

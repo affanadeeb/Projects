@@ -1,0 +1,35 @@
+timestamp 1699641646
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use not not_0 1 0 33 0 1 90
+use threeinputNAND threeinputNAND_0 1 0 1 0 1 37
+node "in2" 0 13.6035 56 -1 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 12 0 0 0 0 0 0 0 0 0 0
+node "gnd" 0 17.187 1 8 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "in3" 1 318.444 85 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 93 66 83 56 0 0 0 0 0 0 0 0
+node "in1" 0 11.2836 -1 30 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4 10 0 0 0 0 0 0 0 0 0 0
+node "m1_57_69#" 3 356.317 57 69 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 354 244 0 0 0 0 0 0 0 0 0 0
+node "out" 0 14.8671 55 84 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 9 12 0 0 0 0 0 0 0 0 0 0
+node "m1_28_65#" 1 80.7522 28 65 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 78 56 0 0 0 0 0 0 0 0 0 0
+node "vdd" 0 17.187 1 56 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 10 14 0 0 0 0 0 0 0 0 0 0
+node "m1_22_56#" 2 186.066 22 56 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 183 128 0 0 0 0 0 0 0 0 0 0
+cap "m1_57_69#" "in3" 173.145
+cap "m1_28_65#" "m1_22_56#" 302.412
+cap "not_0/in" "not_0/vdd" 82.476
+cap "not_0/gnd" "threeinputNAND_0/in3" 92.7855
+cap "not_0/gnd" "not_0/in" 648.026
+cap "threeinputNAND_0/out" "m1_57_69#" 92.7855
+merge "not_0/out" "out" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "threeinputNAND_0/vdd" "vdd" -22.044 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22 0 0 0 0 0 0 0 0 0 0
+merge "vdd" "not_0/vdd"
+merge "not_0/vdd" "m1_22_56#"
+merge "threeinputNAND_0/gnd" "not_0/gnd" -132.303 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -127 -92 0 0 0 0 0 0 0 0 0 0
+merge "not_0/gnd" "m1_57_69#"
+merge "m1_57_69#" "gnd"
+merge "threeinputNAND_0/in1" "in1" -8.016 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 0 0 0 0 0 0 0 0 0
+merge "threeinputNAND_0/in2" "in2" -10.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 0 0 0 0 0 0 0 0 0 0
+merge "threeinputNAND_0/in3" "in3" -14.5512 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 -12 0 0 0 0 0 0 0 0 0 0
+merge "threeinputNAND_0/out" "not_0/in" -14.028 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14 0 0 0 0 0 0 0 0 0 0
+merge "not_0/in" "m1_28_65#"

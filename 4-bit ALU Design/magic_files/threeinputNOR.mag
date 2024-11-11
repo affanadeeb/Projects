@@ -1,0 +1,107 @@
+magic
+tech scmos
+timestamp 1699644455
+<< nwell >>
+rect 0 0 25 16
+rect 32 0 57 16
+rect 64 0 89 16
+<< ntransistor >>
+rect 11 -14 13 -10
+rect 43 -14 45 -10
+rect 75 -14 77 -10
+<< ptransistor >>
+rect 11 6 13 10
+rect 43 6 45 10
+rect 75 6 77 10
+<< ndiffusion >>
+rect 10 -14 11 -10
+rect 13 -14 14 -10
+rect 42 -14 43 -10
+rect 45 -14 46 -10
+rect 74 -14 75 -10
+rect 77 -14 78 -10
+<< pdiffusion >>
+rect 10 6 11 10
+rect 13 6 14 10
+rect 42 6 43 10
+rect 45 6 46 10
+rect 74 6 75 10
+rect 77 6 78 10
+<< ndcontact >>
+rect 6 -14 10 -10
+rect 14 -14 18 -10
+rect 38 -14 42 -10
+rect 46 -14 50 -10
+rect 70 -14 74 -10
+rect 78 -14 82 -10
+<< pdcontact >>
+rect 6 6 10 10
+rect 14 6 18 10
+rect 38 6 42 10
+rect 46 6 50 10
+rect 70 6 74 10
+rect 78 6 82 10
+<< polysilicon >>
+rect 11 10 13 13
+rect 43 10 45 13
+rect 75 10 77 13
+rect 11 -3 13 6
+rect 6 -7 13 -3
+rect 11 -10 13 -7
+rect 43 -4 45 6
+rect 75 -3 77 6
+rect 43 -6 49 -4
+rect 43 -10 45 -6
+rect 75 -5 81 -3
+rect 75 -10 77 -5
+rect 11 -17 13 -14
+rect 43 -17 45 -14
+rect 75 -17 77 -14
+<< polycontact >>
+rect 2 -7 6 -3
+rect 49 -7 53 -3
+rect 81 -6 85 -2
+<< metal1 >>
+rect 0 16 89 19
+rect 7 10 10 16
+rect 18 6 38 9
+rect 50 6 70 9
+rect 82 6 98 9
+rect -1 -7 2 -3
+rect 53 -7 55 -3
+rect 85 -6 87 -2
+rect 18 -14 38 -10
+rect 82 -13 92 -10
+rect 7 -24 10 -14
+rect 46 -24 49 -14
+rect 70 -24 73 -14
+rect 7 -27 73 -24
+rect 95 -35 98 6
+rect 107 -7 108 -2
+rect 31 -36 100 -35
+rect 26 -38 100 -36
+rect 55 -47 60 -46
+<< m2contact >>
+rect 55 -8 60 -3
+rect 87 -7 92 -2
+rect 26 -19 31 -14
+rect 26 -36 31 -30
+rect 102 -7 107 -2
+rect 55 -46 60 -41
+<< metal2 >>
+rect 92 -6 102 -3
+rect 27 -30 30 -19
+rect 56 -41 59 -8
+<< labels >>
+rlabel metal1 0 16 57 19 5 vdd
+rlabel metal1 0 -7 2 -3 3 in1
+rlabel space 0 -27 50 -24 1 gnd
+rlabel metal1 7 -27 49 -24 1 gnd
+rlabel metal1 7 -27 15 -24 1 gnd
+rlabel metal1 25 16 33 19 5 vdd
+rlabel metal1 31 -38 60 -35 1 out
+rlabel metal1 57 16 89 19 5 vdd
+rlabel metal1 55 -47 60 -46 1 in2
+rlabel space 107 -7 108 -1 7 in3
+rlabel metal1 95 6 98 9 1 out
+<< end >>

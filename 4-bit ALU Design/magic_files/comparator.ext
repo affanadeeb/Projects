@@ -1,0 +1,352 @@
+timestamp 1699680831
+version 8.3
+tech scmos
+style TSMC0.18um(tsmc18)from:t11b
+scale 1000 1 9
+resistclasses 6700 7500 929000 929000 1 7700 7700 80 80 80 70 70 40
+use XNOR XNOR_0 1 0 0 0 1 1
+use not not_0 1 0 159 0 1 33
+use AND AND_0 1 0 193 0 1 8
+use XNOR XNOR_1 1 0 276 0 1 2
+use not not_1 1 0 429 0 1 32
+use threeinputAND threeinputAND_0 1 0 460 0 1 2
+use XNOR XNOR_2 1 0 570 0 1 1
+use not not_2 1 0 722 0 1 29
+use fourinputAND fourinputAND_0 1 0 700 0 1 -67
+use fourinputOR fourinputOR_0 1 0 785 0 1 123
+use NOR NOR_0 1 0 819 0 1 233
+use XNOR XNOR_3 1 0 931 0 1 6
+use fourinputAND fourinputAND_1 1 0 1079 0 1 59
+use fiveinputAND fiveinputAND_0 1 0 1168 0 1 29
+use not not_3 1 0 1089 0 1 40
+node "m2_1202_127#" 8 3040.19 1202 127 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 846 570 0 0 0 0 0 0 0 0
+node "m2_31_4#" 7 2811.25 31 4 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 774 522 0 0 0 0 0 0 0 0
+node "m2_400_180#" 18 7215.54 400 180 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2031 1360 0 0 0 0 0 0 0 0
+node "m2_124_189#" 39 15718.9 124 189 m2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 4425 2956 0 0 0 0 0 0 0 0
+node "A0" 1 127.032 958 -36 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 123 88 0 0 0 0 0 0 0 0 0 0
+node "m1_850_n12#" 12 3974.66 850 -12 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 334 226 1021 684 0 0 0 0 0 0 0 0
+node "A1" 1 85.7079 596 -27 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 81 60 0 0 0 0 0 0 0 0 0 0
+node "m1_601_0#" 6 655.386 601 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 660 446 0 0 0 0 0 0 0 0 0 0
+node "A2" 1 62.0943 303 -18 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 57 44 0 0 0 0 0 0 0 0 0 0
+node "m1_307_1#" 6 622.917 307 1 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 627 424 0 0 0 0 0 0 0 0 0 0
+node "A3" 0 13.6035 26 -1 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 5 12 0 0 0 0 0 0 0 0 0 0
+node "m1_1252_10#" 9 3014.21 1252 10 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 211 144 790 530 0 0 0 0 0 0 0 0
+node "m1_962_5#" 7 805.923 962 5 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 813 548 0 0 0 0 0 0 0 0 0 0
+node "m1_747_8#" 0 47.3358 747 8 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 42 34 0 0 0 0 0 0 0 0 0 0
+node "m1_670_11#" 2 175.315 670 11 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 168 122 0 0 0 0 0 0 0 0 0 0
+node "m1_561_12#" 0 35.529 561 12 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30 26 0 0 0 0 0 0 0 0 0 0
+node "m1_453_11#" 0 29.6256 453 11 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 22 0 0 0 0 0 0 0 0 0 0
+node "m1_259_9#" 1 67.9977 259 9 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 63 48 0 0 0 0 0 0 0 0 0 0
+node "gnd" 0 8.9637 5 10 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 3 8 0 0 0 0 0 0 0 0 0 0
+node "m1_376_12#" 2 172.363 376 12 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 165 120 0 0 0 0 0 0 0 0 0 0
+node "m1_183_12#" 1 62.0943 183 12 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 57 44 0 0 0 0 0 0 0 0 0 0
+node "m1_100_11#" 2 190.074 100 11 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 183 132 0 0 0 0 0 0 0 0 0 0
+node "m1_1031_16#" 2 189.017 1031 16 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 186 130 0 0 0 0 0 0 0 0 0 0
+node "m1_923_17#" 0 38.4807 923 17 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33 28 0 0 0 0 0 0 0 0 0 0
+node "B1" 3 531.944 680 -11 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 234 158 116 78 0 0 0 0 0 0 0 0
+node "m1_744_23#" 1 65.046 744 23 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 60 46 0 0 0 0 0 0 0 0 0 0
+node "B2" 3 548.076 386 -7 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 206 146 119 80 0 0 0 0 0 0 0 0
+node "m1_1114_19#" 1 106.37 1114 19 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 102 74 0 0 0 0 0 0 0 0 0 0
+node "m1_451_26#" 0 47.3358 451 26 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 42 34 0 0 0 0 0 0 0 0 0 0
+node "B3" 3 478.573 110 3 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 224 158 86 58 0 0 0 0 0 0 0 0
+node "m1_181_27#" 0 40.1688 181 27 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 32 30 0 0 0 0 0 0 0 0 0 0
+node "m1_1111_34#" 2 874.313 1111 34 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 57 38 240 160 0 0 0 0 0 0 0 0
+node "m1_1089_59#" 2 830.046 1089 59 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 20 217 148 0 0 0 0 0 0 0 0
+node "m1_744_48#" 1 67.9977 744 48 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 63 48 0 0 0 0 0 0 0 0 0 0
+node "m1_429_51#" 0 154.141 429 51 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 20 31 24 0 0 0 0 0 0 0 0
+node "m1_181_52#" 0 38.4807 181 52 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33 28 0 0 0 0 0 0 0 0 0 0
+node "m1_910_57#" 2 897.454 910 57 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 67 46 247 160 0 0 0 0 0 0 0 0
+node "m1_451_51#" 0 53.2392 451 51 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 48 38 0 0 0 0 0 0 0 0 0 0
+node "m1_751_n9#" 30 6357.34 751 -9 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2130 1424 1272 852 0 0 0 0 0 0 0 0
+node "m1_1135_132#" 3 1396.93 1135 132 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 20 382 258 0 0 0 0 0 0 0 0
+node "m1_1132_154#" 3 1360.79 1132 154 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 33 24 385 260 0 0 0 0 0 0 0 0
+node "m1_927_109#" 2 946.604 927 109 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 20 308 174 0 0 0 0 0 0 0 0
+node "m1_885_73#" 4 404.491 885 73 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 405 276 0 0 0 0 0 0 0 0 0 0
+node "m1_1058_175#" 3 774.546 1058 175 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 206 144 170 114 0 0 0 0 0 0 0 0
+node "m1_908_186#" 2 273.136 908 186 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 281 184 0 0 0 0 0 0 0 0 0 0
+node "m1_865_201#" 5 1833 865 201 v1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25 20 511 344 0 0 0 0 0 0 0 0
+node "m1_925_164#" 12 1835.11 925 164 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1201 806 200 134 0 0 0 0 0 0 0 0
+node "Equal" 14 1591.07 893 226 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1611 1080 0 0 0 0 0 0 0 0 0 0
+node "lesser" 0 41.4324 879 242 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 36 30 0 0 0 0 0 0 0 0 0 0
+node "m1_518_108#" 2 593.298 518 108 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 148 102 142 92 0 0 0 0 0 0 0 0
+node "m1_248_106#" 2 529.029 248 106 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 88 130 84 0 0 0 0 0 0 0 0
+node "m1_518_86#" 16 1782.94 518 86 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1806 1210 0 0 0 0 0 0 0 0 0 0
+node "m1_251_81#" 21 2382.13 251 81 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2415 1616 0 0 0 0 0 0 0 0 0 0
+node "m1_761_188#" 3 359.9 761 188 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 359 246 0 0 0 0 0 0 0 0 0 0
+node "vdd" 0 14.5512 867 252 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 12 0 0 0 0 0 0 0 0 0 0
+node "greater" 3 591.53 776 199 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 262 176 116 78 0 0 0 0 0 0 0 0
+node "B0" 11 620.558 1042 -3 pdm12c 0 0 25 20 0 0 0 0 0 0 0 0 0 0 293 204 119 80 0 0 0 0 0 0 0 0
+node "a_722_48#" 8 168.047 722 48 pdm12c 0 0 25 20 0 0 0 0 0 0 0 0 0 0 25 20 37 28 0 0 0 0 0 0 0 0
+node "a_159_52#" 8 252.075 159 52 pm12c 0 0 0 0 0 0 0 0 0 0 25 20 0 0 25 20 43 32 0 0 0 0 0 0 0 0
+cap "m1_865_201#" "m1_908_186#" 63.1773
+cap "A2" "m2_124_189#" 63.1773
+cap "m1_751_n9#" "m2_400_180#" 73.6173
+cap "m1_751_n9#" "m1_251_81#" 126.355
+cap "B0" "m2_124_189#" 63.1773
+cap "m1_751_n9#" "m1_747_8#" 63.1773
+cap "m1_850_n12#" "A0" 97.5423
+cap "A1" "m2_124_189#" 63.1773
+cap "m1_670_11#" "m1_601_0#" 8.2476
+cap "m1_453_11#" "m1_307_1#" 47.1291
+cap "m1_751_n9#" "m1_601_0#" 114.725
+cap "Equal" "m1_925_164#" 1127.17
+cap "A1" "m2_400_180#" 63.1773
+cap "m1_518_86#" "m1_518_108#" 125.034
+cap "m1_1252_10#" "m2_1202_127#" 344.52
+cap "B1" "m2_124_189#" 63.1773
+cap "B2" "m2_124_189#" 73.6173
+cap "m1_1252_10#" "m2_124_189#" 63.1773
+cap "m1_259_9#" "m2_124_189#" 63.1773
+cap "B3" "m2_31_4#" 76.2273
+cap "m1_1132_154#" "m1_925_164#" 63.1773
+cap "B1" "m2_400_180#" 73.6173
+cap "m2_124_189#" "m2_1202_127#" 4.176
+cap "m1_850_n12#" "B0" 71.8773
+cap "m1_751_n9#" "m1_744_23#" 63.1773
+cap "m2_400_180#" "m2_124_189#" 532.44
+cap "m1_751_n9#" "m1_518_86#" 126.355
+cap "m1_251_81#" "m2_124_189#" 63.1773
+cap "B1" "m1_601_0#" 114.725
+cap "B2" "m1_376_12#" 97.5423
+cap "m1_1135_132#" "m1_1132_154#" 16.1571
+cap "m1_1132_154#" "m1_1058_175#" 63.1773
+cap "m1_751_n9#" "A0" 63.1773
+cap "m1_850_n12#" "m2_124_189#" 63.1773
+cap "m1_1114_19#" "m1_1111_34#" 69.0684
+cap "m1_962_5#" "B0" 131.907
+cap "m1_747_8#" "m1_601_0#" 115.466
+cap "m1_248_106#" "m2_124_189#" 73.6173
+cap "m1_908_186#" "m1_925_164#" 395.143
+cap "m1_1135_132#" "m1_925_164#" 63.1773
+cap "m1_248_106#" "m1_251_81#" 236.377
+cap "m1_744_48#" "m1_751_n9#" 63.1773
+cap "m1_1031_16#" "B0" 97.5423
+cap "m1_885_73#" "m1_927_109#" 74.1564
+cap "m1_1058_175#" "m1_925_164#" 63.1773
+cap "m1_751_n9#" "B0" 63.1773
+cap "m1_518_86#" "m2_400_180#" 63.1773
+cap "m1_518_86#" "m1_251_81#" 1171.16
+cap "greater" "m1_761_188#" 114.725
+cap "m1_100_11#" "B3" 166.272
+cap "m2_400_180#" "m1_518_108#" 63.1773
+cap "A0" "m2_124_189#" 63.1773
+cap "m1_561_12#" "m2_400_180#" 63.1773
+cap "m1_865_201#" "m1_925_164#" 63.1773
+cap "B1" "m1_670_11#" 114.725
+cap "m1_751_n9#" "m1_1252_10#" 126.355
+cap "m1_910_57#" "m1_885_73#" 63.1773
+cap "m1_751_n9#" "m2_1202_127#" 126.355
+cap "m1_751_n9#" "m2_124_189#" 383.685
+cap "B2" "m1_307_1#" 131.907
+subcap "m2_31_4#" -1323.29
+cap "not_0/w_0_0#" "XNOR_0/in2" -1.42109e-14
+subcap "m1_307_1#" -518.385
+cap "m2_124_189#" "AND_0/gnd" -7.10543e-15
+cap "AND_0/in2" "m2_124_189#" 13.05
+cap "AND_0/in2" "AND_0/gnd" 92.633
+cap "XNOR_1/XOR_0/gnd" "XNOR_1/in1" 17.6734
+cap "XNOR_1/XOR_0/in2" "XNOR_1/XOR_0/m1_58_43#" 65.9808
+cap "threeinputAND_0/threeinputNAND_0/a_6_n14#" "not_1/out" 24.7428
+cap "XNOR_1/XOR_0/in2" "not_1/in" 329.904
+cap "not_1/gnd" "m1_307_1#" 169.861
+subcap "m1_601_0#" -156.835
+cap "threeinputAND_0/not_0/gnd" "m2_400_180#" -7.10543e-15
+cap "threeinputAND_0/not_0/gnd" "threeinputAND_0/in2" 2.84217e-14
+cap "XNOR_2/in1" "XNOR_2/XOR_0/gnd" 17.6734
+subcap "m1_751_n9#" -5647.9
+cap "XNOR_2/XOR_0/in2" "not_2/in" 148.457
+cap "not_2/gnd" "m1_601_0#" 527.846
+cap "not_2/out" "fourinputAND_0/fourinputNAND_0/a_6_n14#" 16.4952
+cap "XNOR_2/XOR_0/m1_58_43#" "m1_751_n9#" -7.10543e-15
+cap "XNOR_2/XOR_0/in2" "XNOR_2/XOR_0/m1_58_43#" 82.476
+cap "not_2/in" "not_2/w_0_0#" -1.42109e-14
+subcap "m1_850_n12#" -3026.52
+cap "fourinputAND_0/in3" "fourinputAND_0/in4" 29.4557
+cap "fourinputAND_0/fourinputNAND_0/gnd" "fourinputAND_0/in2" 49.4856
+subcap "m1_910_57#" -95.4618
+cap "XNOR_3/in1" "fourinputAND_0/not_0/gnd" 17.6734
+cap "fourinputAND_0/out" "fourinputAND_0/not_0/gnd" 439.872
+cap "fourinputAND_0/not_0/vdd" "fourinputAND_0/not_0/gnd" 87.5249
+cap "fourinputAND_0/not_0/w_0_0#" "fourinputAND_0/not_0/in" -1.42109e-14
+cap "XNOR_3/XOR_0/NAND_0/w_0_0#" "XNOR_3/in1" -1.42109e-14
+cap "fourinputAND_0/not_0/vdd" "XNOR_3/in1" 63.1773
+cap "fourinputAND_0/not_0/vdd" "fourinputAND_0/out" 44.1836
+subcap "m1_1089_59#" -281.635
+cap "XNOR_3/XOR_0/NAND_0/gnd" "XNOR_3/in2" 1.42109e-14
+cap "fiveinputAND_0/not_0/w_0_0#" "fiveinputAND_0/not_0/in" -1.42109e-14
+cap "fiveinputAND_0/gnd" "fiveinputAND_0/in1" 4.26326e-14
+subcap "m1_1252_10#" -2462.66
+cap "fiveinputAND_0/in4" "fiveinputAND_0/in3" 68.73
+cap "fiveinputAND_0/in5" "fiveinputAND_0/fiveinputNAND_0/out" 16.4952
+subcap "m1_251_81#" -2018.96
+cap "XNOR_1/XOR_0/gnd" "m2_124_189#" 13.05
+cap "AND_0/vdd" "XNOR_1/XOR_0/gnd" 92.633
+cap "AND_0/vdd" "AND_0/out" -2.84217e-14
+cap "AND_0/out" "XNOR_1/XOR_0/gnd" 302.412
+subcap "m1_518_108#" -3.2505
+subcap "m1_518_86#" -1490.75
+cap "XNOR_2/XOR_0/gnd" "m2_400_180#" 13.05
+cap "XNOR_2/XOR_0/gnd" "threeinputAND_0/not_0/vdd" 97.5423
+cap "m1_518_86#" "XNOR_2/XOR_0/vdd" 661.772
+cap "XNOR_2/XOR_0/vdd" "m1_751_n9#" 117.45
+cap "fourinputOR_0/in1" "fourinputOR_0/not_0/in" 536.094
+cap "fourinputOR_0/in3" "fourinputOR_0/fourinputNOR_0/gnd" 22.1229
+cap "fourinputOR_0/fourinputNOR_0/out" "fourinputOR_0/fourinputNOR_0/gnd" 63.1773
+subcap "m1_910_57#" -924.327
+subcap "m1_925_164#" -1754.98
+cap "XNOR_3/XOR_0/NAND_1/gnd" "fourinputAND_0/not_0/vdd" 51.8396
+cap "XNOR_3/XOR_0/NAND_3/w_0_0#" "XNOR_3/XOR_0/NAND_3/vdd" -8.88178e-16
+cap "XNOR_3/XOR_0/NAND_1/gnd" "m1_885_73#" 99.1676
+cap "m1_885_73#" "fourinputAND_0/not_0/vdd" 2.94557
+cap "XNOR_3/XOR_0/vdd" "XNOR_3/XOR_0/NAND_3/gnd" 63.1773
+subcap "m2_1202_127#" -2709.16
+subcap "m1_1135_132#" -471.676
+subcap "m1_1132_154#" -1050.69
+cap "fiveinputAND_0/fiveinputNAND_0/out" "fiveinputAND_0/vdd" 63.1773
+subcap "m2_1202_127#" -2573.58
+cap "fourinputAND_1/in3" "fourinputAND_1/in4" 10.44
+cap "fiveinputAND_0/fiveinputNAND_0/out" "m1_751_n9#" 148.457
+subcap "m2_124_189#" -15093.1
+subcap "m2_400_180#" -6886.2
+cap "m1_251_81#" "XNOR_1/vdd'" 453.618
+subcap "m2_400_180#" -6441.76
+cap "m1_518_86#" "XNOR_2/vdd'" 8.83671
+subcap "m1_761_188#" -5.7603
+cap "m1_518_86#" "XNOR_2/XOR_0/vdd" 82.476
+subcap "m1_908_186#" -70.6632
+subcap "m1_865_201#" -1266.64
+subcap "Equal" -1221.81
+cap "NOR_0/vdd" "NOR_0/out" 41.238
+cap "NOR_0/out" "NOR_0/gnd" 142.886
+cap "fourinputOR_0/fourinputNOR_0/vdd" "NOR_0/out" 261.174
+subcap "m1_925_164#" -870.447
+subcap "Equal" -1270.59
+cap "fourinputOR_0/fourinputNOR_0/vdd" "fourinputOR_0/fourinputNOR_0/out" 35.3469
+cap "XNOR_3/vdd'" "m1_925_164#" 340.214
+cap "fourinputAND_1/fourinputNAND_0/w_0_0#" "fourinputAND_1/vdd" -7.10543e-15
+cap "fourinputAND_1/not_0/vdd" "fourinputAND_1/out" 12.3714
+cap "fourinputAND_1/not_0/vdd" "fourinputAND_1/out" 41.238
+merge "fiveinputAND_0/out" "fourinputOR_0/in4" -635.388 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -552 -389 7 -7 0 0 0 0 0 0 0 0
+merge "fourinputOR_0/in4" "m1_925_164#"
+merge "XNOR_1/out" "fourinputAND_1/in3" -2593.35 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -58 -45 -694 -493 0 0 0 0 0 0 0 0
+merge "fourinputAND_1/in3" "fiveinputAND_0/in3"
+merge "fiveinputAND_0/in3" "fourinputAND_0/in3"
+merge "fourinputAND_0/in3" "m2_400_180#"
+merge "m2_400_180#" "m1_850_n12#"
+merge "m1_850_n12#" "m1_1252_10#"
+merge "not_0/in" "XNOR_0/in2" -33.696 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -18 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_0/in2" "B3"
+merge "XNOR_0/out" "fourinputAND_1/in2" -2610.87 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -702 -492 0 0 0 0 0 0 0 0
+merge "fourinputAND_1/in2" "fiveinputAND_0/fiveinputNAND_0/in4"
+merge "fiveinputAND_0/fiveinputNAND_0/in4" "fiveinputAND_0/in4"
+merge "fiveinputAND_0/in4" "fourinputAND_0/in4"
+merge "fourinputAND_0/in4" "threeinputAND_0/in3"
+merge "threeinputAND_0/in3" "m2_124_189#"
+merge "m2_124_189#" "m2_1202_127#"
+merge "AND_0/in1" "not_0/out" -16.6638 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2 -16 0 0 0 0 0 0 0 0 0 0
+merge "not_0/out" "m1_181_27#"
+merge "fourinputOR_0/in1" "AND_0/out" -818.848 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -798 -550 0 0 0 0 0 0 0 0 0 0
+merge "AND_0/out" "m1_251_81#"
+merge "fourinputAND_0/gnd" "not_2/gnd" -22.044 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22 0 0 0 0 0 0 0 0 0 0
+merge "not_2/gnd" "XNOR_2/XOR_0/gnd"
+merge "XNOR_2/XOR_0/gnd" "m1_670_11#"
+merge "m1_670_11#" "m1_747_8#"
+merge "XNOR_2/out" "fourinputAND_1/in4" -1665.29 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -312 -222 -375 -256 0 0 0 0 0 0 0 0
+merge "fourinputAND_1/in4" "fiveinputAND_0/in5"
+merge "fiveinputAND_0/in5" "m1_751_n9#"
+merge "XNOR_1/XOR_0/vdd" "XNOR_1/XOR_0/NAND_1/vdd" -144.175 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -123 -22 -168 -6 0 0 0 0 0 0 0 0
+merge "XNOR_1/XOR_0/NAND_1/vdd" "AND_0/vdd"
+merge "AND_0/vdd" "m1_248_106#"
+merge "m1_248_106#" "threeinputAND_0/vdd"
+merge "threeinputAND_0/vdd" "not_1/vdd"
+merge "not_1/vdd" "XNOR_1/XOR_0/m1_58_43#"
+merge "XNOR_1/XOR_0/m1_58_43#" "m1_429_51#"
+merge "m1_429_51#" "m1_451_51#"
+merge "fiveinputAND_0/in2" "XNOR_3/in1" -608.376 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -600 -418 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_3/in1" "m1_962_5#"
+merge "m1_962_5#" "A0"
+merge "XNOR_3/not_0/gnd" "fourinputAND_1/gnd" -228.641 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -8 0 -32 0 0 0 0 0 0 0 0
+merge "fourinputAND_1/gnd" "XNOR_3/XOR_0/NAND_3/gnd"
+merge "XNOR_3/XOR_0/NAND_3/gnd" "m1_1135_132#"
+merge "AND_0/NAND_0/vdd" "not_0/vdd" -47.8683 0 0 0 0 0 0 0 0 0 0 35 0 0 0 59 -22 134 -13 0 0 0 0 0 0 0 0
+merge "not_0/vdd" "XNOR_0/XOR_0/m1_58_43#"
+merge "XNOR_0/XOR_0/m1_58_43#" "a_159_52#"
+merge "a_159_52#" "m1_181_52#"
+merge "threeinputAND_0/in1" "not_1/out" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "not_1/out" "m1_451_26#"
+merge "not_3/in" "XNOR_3/in2" -28.476 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -18 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_3/in2" "B0"
+merge "not_3/out" "fiveinputAND_0/in1" -37.332 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 -6 0 0 0 0 0 0 0 0
+merge "fiveinputAND_0/in1" "m1_1111_34#"
+merge "fourinputAND_1/vdd" "XNOR_3/vdd'" -42.132 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -16 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_3/vdd'" "m1_1058_175#"
+merge "XNOR_1/gnd" "AND_0/gnd" -14.028 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14 0 0 0 0 0 0 0 0 0 0
+merge "AND_0/gnd" "AND_0/NAND_0/gnd"
+merge "AND_0/NAND_0/gnd" "not_0/gnd"
+merge "not_0/gnd" "XNOR_0/XOR_0/NAND_0/gnd"
+merge "XNOR_0/XOR_0/NAND_0/gnd" "XNOR_0/gnd"
+merge "XNOR_0/gnd" "m1_100_11#"
+merge "m1_100_11#" "gnd"
+merge "gnd" "m1_183_12#"
+merge "m1_183_12#" "m1_259_9#"
+merge "fourinputOR_0/in3" "fourinputAND_0/out" -124.189 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -114 -88 0 0 0 0 0 0 0 0 0 0
+merge "fourinputAND_0/out" "m1_885_73#"
+merge "threeinputAND_0/gnd" "not_1/gnd" -24.9957 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3 -24 0 0 0 0 0 0 0 0 0 0
+merge "not_1/gnd" "XNOR_1/XOR_0/gnd"
+merge "XNOR_1/XOR_0/gnd" "m1_376_12#"
+merge "m1_376_12#" "m1_453_11#"
+merge "XNOR_2/XOR_0/vdd" "fourinputAND_0/vdd" -89.2884 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -22 4 -8 0 0 0 0 0 0 0 0
+merge "fourinputAND_0/vdd" "not_2/vdd"
+merge "not_2/vdd" "XNOR_2/XOR_0/m1_58_43#"
+merge "XNOR_2/XOR_0/m1_58_43#" "a_722_48#"
+merge "a_722_48#" "m1_744_48#"
+merge "AND_0/in2" "XNOR_0/in1" -1162.83 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 -300 -212 0 0 0 0 0 0 0 0
+merge "XNOR_0/in1" "m2_31_4#"
+merge "m2_31_4#" "A3"
+merge "XNOR_2/XOR_0/NAND_1/vdd" "threeinputAND_0/not_0/vdd" -60.3891 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "threeinputAND_0/not_0/vdd" "m1_518_108#"
+merge "fiveinputAND_0/vdd" "XNOR_3/XOR_0/vdd" -142.7 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -10 -73 -12 0 0 0 0 0 0 0 0
+merge "XNOR_3/XOR_0/vdd" "fiveinputAND_0/not_0/vdd"
+merge "fiveinputAND_0/not_0/vdd" "not_3/vdd"
+merge "not_3/vdd" "XNOR_3/XOR_0/NAND_0/vdd"
+merge "XNOR_3/XOR_0/NAND_0/vdd" "fourinputAND_0/not_0/vdd"
+merge "fourinputAND_0/not_0/vdd" "m1_910_57#"
+merge "m1_910_57#" "m1_1089_59#"
+merge "not_3/gnd" "XNOR_3/XOR_0/NAND_0/gnd" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_3/XOR_0/NAND_0/gnd" "m1_1031_16#"
+merge "m1_1031_16#" "fiveinputAND_0/gnd"
+merge "fiveinputAND_0/gnd" "m1_1114_19#"
+merge "fourinputOR_0/fourinputNOR_0/vdd" "XNOR_3/XOR_0/NAND_3/vdd" -4.4424 0 0 0 0 0 0 0 0 0 0 0 0 0 0 24 -12 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_3/XOR_0/NAND_3/vdd" "m1_908_186#"
+merge "XNOR_3/out" "fourinputAND_1/in1" -40.7082 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 -10 0 -6 0 0 0 0 0 0 0 0
+merge "fourinputAND_1/in1" "m1_1132_154#"
+merge "not_2/in" "XNOR_2/in2" -14.028 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -14 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_2/in2" "B1"
+merge "threeinputAND_0/in2" "XNOR_1/in1" -306.572 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -279 -218 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_1/in1" "m1_307_1#"
+merge "m1_307_1#" "A2"
+merge "NOR_0/in1" "fourinputOR_0/out" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "fourinputOR_0/out" "greater"
+merge "NOR_0/in2" "fourinputAND_1/out" -76.4481 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -39 -64 0 0 0 0 0 0 0 0 0 0
+merge "fourinputAND_1/out" "Equal"
+merge "fourinputAND_0/in2" "XNOR_2/in1" -309.415 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -288 -218 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_2/in1" "m1_601_0#"
+merge "m1_601_0#" "A1"
+merge "XNOR_2/gnd" "threeinputAND_0/not_0/gnd" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "threeinputAND_0/not_0/gnd" "m1_561_12#"
+merge "fourinputAND_0/in1" "not_2/out" -12.024 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -12 0 0 0 0 0 0 0 0 0 0
+merge "not_2/out" "m1_744_23#"
+merge "NOR_0/gnd" "XNOR_3/XOR_0/NAND_1/gnd" -879.873 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -18 -204 -148 0 0 0 0 0 0 0 0
+merge "XNOR_3/XOR_0/NAND_1/gnd" "m1_865_201#"
+merge "m1_865_201#" "fourinputOR_0/fourinputNOR_0/gnd"
+merge "fourinputOR_0/fourinputNOR_0/gnd" "m1_927_109#"
+merge "NOR_0/out" "lesser" -6.012 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 0 0 0 0 0 0 0 0 0 0
+merge "NOR_0/vdd" "vdd" -22.6758 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2 -22 0 0 0 0 0 0 0 0 0 0
+merge "vdd" "fourinputOR_0/vdd"
+merge "fourinputOR_0/vdd" "m1_761_188#"
+merge "not_1/in" "XNOR_1/in2" -33.696 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -18 0 0 0 0 0 0 0 0 0 0
+merge "XNOR_1/in2" "B2"
+merge "XNOR_3/gnd" "fourinputAND_0/not_0/gnd" -17.9274 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6 -16 0 0 0 0 0 0 0 0 0 0
+merge "fourinputAND_0/not_0/gnd" "m1_923_17#"
+merge "fourinputOR_0/in2" "threeinputAND_0/out" -621.887 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -75 -597 0 0 0 0 0 0 0 0 0 0
+merge "threeinputAND_0/out" "m1_518_86#"

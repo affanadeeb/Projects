@@ -1,0 +1,119 @@
+XOR gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+
+M1000 NAND_2/in1 in1 NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1001 NAND_2/in1 in1 vdd vdd CMOSP w=4 l=2
++  ad=40 pd=36 as=160 ps=144
+M1002 gnd in2 NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=0 ps=0
+M1003 vdd in2 NAND_2/in1 NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 NAND_3/in1 in1 NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1005 NAND_3/in1 in1 vdd NAND_1/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1006 gnd NAND_2/in1 NAND_1/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 vdd NAND_2/in1 NAND_3/in1 NAND_1/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 NAND_3/in2 NAND_2/in1 NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1009 NAND_3/in2 NAND_2/in1 vdd NAND_2/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1010 gnd in2 NAND_2/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1011 vdd in2 NAND_3/in2 NAND_2/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1012 out NAND_3/in1 NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1013 out NAND_3/in1 vdd NAND_3/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1014 gnd NAND_3/in2 NAND_3/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1015 vdd NAND_3/in2 out NAND_3/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 vdd NAND_3/in2 0.25fF
+C1 NAND_1/w_0_0# vdd 0.05fF
+C2 NAND_3/a_6_n14# out 0.12fF
+C3 NAND_3/in1 NAND_1/w_0_0# 0.03fF
+C4 NAND_1/a_6_n14# gnd 0.57fF
+C5 NAND_3/a_6_n14# gnd 0.57fF
+C6 out vdd 0.25fF
+C7 NAND_3/w_0_0# vdd 0.05fF
+C8 gnd in1 0.73fF
+C9 NAND_2/w_32_0# NAND_3/in2 0.03fF
+C10 gnd vdd 0.26fF
+C11 NAND_3/in1 NAND_3/w_0_0# 0.06fF
+C12 NAND_2/in1 NAND_2/w_0_0# 0.06fF
+C13 vdd in1 0.06fF
+C14 NAND_2/a_6_n14# NAND_3/in2 0.12fF
+C15 NAND_3/in1 gnd 0.11fF
+C16 vdd vdd 0.05fF
+C17 NAND_2/in1 NAND_0/a_6_n14# 0.12fF
+C18 NAND_3/w_32_0# NAND_3/in2 0.06fF
+C19 gnd NAND_2/a_6_n14# 0.59fF
+C20 NAND_3/in2 NAND_2/w_0_0# 0.03fF
+C21 NAND_3/in1 NAND_1/a_6_n14# 0.12fF
+C22 NAND_3/in1 vdd 0.25fF
+C23 out NAND_3/w_32_0# 0.03fF
+C24 NAND_0/w_32_0# vdd 0.05fF
+C25 vdd NAND_1/w_32_0# 0.05fF
+C26 gnd in2 0.02fF
+C27 NAND_2/in1 gnd 0.15fF
+C28 NAND_3/in1 NAND_1/w_32_0# 0.03fF
+C29 NAND_2/w_32_0# vdd 0.05fF
+C30 NAND_2/in1 vdd 0.03fF
+C31 NAND_0/a_6_n14# gnd 0.57fF
+C32 in2 vdd 0.06fF
+C33 NAND_3/w_32_0# vdd 0.05fF
+C34 vdd NAND_2/w_0_0# 0.05fF
+C35 NAND_2/in1 vdd 0.25fF
+C36 NAND_3/w_0_0# out 0.03fF
+C37 NAND_0/w_32_0# in2 0.06fF
+C38 NAND_2/in1 NAND_0/w_32_0# 0.03fF
+C39 NAND_2/in1 NAND_1/w_32_0# 0.06fF
+C40 NAND_2/w_32_0# in2 0.06fF
+C41 NAND_1/w_0_0# in1 0.06fF
+C42 gnd Gnd 2.42fF
+C43 NAND_3/a_6_n14# Gnd 0.14fF
+C44 out Gnd 0.52fF
+C45 vdd Gnd 0.33fF
+C46 NAND_3/in2 Gnd 0.76fF
+C47 NAND_3/in1 Gnd 0.78fF
+C48 NAND_3/w_32_0# Gnd 0.40fF
+C49 NAND_3/w_0_0# Gnd 0.40fF
+C50 NAND_2/a_6_n14# Gnd 0.14fF
+C51 NAND_2/in1 Gnd 0.97fF
+C52 NAND_2/w_32_0# Gnd 0.40fF
+C53 NAND_2/w_0_0# Gnd 0.40fF
+C54 NAND_1/a_6_n14# Gnd 0.14fF
+C55 in1 Gnd 1.00fF
+C56 NAND_1/w_32_0# Gnd 0.40fF
+C57 NAND_1/w_0_0# Gnd 0.40fF
+C58 NAND_0/a_6_n14# Gnd 0.14fF
+C59 in2 Gnd 0.45fF
+C60 NAND_0/w_32_0# Gnd 0.40fF
+C61 vdd Gnd 0.40fF
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(out)+4
+.end
+.endc

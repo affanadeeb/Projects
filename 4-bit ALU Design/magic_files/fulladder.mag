@@ -1,0 +1,87 @@
+magic
+tech scmos
+timestamp 1699630280
+<< metal1 >>
+rect 38 367 43 368
+rect 64 354 69 356
+rect 94 301 121 304
+rect 118 286 121 301
+rect 118 283 154 286
+rect 196 283 220 286
+rect -42 185 -14 188
+rect 13 126 16 194
+rect 78 181 81 215
+rect 118 169 121 283
+rect 197 261 211 264
+rect 208 236 211 261
+rect 217 259 220 283
+rect 208 233 214 236
+rect 320 218 328 221
+rect 135 192 138 209
+rect 130 189 138 192
+rect 204 189 205 192
+rect 208 177 211 208
+rect 133 174 211 177
+rect 134 121 174 124
+rect 226 87 229 194
+rect 289 101 292 183
+rect 238 98 292 101
+rect 224 84 229 87
+rect 224 83 225 84
+rect 155 41 158 47
+rect 113 25 151 27
+rect 110 24 151 25
+rect 165 20 168 27
+rect 100 17 168 20
+rect 1 8 6 10
+rect 236 5 239 50
+rect 31 2 239 5
+rect 26 -2 31 0
+rect 151 -9 156 -7
+<< m2contact >>
+rect 125 187 130 192
+rect 199 184 204 189
+rect 128 173 133 178
+rect 221 184 226 189
+rect 217 97 222 102
+rect 233 97 238 102
+rect 154 36 159 41
+rect 151 24 156 29
+rect 151 -7 156 -2
+<< metal2 >>
+rect -9 188 125 191
+rect 204 185 221 188
+rect 83 174 128 177
+rect 222 98 233 101
+rect 154 29 157 36
+rect 156 24 157 29
+rect 152 -2 155 24
+use XOR  XOR_0
+timestamp 1699628355
+transform 1 0 50 0 1 10
+box -50 -10 103 172
+use AND  AND_0
+timestamp 1699599481
+transform 1 0 159 0 1 26
+box -4 1 77 98
+use XOR  XOR_1
+timestamp 1699628355
+transform 1 0 10 0 1 195
+box -50 -10 103 172
+use AND  AND_1
+timestamp 1699599481
+transform 1 0 139 0 1 188
+box -4 1 77 98
+use OR  OR_0
+timestamp 1699627711
+transform 1 0 216 0 1 203
+box -2 -20 105 58
+<< labels >>
+rlabel metal1 38 367 43 368 5 S
+rlabel metal1 326 218 328 221 7 C
+rlabel metal1 -42 185 -34 188 3 C_in
+rlabel metal1 26 -2 31 0 1 B
+rlabel metal1 151 -9 156 -7 1 A
+rlabel metal1 1 8 6 10 1 gnd
+rlabel metal1 64 354 69 356 1 vdd
+<< end >>

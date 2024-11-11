@@ -1,0 +1,35 @@
+magic
+tech scmos
+timestamp 1699627711
+<< metal1 >>
+rect 41 56 44 58
+rect 58 53 83 56
+rect 80 40 83 53
+rect -2 30 0 34
+rect 65 14 81 18
+rect 102 15 104 18
+rect 8 -6 11 10
+rect 81 -6 84 0
+rect 8 -9 84 -6
+rect 40 -11 43 -9
+rect 72 -20 77 -18
+<< m2contact >>
+rect 72 25 77 30
+rect 72 -18 77 -13
+<< metal2 >>
+rect 73 -13 76 25
+use NOT  NOT_0
+timestamp 1698566035
+transform 1 0 80 0 1 21
+box 0 -21 25 19
+use NOR  NOR_0
+timestamp 1698585264
+transform 1 0 1 0 1 37
+box -1 -38 74 19
+<< labels >>
+rlabel metal1 72 -20 77 -18 1 in2
+rlabel metal1 102 15 104 18 7 out
+rlabel metal1 40 -11 43 -9 1 gnd
+rlabel metal1 41 56 44 58 5 vdd
+rlabel metal1 -2 30 0 34 3 in1
+<< end >>

@@ -1,0 +1,65 @@
+Three Input NAND gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+vin3 in3 gnd  PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+
+
+M1000 out in1 a_6_n14# gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1001 out in3 vdd vdd CMOSP w=4 l=2
++  ad=60 pd=54 as=60 ps=54
+M1002 out in1 vdd vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1003 gnd in3 a_45_n14# gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1004 a_45_n14# in2 a_6_n14# gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1005 vdd in2 out vdd CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 a_45_n14# in2 0.06fF
+C1 vdd vdd 0.05fF
+C2 vdd vdd 0.05fF
+C3 gnd a_6_n14# 0.47fF
+C4 vdd out 0.03fF
+C5 vdd out 0.03fF
+C6 out vdd 1.20fF
+C7 a_45_n14# gnd 0.04fF
+C8 vdd vdd 0.05fF
+C9 out vdd 0.03fF
+C10 out a_6_n14# 0.11fF
+C11 vdd in3 0.06fF
+C12 in1 vdd 0.06fF
+C13 vdd in2 0.06fF
+C14 a_45_n14# a_6_n14# 0.04fF
+C15 gnd gnd 0.28fF
+C16 a_45_n14# gnd 0.07fF
+C17 a_6_n14# gnd 0.14fF
+C18 in3 gnd 0.17fF
+C19 in2 gnd 0.17fF
+C20 vdd gnd 0.18fF
+C21 in1 gnd 0.17fF
+C22 out gnd 0.51fF
+C23 vdd gnd 0.39fF
+C24 vdd gnd 0.40fF
+C25 vdd gnd 0.40fF
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(in3)+4 v(out)+6
+.end
+.endc

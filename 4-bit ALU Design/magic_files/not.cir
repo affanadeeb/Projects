@@ -1,0 +1,38 @@
+NOT gate
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin in gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+M1000 out in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=20 ps=18
+M1001 out in vdd vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=20 ps=18
+C0 out vdd 0.07fF
+C1 vdd vdd 0.05fF
+C2 out in 0.02fF
+C3 out gnd 0.08fF
+C4 in gnd 0.01fF
+C5 out vdd 0.03fF
+C6 in vdd 0.06fF
+C7 gnd Gnd 0.09fF
+C8 out Gnd 0.05fF
+C9 vdd Gnd 0.05fF
+C10 in Gnd 0.17fF
+C11 vdd Gnd 0.40fF
+
+.tran 0.1n 200n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in) v(out)+2
+.end
+.endc

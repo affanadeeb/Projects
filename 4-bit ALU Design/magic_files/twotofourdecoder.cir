@@ -1,0 +1,198 @@
+Twotofourdecoder Circuit
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global vdd
+
+Vdd vdd gnd 'SUPPLY'
+V_in_a S0 gnd PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+V_in_b S1 gnd PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+
+M1000 AND_0/not_0/in S0 AND_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1001 AND_0/not_0/in S0 vdd vdd CMOSP w=4 l=2
++  ad=40 pd=36 as=280 ps=252
+M1002 gnd S1 AND_0/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=200 pd=180 as=0 ps=0
+M1003 vdd S1 AND_0/not_0/in AND_0/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 D3 AND_0/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1005 D3 AND_0/not_0/in vdd AND_0/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1006 AND_1/not_0/in S1 AND_1/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1007 AND_1/not_0/in S1 vdd AND_1/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1008 gnd not_0/out AND_1/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1009 vdd not_0/out AND_1/not_0/in AND_1/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 D2 AND_1/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1011 D2 AND_1/not_0/in vdd AND_1/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1012 AND_2/not_0/in not_0/out AND_2/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1013 AND_2/not_0/in not_0/out vdd AND_2/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1014 gnd not_1/out AND_2/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1015 vdd not_1/out AND_2/not_0/in AND_2/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1016 D0 AND_2/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1017 D0 AND_2/not_0/in vdd AND_2/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1018 AND_3/not_0/in not_1/out AND_3/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=40 ps=36
+M1019 AND_3/not_0/in not_1/out vdd AND_3/NAND_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=0 ps=0
+M1020 gnd S0 AND_3/NAND_0/a_6_n14# Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1021 vdd S0 AND_3/not_0/in AND_3/NAND_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1022 D1 AND_3/not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1023 D1 AND_3/not_0/in vdd AND_3/not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1024 not_0/out S0 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1025 not_0/out S0 vdd not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1026 not_1/out S1 gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1027 not_1/out S1 vdd not_1/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 AND_2/not_0/w_0_0# AND_2/not_0/in 0.06fF
+C1 AND_3/not_0/in AND_3/NAND_0/a_6_n14# 0.12fF
+C2 not_0/out AND_2/NAND_0/w_0_0# 0.06fF
+C3 AND_3/NAND_0/w_32_0# AND_3/not_0/in 0.03fF
+C4 AND_0/NAND_0/w_32_0# S1 0.06fF
+C5 gnd AND_1/NAND_0/a_6_n14# 0.57fF
+C6 not_1/out AND_2/NAND_0/w_32_0# 0.06fF
+C7 gnd D0 0.08fF
+C8 not_1/out AND_3/NAND_0/a_6_n14# 0.07fF
+C9 AND_1/not_0/w_0_0# D2 0.03fF
+C10 gnd vdd 0.07fF
+C11 not_1/out S0 0.13fF
+C12 D3 AND_0/not_0/w_0_0# 0.03fF
+C13 AND_3/NAND_0/w_32_0# S0 0.06fF
+C14 gnd AND_0/NAND_0/a_6_n14# 0.57fF
+C15 D0 AND_2/not_0/in 0.02fF
+C16 AND_1/NAND_0/w_0_0# S1 0.06fF
+C17 vdd AND_2/not_0/in 0.29fF
+C18 not_0/out not_0/w_0_0# 0.03fF
+C19 AND_3/not_0/w_0_0# vdd 0.05fF
+C20 gnd AND_0/not_0/in 0.04fF
+C21 AND_1/not_0/in gnd 0.04fF
+C22 gnd AND_3/not_0/in 0.04fF
+C23 D1 gnd 0.08fF
+C24 gnd AND_3/NAND_0/a_6_n14# 0.57fF
+C25 vdd not_1/w_0_0# 0.05fF
+C26 not_1/out gnd 3.19fF
+C27 vdd S1 0.13fF
+C28 gnd S0 0.44fF
+C29 AND_1/not_0/w_0_0# vdd 0.05fF
+C30 D3 vdd 0.20fF
+C31 AND_3/not_0/w_0_0# AND_3/not_0/in 0.06fF
+C32 D1 AND_3/not_0/w_0_0# 0.03fF
+C33 AND_2/NAND_0/w_32_0# AND_2/not_0/in 0.03fF
+C34 not_0/out vdd 0.13fF
+C35 AND_1/NAND_0/w_32_0# vdd 0.05fF
+C36 vdd AND_2/NAND_0/w_0_0# 0.05fF
+C37 AND_1/not_0/in AND_1/not_0/w_0_0# 0.06fF
+C38 D3 AND_0/not_0/in 0.02fF
+C39 AND_3/NAND_0/w_0_0# vdd 0.05fF
+C40 not_1/out not_1/w_0_0# 0.03fF
+C41 not_1/out S1 0.16fF
+C42 AND_0/NAND_0/w_32_0# vdd 0.05fF
+C43 AND_1/not_0/in AND_1/NAND_0/w_32_0# 0.03fF
+C44 D2 vdd 0.20fF
+C45 not_0/out S0 0.02fF
+C46 vdd AND_0/not_0/w_0_0# 0.05fF
+C47 vdd vdd 0.05fF
+C48 gnd AND_2/not_0/in 0.04fF
+C49 AND_2/not_0/w_0_0# D0 0.03fF
+C50 AND_2/not_0/w_0_0# vdd 0.05fF
+C51 AND_3/NAND_0/w_0_0# AND_3/not_0/in 0.03fF
+C52 vdd not_0/w_0_0# 0.05fF
+C53 vdd AND_1/NAND_0/w_0_0# 0.05fF
+C54 AND_0/NAND_0/w_32_0# AND_0/not_0/in 0.03fF
+C55 not_1/out AND_3/NAND_0/w_0_0# 0.06fF
+C56 AND_1/not_0/in D2 0.02fF
+C57 gnd S1 0.78fF
+C58 AND_0/not_0/in AND_0/not_0/w_0_0# 0.06fF
+C59 AND_0/not_0/in vdd 0.03fF
+C60 D3 gnd 0.08fF
+C61 gnd not_0/out 0.42fF
+C62 D0 vdd 0.20fF
+C63 S0 vdd 0.06fF
+C64 AND_1/not_0/in AND_1/NAND_0/w_0_0# 0.03fF
+C65 gnd AND_2/NAND_0/a_6_n14# 0.57fF
+C66 S0 not_0/w_0_0# 0.06fF
+C67 AND_2/NAND_0/a_6_n14# AND_2/not_0/in 0.12fF
+C68 AND_1/not_0/in AND_1/NAND_0/a_6_n14# 0.12fF
+C69 not_1/w_0_0# S1 0.06fF
+C70 vdd AND_0/not_0/in 0.29fF
+C71 AND_1/not_0/in vdd 0.29fF
+C72 vdd AND_3/not_0/in 0.29fF
+C73 D1 vdd 0.13fF
+C74 AND_2/NAND_0/w_0_0# AND_2/not_0/in 0.03fF
+C75 AND_2/NAND_0/w_32_0# vdd 0.05fF
+C76 gnd D2 0.08fF
+C77 not_0/out S1 0.14fF
+C78 AND_0/not_0/in AND_0/NAND_0/a_6_n14# 0.12fF
+C79 not_1/out vdd 0.64fF
+C80 AND_3/NAND_0/w_32_0# vdd 0.05fF
+C81 S0 AND_0/NAND_0/a_6_n14# 0.11fF
+C82 D1 AND_3/not_0/in 0.02fF
+C83 AND_1/NAND_0/w_32_0# not_0/out 0.06fF
+C84 vdd Gnd 3.80fF
+C85 not_1/w_0_0# Gnd 0.40fF
+C86 not_0/w_0_0# Gnd 0.40fF
+C87 AND_3/not_0/in Gnd 0.76fF
+C88 gnd Gnd 4.39fF
+C89 D1 Gnd 0.22fF
+C90 AND_3/not_0/w_0_0# Gnd 0.40fF
+C91 AND_3/NAND_0/a_6_n14# Gnd 0.14fF
+C92 S0 Gnd 1.49fF
+C93 not_1/out Gnd 1.39fF
+C94 AND_3/NAND_0/w_32_0# Gnd 0.40fF
+C95 AND_3/NAND_0/w_0_0# Gnd 0.40fF
+C96 AND_2/not_0/in Gnd 0.76fF
+C97 D0 Gnd 0.19fF
+C98 AND_2/not_0/w_0_0# Gnd 0.40fF
+C99 AND_2/NAND_0/a_6_n14# Gnd 0.14fF
+C100 not_0/out Gnd 1.67fF
+C101 AND_2/NAND_0/w_32_0# Gnd 0.40fF
+C102 AND_2/NAND_0/w_0_0# Gnd 0.40fF
+C103 AND_1/not_0/in Gnd 0.76fF
+C104 D2 Gnd 0.20fF
+C105 AND_1/not_0/w_0_0# Gnd 0.40fF
+C106 AND_1/NAND_0/a_6_n14# Gnd 0.14fF
+C107 S1 Gnd 1.62fF
+C108 AND_1/NAND_0/w_32_0# Gnd 0.40fF
+C109 AND_1/NAND_0/w_0_0# Gnd 0.40fF
+C110 AND_0/not_0/in Gnd 0.76fF
+C111 D3 Gnd 0.19fF
+C112 AND_0/not_0/w_0_0# Gnd 0.40fF
+C113 AND_0/NAND_0/a_6_n14# Gnd 0.14fF
+C114 AND_0/NAND_0/w_32_0# Gnd 0.40fF
+C115 vdd Gnd 0.40fF
+
+.tran 1n 200n
+
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(S0) v(S1)+2 v(D0)+4 v(D1)+6 v(D2)+8 v(D3)+10
+.end
+.endc

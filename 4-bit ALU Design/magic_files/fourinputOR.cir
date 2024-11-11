@@ -1,0 +1,101 @@
+Four Input OR gate
+
+.include TSMC_180nm.txt
+.option scale=0.09u
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+
+.param width_P = 8*LAMBDA
+.param width_N = 4*LAMBDA
+
+.global gnd vdd
+
+Vdd vdd gnd 'SUPPLY'
+vin1 in1 gnd  PULSE(0 1.8 0ns 100ps 100ps 20ns 40ns)
+vin2 in2 gnd  PULSE(0 1.8 0ns 100ps 100ps 40ns 80ns)
+vin3 in3 gnd  PULSE(0 1.8 0ns 100ps 100ps 80ns 160ns)
+vin4 in4 gnd  PULSE(0 1.8 0ns 100ps 100ps 160ns 320ns)
+
+M1000 not_0/in in4 gnd Gnd CMOSN w=4 l=2
++  ad=80 pd=72 as=100 ps=90
+M1001 not_0/in in1 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1002 fourinputNOR_0/a_77_6# in3 fourinputNOR_0/a_45_6# vdd CMOSP w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1003 not_0/in in3 gnd Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 fourinputNOR_0/a_13_6# in1 vdd fourinputNOR_0/w_0_0# CMOSP w=4 l=2
++  ad=40 pd=36 as=40 ps=36
+M1005 not_0/in in4 fourinputNOR_0/a_77_6# fourinputNOR_0/w_97_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1006 gnd in2 not_0/in Gnd CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1007 fourinputNOR_0/a_45_6# in2 fourinputNOR_0/a_13_6# fourinputNOR_0/w_32_0# CMOSP w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 out not_0/in gnd Gnd CMOSN w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1009 out not_0/in vdd not_0/w_0_0# CMOSP w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+C0 in3 vdd 0.06fF
+C1 vdd not_0/w_0_0# 0.05fF
+C2 fourinputNOR_0/a_77_6# fourinputNOR_0/w_97_0# 0.03fF
+C3 vdd fourinputNOR_0/a_77_6# 0.18fF
+C4 fourinputNOR_0/a_45_6# fourinputNOR_0/a_13_6# 0.04fF
+C5 in4 not_0/in 0.10fF
+C6 fourinputNOR_0/a_45_6# vdd 0.03fF
+C7 not_0/in in3 0.15fF
+C8 in4 fourinputNOR_0/w_97_0# 0.06fF
+C9 vdd fourinputNOR_0/a_45_6# 0.17fF
+C10 fourinputNOR_0/a_13_6# fourinputNOR_0/w_32_0# 0.03fF
+C11 out gnd 0.08fF
+C12 fourinputNOR_0/a_45_6# fourinputNOR_0/a_77_6# 0.04fF
+C13 in1 gnd 0.16fF
+C14 in2 fourinputNOR_0/w_32_0# 0.06fF
+C15 in1 fourinputNOR_0/w_0_0# 0.06fF
+C16 out not_0/in 0.02fF
+C17 in1 not_0/in 0.13fF
+C18 vdd fourinputNOR_0/w_32_0# 0.03fF
+C19 in2 gnd 0.08fF
+C20 vdd out 0.20fF
+C21 not_0/w_0_0# out 0.03fF
+C22 not_0/in gnd 0.88fF
+C23 fourinputNOR_0/w_0_0# fourinputNOR_0/a_13_6# 0.03fF
+C24 in2 not_0/in 0.11fF
+C25 vdd fourinputNOR_0/a_13_6# 0.21fF
+C26 vdd vdd 0.03fF
+C27 fourinputNOR_0/a_77_6# vdd 0.03fF
+C28 fourinputNOR_0/a_45_6# fourinputNOR_0/w_32_0# 0.03fF
+C29 vdd fourinputNOR_0/w_0_0# 0.05fF
+C30 fourinputNOR_0/w_97_0# not_0/in 0.03fF
+C31 vdd not_0/in 0.07fF
+C32 in3 gnd 0.07fF
+C33 not_0/w_0_0# not_0/in 0.06fF
+C34 fourinputNOR_0/a_77_6# not_0/in 0.04fF
+C35 vdd fourinputNOR_0/w_97_0# 0.03fF
+C36 gnd Gnd 0.80fF
+C37 out Gnd 0.54fF
+C38 vdd Gnd 0.32fF
+C39 not_0/in Gnd 1.09fF
+C40 not_0/w_0_0# Gnd 0.40fF
+C41 fourinputNOR_0/a_77_6# Gnd 0.02fF
+C42 fourinputNOR_0/a_45_6# Gnd 0.02fF
+C43 fourinputNOR_0/a_13_6# Gnd 0.02fF
+C44 in4 Gnd 0.28fF
+C45 in3 Gnd 0.56fF
+C46 in2 Gnd 0.67fF
+C47 in1 Gnd 0.58fF
+C48 fourinputNOR_0/w_97_0# Gnd 0.03fF
+C49 vdd Gnd 0.40fF
+C50 fourinputNOR_0/w_32_0# Gnd 0.40fF
+C51 fourinputNOR_0/w_0_0# Gnd 0.40fF
+
+
+.tran 0.1n 400n
+.control
+run
+set color0 = rgb:f/f/e
+set color1 = black
+plot v(in1) v(in2)+2 v(in3)+4 v(in4)+6 v(out)+8
+.end
+.endc
+
