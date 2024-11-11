@@ -1,0 +1,12 @@
+irmovq $8,%rdx
+irmovq $70 %rax
+rmmovq  %rdx 0(%rax)
+rmmovq %rax 0(%rdx)
+nop
+nop
+nop
+mrmovq %rsp 0(%rax)
+ret
+
+.71
+halt 

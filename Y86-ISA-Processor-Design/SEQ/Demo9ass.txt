@@ -1,0 +1,15 @@
+irmovq $most-ve %rdx
+nop
+cmovle %rdx %rcx
+addq %rcx %rcx
+cmovg %rdx %rcx
+addq %rcx %rcx
+cmovl %rdx %rcx
+addq %rcx %rcx
+cmovne %rdx %rcx
+addq %rcx %rcx
+cmovge %rcx %rdx
+addq %rcx %rcx
+cmove %rcx %rbx
+addq %rbx %rax
+halt

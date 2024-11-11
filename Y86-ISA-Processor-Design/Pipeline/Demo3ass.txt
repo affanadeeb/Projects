@@ -1,0 +1,7 @@
+irmovq $128,%rdx
+irmovq $3,%rcx
+rmmovq %rcx,0(%rdx)
+irmovq $10,%rbx
+mrmovq 0(%rdx) %rax
+addq %rbx,%rax
+halt

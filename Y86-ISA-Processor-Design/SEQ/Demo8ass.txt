@@ -1,0 +1,9 @@
+irmovq $511 %rsp
+irmovq $50 %rdi
+irmovq $100 %rsi
+pushq %rdi
+pushq %rsi
+popq %rcx
+popq %rax
+addq %rax %rcx
+halt

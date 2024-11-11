@@ -1,0 +1,12 @@
+call dest1
+
+.dest1
+xorq %rax %rax 
+jump dest2
+nop
+nop
+nop
+return
+
+.dest2
+return 
