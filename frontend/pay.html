@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Advanced payment portal with multiple payment methods including cards and UPI">
-    <title>MultiPay Portal</title>
+    <meta name="description" content="Secure payment portal with multiple payment methods and gateway integrations">
+    <title>MultiPay Secure Portal</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <style>
         :root {
             --primary-color: #2563eb;
@@ -305,33 +306,164 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Responsive Design */
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #f0fdf4;
+            color: #166534;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .security-badge i {
+            color: #16a34a;
+        }
+
+        /* Gateway Selection */
+        .gateway-selector {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-radius: 0.5rem;
+        }
+
+        .gateway-options {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .gateway-option {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .gateway-option:hover {
+            border-color: var(--primary-color);
+        }
+
+        .gateway-option.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Accessibility Improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
         @media (max-width: 640px) {
             .container {
-                margin: 1rem;
+                margin: 0.5rem;
                 padding: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            .payment-methods {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
             }
 
             .card-input-group {
                 grid-template-columns: 1fr;
+                gap: 0.5rem;
             }
 
-            .payment-methods {
-                grid-template-columns: 1fr 1fr;
+            .gateway-options {
+                flex-direction: column;
             }
+
+            .upi-apps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Loading Animation Enhancement */
+        .loading.active .spinner {
+            background: conic-gradient(transparent 0deg, var(--primary-color) 360deg);
+            mask: radial-gradient(closest-side, transparent 75%, #000 76%);
+        }
+
+        /* Session Timeout Indicator */
+        .session-timer {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .session-timer i {
+            color: var(--primary-color);
         }
     </style>
 </head>
 <body>
+    <!-- Session Timer -->
+    <div class="session-timer">
+        <i class="fas fa-clock"></i>
+        <span id="sessionTime">10:00</span>
+    </div>
+    
     <div class="container">
-        <div class="header">
-            <h1>MultiPay Portal</h1>
-            <p>Choose your preferred payment method</p>
+        <div class="security-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>Secure Payment Portal - PCI DSS Compliant</span>
         </div>
 
+        <div class="header">
+            <h1>MultiPay Portal</h1>
+            <p>Enter amount and choose your preferred payment method</p>
+        </div>
+
+        <!-- New Amount Input Section -->
         <div class="amount-display">
-            <p>Amount to Pay</p>
-            <h2>₹1,499.00</h2>
+            <div class="amount-input">
+                <select id="currency">
+                    <option value="INR">₹ INR</option>
+                    <option value="USD">$ USD</option>
+                    <option value="EUR">€ EUR</option>
+                    <option value="GBP">£ GBP</option>
+                </select>
+                <input type="number" id="paymentAmount" placeholder="Enter amount" min="1" step="0.01">
+            </div>
+            <div id="amountError" class="error-message"></div>
+            <div id="processingFee" class="processing-fee"></div>
+            <div id="totalAmount" class="total-amount"></div>
+        </div>
+
+                <!-- Gateway Selector -->
+        <div class="gateway-selector">
+            <label for="gateway">Select Payment Gateway</label>
+            <div class="gateway-options">
+                <div class="gateway-option active" data-gateway="stripe">
+                    <i class="fab fa-stripe"></i> Stripe
+                </div>
+                <div class="gateway-option" data-gateway="paypal">
+                    <i class="fab fa-paypal"></i> PayPal
+                </div>
+                <div class="gateway-option" data-gateway="razorpay">
+                    <i class="fas fa-wallet"></i> Razorpay
+                </div>
+            </div>
         </div>
 
         <div class="payment-methods">
@@ -485,6 +617,155 @@
     </div>
 
     <script>
+
+            const paymentAmount = document.getElementById('paymentAmount');
+            const currency = document.getElementById('currency');
+            const amountError = document.getElementById('amountError');
+            const processingFee = document.getElementById('processingFee');
+            const totalAmount = document.getElementById('totalAmount');
+
+            // Currency symbols mapping
+            const currencySymbols = {
+                'INR': '₹',
+                'USD': '$',
+                'EUR': '€',
+                'GBP': '£'
+            };
+
+            // Processing fee rates
+            const processingFeeRates = {
+                card: 0.02, // 2%
+                upi: 0.01,  // 1%
+                netbanking: 0.015 // 1.5%
+            };
+            function updatePaymentButtons(amount) {
+                const symbol = currencySymbols[currency.value];
+                document.querySelectorAll('.btn-primary').forEach(button => {
+                    if (button.type === 'submit') {
+                        button.textContent = `Pay ${symbol}${amount.toFixed(2)}`;
+                    }
+                });
+            }
+     // Enhanced Security Features
+            const securityFeatures = {
+                encryptData: (data) => {
+                    const key = CryptoJS.lib.WordArray.random(32);
+                    return CryptoJS.AES.encrypt(JSON.stringify(data), key).toString();
+                },
+                
+                validateInput: (input, pattern) => {
+                    return pattern.test(input) && !/<script|javascript:/i.test(input);
+                },
+
+                sanitizeInput: (input) => {
+                    return input.replace(/<[^>]*>/g, '');
+                }
+            };
+
+            // Session Management
+            class SessionManager {
+                constructor(timeout = 600) {
+                    this.timeout = timeout;
+                    this.timeLeft = timeout;
+                    this.timer = null;
+                    this.initializeTimer();
+                }
+
+                initializeTimer() {
+                    this.updateDisplay();
+                    this.timer = setInterval(() => {
+                        this.timeLeft--;
+                        this.updateDisplay();
+                        if (this.timeLeft <= 0) {
+                            this.handleTimeout();
+                        }
+                    }, 1000);
+                }
+
+                updateDisplay() {
+                    const minutes = Math.floor(this.timeLeft / 60);
+                    const seconds = this.timeLeft % 60;
+                    document.getElementById('sessionTime').textContent = 
+                        `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                }
+
+                handleTimeout() {
+                    clearInterval(this.timer);
+                    alert('Session timeout. Please refresh to start a new session.');
+                    // Redirect to session timeout page
+                }
+
+                resetTimer() {
+                    this.timeLeft = this.timeout;
+                    this.updateDisplay();
+                }
+            }
+
+            // Initialize session manager
+            const sessionManager = new SessionManager();
+
+            // Gateway Integration
+            class PaymentGateway {
+                constructor(type) {
+                    this.type = type;
+                    this.initialized = false;
+                }
+
+                async initialize() {
+                    switch(this.type) {
+                        case 'stripe':
+                            // Initialize Stripe
+                            break;
+                        case 'paypal':
+                            // Initialize PayPal
+                            break;
+                        case 'razorpay':
+                            // Initialize Razorpay
+                            break;
+                    }
+                    this.initialized = true;
+                }
+
+                async processPayment(paymentDetails) {
+                    if (!this.initialized) {
+                        await this.initialize();
+                    }
+
+                    // Encrypt sensitive data
+                    const encryptedData = securityFeatures.encryptData(paymentDetails);
+
+                    // Simulate payment processing
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            resolve({
+                                success: true,
+                                transactionId: 'TXN' + Date.now().toString().slice(-8)
+                            });
+                        }, 2000);
+                    });
+                }
+            }
+
+            // Enhanced form validation
+            function validateForm(formData) {
+                for (let [key, value] of formData.entries()) {
+                    value = securityFeatures.sanitizeInput(value);
+                    if (!value) {
+                        throw new Error(`${key} is required`);
+                    }
+                }
+                return true;
+            }
+
+            // Event listeners for gateway selection
+            document.querySelectorAll('.gateway-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    document.querySelectorAll('.gateway-option').forEach(opt => 
+                        opt.classList.remove('active'));
+                    option.classList.add('active');
+                });
+            });
+            
         // Global Variables
         let currentPaymentMethod = null;
         const paymentForms = {
@@ -501,6 +782,49 @@
             });
         });
 
+        //adding this
+            paymentAmount.addEventListener('input', function() {
+            const amount = parseFloat(this.value) || 0;
+            const selectedCurrency = currency.value;
+            const symbol = currencySymbols[selectedCurrency];
+            
+            // Validate amount
+            if (amount <= 0) {
+                amountError.textContent = 'Please enter a valid amount';
+                amountError.style.display = 'block';
+                return;
+            } else {
+                amountError.style.display = 'none';
+            }
+            
+            // Calculate processing fee based on current payment method
+            const feeRate = processingFeeRates[currentPaymentMethod || 'card'];
+            const fee = amount * feeRate;
+            const total = amount + fee;
+            
+            // Update processing fee display
+            processingFee.textContent = `Processing fee: ${symbol}${fee.toFixed(2)}`;
+            processingFee.style.display = 'block';
+            
+            // Update total amount display
+            totalAmount.textContent = `Total amount: ${symbol}${total.toFixed(2)}`;
+            totalAmount.style.display = 'block';
+            
+            // Update all payment buttons
+            document.querySelectorAll('.btn-primary').forEach(button => {
+                if (button.type === 'submit') {
+                    button.textContent = `Pay ${symbol}${total.toFixed(2)}`;
+                }
+            });
+        });
+
+        // Add currency change handler
+        currency.addEventListener('change', function() {
+            // Trigger amount input event to update displays with new currency
+            const event = new Event('input');
+            paymentAmount.dispatchEvent(event);
+        });
+
         function switchPaymentMethod(methodType) {
             // Reset active states
             document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('active'));
@@ -510,6 +834,9 @@
             document.querySelector(`[data-method="${methodType}"]`).classList.add('active');
             paymentForms[methodType].style.display = 'block';
             currentPaymentMethod = methodType;
+
+            const event = new Event('input');
+            paymentAmount.dispatchEvent(event);
         }
 
         // Card Number Formatting
